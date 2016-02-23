@@ -3,5 +3,4 @@
 *.log
 /tmp/
 *~
-config/secrets.yml
 /db/*.sqlite3
