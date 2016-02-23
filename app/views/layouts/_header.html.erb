@@ -6,6 +6,14 @@
         <li><%= link_to "Koti", root_path %></li>
         <li><%= link_to "Help", help_path %></li>
         <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Luo isännöitsijä", create_user_path %></li>        
+        <% if logged_in? %>
+          <li><%= link_to "Profiili", current_user %></li>
+          <li><%= link_to "Asetukset", '#' %></li>
+          <li><%= link_to "Kirjaudu ulos", logout_path, method: "delete" %></li>
+        <% else %>
+          <li><%= link_to "Kirjaudu isännöitsijänä", login_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

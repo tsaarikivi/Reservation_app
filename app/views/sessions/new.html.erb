@@ -1,0 +1,21 @@
+<% provide(:title, "Kirjaudu") %>
+<h1>Kirjaudu</h1>
+
+<div>
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.label :email %>
+    <br>
+    <%= f.email_field :email %>
+    <br>
+    <%= f.label :password %>
+    <br>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.label :remember_me do %>
+      <%= f.check_box :remember_me %>
+      <span>Muista minut</span>
+    <% end %>
+    <br>
+    <%= f.submit "Kirjaudu" %>
+  <% end %>
+</div>
