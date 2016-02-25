@@ -57,4 +57,12 @@ class UserTest < ActiveSupport::TestCase
   test "authenticated? should return false for a user with nil digest" do
     assert_not @user.authenticated?('')
   end
+
+  test "associated housings should be destroyed" do
+    @user.save
+    @user.housings.create!(name: "HousingTEST")
+    assert_difference 'Housing.count', -1 do
+      @user.destroy
+    end
+  end
 end

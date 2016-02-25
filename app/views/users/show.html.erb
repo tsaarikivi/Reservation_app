@@ -1,3 +1,11 @@
 <% provide(:title, "Käyttäjä") %>
-<%= @user.email %>
-<p>Tänne tulee tietoa isännöitsijästä</p>
+<h2>Käyttäjä: <%= @user.email %></h2>
+<%= link_to "Luo uusi taloyhtiö", create_housing_path %>
+<div class="housing-list-cont">
+  <% if @user.housings.any? %>
+    <h3>Taloyhtiöitä: (<%= @user.housings.count %>)</h3>
+    <ol class="housing-list">
+      <%= render @housings %>
+    </ol>
+  <% end %>
+</div>
