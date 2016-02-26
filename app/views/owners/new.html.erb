@@ -1,6 +1,6 @@
 <% provide(:title, 'Luo Taloyhtiö') %>
 <h1>Luo uusi Taloyhtiö</h1>
-<%= form_for(@housing) do |f| %>
+<%= form_for(@owner) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <br>
   <%= f.label :name %>

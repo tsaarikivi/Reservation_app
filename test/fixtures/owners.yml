@@ -1,12 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-housing1:
-  name: "housing1"
+owner1:
+  name: "owner1"
   created_at: <%= 10.minutes.ago %>
 
-housing2:
-  name: "housing2"
+owner2:
+  name: "owner2"
   created_at: <%= 3.years.ago %>
 
 most_recent:
-  name: "housing3"
+  name: "owner3"
   created_at: <%= Time.zone.now %>

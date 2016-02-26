@@ -1,6 +1,6 @@
 <% provide(:title, 'Luo isännöitsijä') %>
 <h1>Luo uusi isännöitsijä</h1>
-<%= form_for(@user) do |f| %>
+<%= form_for(@admin) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <br>
   <%= f.label :email %>

@@ -3,11 +3,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      log_in user
-      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to user
+    admin = Admin.find_by(email: params[:session][:email].downcase)
+    if admin && admin.authenticate(params[:session][:password])
+      log_in admin
+      params[:session][:remember_me] == '1' ? remember(admin) : forget(admin)
+      redirect_to admin
     else
       flash.now[:danger] = 'Tarkista sähköposti/salasana.'
       render 'new'
