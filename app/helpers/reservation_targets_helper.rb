@@ -1,0 +1,2 @@
+module ReservationTargetsHelper
+end
