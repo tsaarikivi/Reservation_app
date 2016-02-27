@@ -1,0 +1,11 @@
+<% provide(:title, "Omistaja") %>
+<h2>Omistaja: <%= @owner.name %></h2>
+<%= link_to "Luo uusi Resurssi", create_reservation_target_path %>
+<div class="reservation-target-list-cont">
+  <% if @owner.reservation_targets.any? %>
+    <h3>Resursseja: (<%= @owner.reservation_targets.count %>)</h3>
+    <ol class="reservation-target-list">
+      <%= render @reservation_targets %>
+    </ol>
+  <% end %>
+</div>

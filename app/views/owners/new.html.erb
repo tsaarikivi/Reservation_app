@@ -1,5 +1,5 @@
-<% provide(:title, 'Luo Taloyhtiö') %>
-<h1>Luo uusi Taloyhtiö</h1>
+<% provide(:title, 'Luo Omistaja') %>
+<h1>Luo uusi Omistaja</h1>
 <%= form_for(@owner) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <br>
@@ -7,5 +7,5 @@
   <br>
   <%= f.text_field :name %>
   <br>
-  <%= f.submit "Luo Taloyhtiö" %>
+  <%= f.submit "Luo Omistaja" %>
 <% end %>

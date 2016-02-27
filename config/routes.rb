@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
   get 'create_admin' => 'admins#new'
   get 'create_owner' => 'owners#new'
+  get 'create_reservation_target' => 'reservation_targets#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
