@@ -3,7 +3,6 @@
 
 
 isannoitsija = Admin.create(
-    name: 'Liisa Anttila',
     email: 'liisa.anttila@isannointisaarinen.fi',
     password: 'salasana',
     password_confirmation: 'salasana'
@@ -11,7 +10,7 @@ isannoitsija = Admin.create(
 
 omistaja = Owner.create(
     name: 'As Oy Hakolahdentie 2', 
-    admin_id: isannoitsija.admin_id
+    admin_id: isannoitsija.id
     )
 
 sauna = ReservationTarget.create(
