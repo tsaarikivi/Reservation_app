@@ -20,6 +20,9 @@ class ReservationTargetsController < ApplicationController
   def destroy
   end
 
+  def show
+  end
+
   private
 
   def reservation_target_params
