@@ -1,9 +1,9 @@
-<% provide(:title, "Käyttäjä") %>
-<h2>Käyttäjä: <%= @admin.email %></h2>
-<%= link_to "Luo uusi taloyhtiö", create_owner_path %>
+<% provide(:title, "Ylläpitäjä") %>
+<h2>Ylläpitäjä: <%= @admin.email %></h2>
+<%= link_to "Luo uusi Omistaja", new_owner_path %>
 <div class="owner-list-cont">
   <% if @admin.owners.any? %>
-    <h3>Taloyhtiöitä: (<%= @admin.owners.count %>)</h3>
+    <h3>Omistajia: (<%= @admin.owners.count %>)</h3>
     <ol class="owner-list">
       <%= render @owners %>
     </ol>

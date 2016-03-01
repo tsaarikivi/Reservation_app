@@ -1,4 +1,7 @@
 class ReservationTargetsController < ApplicationController
+  before_action :logged_in_admin, only: [:create, :destroy, :show]
+  include ReservationTargetsHelper
+
   def new
     @reservation_target = ReservationTarget.new
   end

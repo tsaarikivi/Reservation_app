@@ -1,5 +1,5 @@
 class OwnersController < ApplicationController
-  before_action :logged_in_admin, only: [:create, :destroy]
+  before_action :logged_in_admin, only: [:create, :destroy, :show]
 
   def new
     @owner = Owner.new
