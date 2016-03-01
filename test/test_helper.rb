@@ -10,19 +10,19 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   def is_logged_in?
-    !session[:user_id].nil?
+    !session[:admin_id].nil?
   end
 
-  # Logs in a test user.
-  def log_in_as(user, options = {})
+  # Logs in a test admin.
+  def log_in_as(admin, options = {})
     password    = options[:password]    || 'password'
     remember_me = options[:remember_me] || '1'
     if integration_test?
-      post login_path, session: { email:       user.email,
+      post login_path, session: { email:       admin.email,
                                   password:    password,
                                   remember_me: remember_me }
     else
-      session[:user_id] = user.id
+      session[:admin_id] = admin.id
     end
   end
 

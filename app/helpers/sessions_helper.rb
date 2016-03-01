@@ -1,45 +1,45 @@
 module SessionsHelper
-  # Logs in the given user.
-  def log_in(user)
-    session[:user_id] = user.id
+  # Logs in the given admin.
+  def log_in(admin)
+    session[:admin_id] = admin.id
   end
 
-  # Remembers a user in a persistent session.
-  def remember(user)
-    user.remember
-    cookies.permanent.signed[:user_id] = user.id
-    cookies.permanent[:remember_token] = user.remember_token
+  # Remembers a admin in a persistent session.
+  def remember(admin)
+    admin.remember
+    cookies.permanent.signed[:admin_id] = admin.id
+    cookies.permanent[:remember_token] = admin.remember_token
   end
 
-  # Returns the user corresponding to the remember token cookie.
-  def current_user
-    if (user_id = session[:user_id])
-      @current_user ||= User.find_by(id: user_id)
-    elsif (user_id = cookies.signed[:user_id])
-      user = User.find_by(id: user_id)
-      if user && user.authenticated?(cookies[:remember_token])
-        log_in user
-        @current_user = user
+  # Returns the admin corresponding to the remember token cookie.
+  def current_admin
+    if (admin_id = session[:admin_id])
+      @current_admin ||= Admin.find_by(id: admin_id)
+    elsif (admin_id = cookies.signed[:admin_id])
+      admin = Admin.find_by(id: admin_id)
+      if admin && admin.authenticated?(cookies[:remember_token])
+        log_in admin
+        @current_admin = admin
       end
     end
   end
 
-  # Returns true if the user is logged in, false otherwise.
+  # Returns true if the admin is logged in, false otherwise.
   def logged_in?
-    !current_user.nil?
+    !current_admin.nil?
   end
 
   # Forgets a persistent session.
-  def forget(user)
-    user.forget
-    cookies.delete(:user_id)
+  def forget(admin)
+    admin.forget
+    cookies.delete(:admin_id)
     cookies.delete(:remember_token)
   end
 
-  # Logs out the current user.
+  # Logs out the current admin.
   def log_out
-    forget(current_user)
-    session.delete(:user_id)
-    @current_user = nil
+    forget(current_admin)
+    session.delete(:admin_id)
+    @current_admin = nil
   end
 end

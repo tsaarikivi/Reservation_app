@@ -1,5 +1,5 @@
-class User < ActiveRecord::Base
-  has_many :housings, dependent: :destroy
+class Admin < ActiveRecord::Base
+  has_many :owners, dependent: :destroy
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -11,21 +11,21 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
 
   # Returns the hash digest of the given string.
-  def User.digest(string)
+  def Admin.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
 
   # Returns a random token
-  def User.new_token
+  def Admin.new_token
     SecureRandom.urlsafe_base64
   end
 
-  # Remembers a user in the database for use in persistent sessions.
+  # Remembers a admin in the database for use in persistent sessions.
   def remember
-    self.remember_token = User.new_token
-    update_attribute(:remember_digest, User.digest(remember_token))
+    self.remember_token = Admin.new_token
+    update_attribute(:remember_digest, Admin.digest(remember_token))
   end
 
   # Returns true if the given token matches the digest.
@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
-  # Forgets a user.
+  # Forgets a admin.
   def forget
     update_attribute(:remember_digest, nil)
   end

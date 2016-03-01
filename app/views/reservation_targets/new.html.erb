@@ -1,0 +1,15 @@
+<% provide(:title, 'Luo Resurssi') %>
+<h1>Luo uusi Resurssi</h1>
+<%= form_for(@reservation_target) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <br>
+  <%= f.label :name %>
+  <br>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :category %>
+  <br>
+  <%= f.number_field :category %>
+  <br>
+  <%= f.submit "Luo Resurssi" %>
+<% end %>
