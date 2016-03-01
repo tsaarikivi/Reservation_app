@@ -8,5 +8,7 @@ class CreateReservationSlots < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :reservation_slots, [:reservation_target_id, :created_at],
+              :name => 'reservation_slots_index'
   end
 end
