@@ -2,9 +2,10 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(name: "Example user",
-                     password: "foobar",
-                     password_confirmation: "foobar")
+    @owner = owners(:testowner)
+    @user = @owner.users.build(name: "testuseri",
+                               password: "password",
+                               password_confirmation: "password")
   end
 
   test "should be valid" do
