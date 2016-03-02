@@ -1,0 +1,2 @@
+class ReservationTokensController < ApplicationController
+end
