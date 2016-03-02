@@ -6,7 +6,6 @@ class ReservationTargetTest < ActiveSupport::TestCase
     @reservation_target = @owner.reservation_targets.build(
                                  name: "testrestar",
                                  category: 1,
-                                 owner_id: @owner,
                                  timeWindowInDays: 7
     )
   end

@@ -7,8 +7,7 @@ class ReservationSlotTest < ActiveSupport::TestCase
     @reservation_slot = @reservation_target.reservation_slots.build(
                         day: 1,
                         startTime: 1800,
-                        endTime: 2000,
-                        reservation_target_id: @reservation_target
+                        endTime: 2000
     )
   end
 

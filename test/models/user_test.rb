@@ -5,8 +5,7 @@ class UserTest < ActiveSupport::TestCase
     @owner = owners(:testowner)
     @user = @owner.users.build(name: "testuseri",
                                password: "password",
-                               password_confirmation: "password",
-                               owner_id: @owner)
+                               password_confirmation: "password")
   end
 
   test "should be valid" do
