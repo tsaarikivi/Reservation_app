@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+testslotfail:
   day: 1
   startTime: 1
   endTime: 1
-  reservation_target_id: 
+  reservation_target_id:
 
-two:
+testslot:
   day: 1
   startTime: 1
   endTime: 1
-  reservation_target_id: 
+  reservation_target_id: reservation_targets(:testtarget)

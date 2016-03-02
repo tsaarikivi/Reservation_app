@@ -4,7 +4,8 @@ class AdminTest < ActiveSupport::TestCase
 
   def setup
     @admin = Admin.new(email: "admin@example.com",
-                     password: "foobar", password_confirmation: "foobar")
+                       password: "foobar",
+                       password_confirmation: "foobar")
   end
 
   test "should be valid admin" do

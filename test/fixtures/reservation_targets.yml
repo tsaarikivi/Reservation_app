@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+testtargetfail:
   name: MyString
   category: 1
-  owner_id: 
+  owner_id: nil
+  timeWindowInDays: nil
 
-two:
-  name: MyString
+testtarget:
+  name: testtarget
   category: 1
-  owner_id: 
+  owner_id: owners(:testowner)
+  timeWindowInDays: 7
