@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302101233) do
+ActiveRecord::Schema.define(version: 20160302102803) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
@@ -38,10 +38,12 @@ ActiveRecord::Schema.define(version: 20160302101233) do
     t.integer  "reservation_target_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.integer  "reservation_token_id"
   end
 
   add_index "reservation_slots", ["reservation_target_id", "created_at"], name: "reservation_slots_index"
   add_index "reservation_slots", ["reservation_target_id"], name: "index_reservation_slots_on_reservation_target_id"
+  add_index "reservation_slots", ["reservation_token_id"], name: "index_reservation_slots_on_reservation_token_id"
 
   create_table "reservation_targets", force: :cascade do |t|
     t.string   "name"
@@ -57,10 +59,12 @@ ActiveRecord::Schema.define(version: 20160302101233) do
 
   create_table "reservation_tokens", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "reservation_target_id"
   end
 
+  add_index "reservation_tokens", ["reservation_target_id"], name: "index_reservation_tokens_on_reservation_target_id"
   add_index "reservation_tokens", ["user_id"], name: "index_reservation_tokens_on_user_id"
 
   create_table "users", force: :cascade do |t|
