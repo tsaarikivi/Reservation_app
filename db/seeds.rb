@@ -15,20 +15,25 @@ omistaja = Owner.create(
 
 sauna = ReservationTarget.create(
     name: 'Sauna', 
-    timeWindowInDays: 7, 
+    #timeWindowInDays: 7, 
     category: 1
     )
     
 kuivaushuone = ReservationTarget.create(
     name: 'Kuivaushuone', 
-    timeWindowInDays: 3, 
+    #timeWindowInDays: 3, 
     category: 2
     )
 
-A1 = User.create({name: 'A1', owner_id: omistaja.owner_id})
+A1 = User.create(
+    name: 'A1', 
+    owner_id: omistaja.id)
    # A1_T1 = Token.create(user_id: A1.user_id, reservationTarget_id: sauna.reservationTarget_id)
    # A1_T2 = Token.create(user_id: A1.user_id, reservationTarget_id: kuivaushuone.reservationTarget_id)
-C25 = User.create({name: 'C25', owner_id: omistaja.owner_id})
+   
+C25 = User.create(
+    name: 'C25', 
+    owner_id: omistaja.id)
    # C25_T1 = Token.create(user_id: C25.user_id, reservationTarget_id: sauna.reservationTarget_id)
    # C25_T2 = Token.create(user_id: C25.user_id, reservationTarget_id: kuivaushuone.reservationTarget_id)
     
