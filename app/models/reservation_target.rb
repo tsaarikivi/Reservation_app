@@ -6,4 +6,5 @@ class ReservationTarget < ActiveRecord::Base
   validates :owner_id, presence: true
   validates :name, presence: true, length: { maximum: 100 }
   validates :category, presence: true
+  validates :timeWindowInDays, presence: true
 end

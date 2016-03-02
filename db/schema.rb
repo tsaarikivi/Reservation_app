@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302094722) do
+ActiveRecord::Schema.define(version: 20160302101233) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
@@ -47,8 +47,9 @@ ActiveRecord::Schema.define(version: 20160302094722) do
     t.string   "name"
     t.integer  "category"
     t.integer  "owner_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "timeWindowInDays"
   end
 
   add_index "reservation_targets", ["owner_id", "created_at"], name: "index_reservation_targets_on_owner_id_and_created_at"
