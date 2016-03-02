@@ -16,4 +16,13 @@ class ReservationTokenTest < ActiveSupport::TestCase
     assert @reservation_token.valid?
   end
 
+  test "user_id should be present" do
+    @reservation_token.user_id = nil
+    assert_not @reservation_token.valid?
+  end
+
+  test "reservation_target_id should be present" do
+    @reservation_token.reservation_target_id = nil
+    assert_not @reservation_token.valid?
+  end
 end
