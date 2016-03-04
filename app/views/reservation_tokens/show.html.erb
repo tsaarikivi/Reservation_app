@@ -1,0 +1,7 @@
+<div class="reservation-target-list-cont">
+  <% if @user.reservation_tokens.count > 0 %>
+    <ol class="reservation-target-list">
+      <%= render @user.reservation_tokens %>
+    </ol>
+  <% end %>
+</div>

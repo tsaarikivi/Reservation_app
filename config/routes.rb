@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
   get 'users/new'
 
-  root 'static_pages#home'
+  root 'reservation_tokens#show'
   get 'help' => 'static_pages#help'
   get 'about' => 'static_pages#about'
   get 'create_admin' => 'admins#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+
+  get 'varaus' => 'reservation_tokens#show'
+
   resources :admins
   resources :owners do
     resources :reservation_targets
@@ -17,7 +20,9 @@ Rails.application.routes.draw do
     resources :reservation_slots
   end
   resources :reservation_slots
-  resources :users
+  resources :users do
+    resources :reservation_tokens
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,12 @@
+<header>
+  <div class="topbar">
+    <%= link_to "Taloyhtiöappi", root_path, id: "logo" %>
+    <nav>
+      <ul>
+        <% if logged_in? %>
+          <li><%= link_to "Kirjaudu ulos", logout_path, method: "delete" %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
