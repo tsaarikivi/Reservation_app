@@ -27,12 +27,19 @@ sauna = ReservationTarget.create(
     owner_id: omistaja.id
     )
 
-kuivaushuone = ReservationTarget.create(
-    name: 'Kuivaushuone',
-    timeWindowInDays: 3,
-    category: 2,
-    owner_id: omistaja.id
-    )
+    kuivaushuone = ReservationTarget.create(
+        name: 'Kuivaushuone',
+        timeWindowInDays: 3,
+        category: 2,
+        owner_id: omistaja.id
+        )
+
+    autopesu = ReservationTarget.create(
+        name: 'Autopesu',
+        timeWindowInDays: 3,
+        category: 1,
+        owner_id: omistaja.id
+        )
 
 ######################################################
 # Users
@@ -43,10 +50,14 @@ A1 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
-   A1_T1 = ReservationToken.create(
-       user_id: A1.id,
-       reservation_target_id: sauna.id
-       )
+   A1_T10 = ReservationToken.create(
+        user_id: A1.id,
+        reservation_target_id: sauna.id
+        )
+   A1_T11 = ReservationToken.create(
+            user_id: A1.id,
+            reservation_target_id: sauna.id
+            )
    A1_T2 = ReservationToken.create(
        user_id: A1.id,
        reservation_target_id: kuivaushuone.id
@@ -403,10 +414,18 @@ C25 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
-   C25_T1 = ReservationToken.create(
-       user_id: C25.id,
-       reservation_target_id: sauna.id
-       )
+    C25_T10 = ReservationToken.create(
+        user_id: C25.id,
+        reservation_target_id: sauna.id
+        )
+        C25_T11 = ReservationToken.create(
+            user_id: C25.id,
+            reservation_target_id: sauna.id
+            )
+            C25_T12 = ReservationToken.create(
+                user_id: C25.id,
+                reservation_target_id: sauna.id
+                )
    C25_T2 = ReservationToken.create(
        user_id: C25.id,
        reservation_target_id: kuivaushuone.id
@@ -771,7 +790,7 @@ Ma19_20 = ReservationSlot.create(
     day: 1,
     startTime: 1900,
     endTime: 2000,
-    reservation_token_id: A1_T1.id
+    reservation_token_id: A1_T10.id
     )
 Ma20_21 = ReservationSlot.create(
     reservation_target_id: sauna.id,
@@ -832,7 +851,7 @@ To20_21 = ReservationSlot.create(
     day: 4,
     startTime: 2000,
     endTime: 2100,
-    reservation_token_id: C25_T1.id
+    reservation_token_id: C25_T10.id
     )
 Pe18_19 = ReservationSlot.create(
     reservation_target_id: sauna.id,

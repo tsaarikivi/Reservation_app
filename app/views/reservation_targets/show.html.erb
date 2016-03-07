@@ -1,3 +1,25 @@
-<h1>
-  Tänne tulee sitten kalenterinäkymä, tosin tätä ei välttämättä käytetä käyttäjän näkymänä.
-</h1>
+<div class="reservation-target-list">
+  <% if @reservation_slots.count > 0 %>
+  <Table style="width:100%">
+    Count slots: <%= @reservation_slots.count %>
+    Max day: <%= @max = @reservation_slots.maximum("day")%>
+
+    <% @dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+
+    <% for @dayIndex in 1..@max %>
+    <tr>
+      <%
+      if @dayIndex > 0 and @dayIndex < 8 %>
+        <td><%= @dayNames[@dayIndex-1] %></td>
+      <% else
+        @di = @dayIndex.mod(7)
+      %>
+        <td><%= @di[@dayIndex-1] %></td>
+        <td>what day?</td>
+      <% end %>
+      <%= render @reservation_slots.where("day = ?", @dayIndex) %>
+    </tr>
+    <% end %>
+  </table>
+  <% end %>
+</div>

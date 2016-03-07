@@ -1,0 +1,23 @@
+  <td>
+    <%
+    if reservation_slot.reservation_token_id != nil
+      @userId = ReservationToken.find_by_id(reservation_slot.reservation_token_id).user_id
+      @userName = User.find_by_id(@userId).name
+    else
+      @userId = 0
+    end
+    %>
+
+    <%
+    ah_current_user
+     if @userId == @currentUserGlobal.id or reservation_slot.reservation_token_id == nil%>
+      <%= link_to reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s, reservation_slot %>
+    <% else %>
+      <%= reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s %>
+    <% end %>
+
+    <% if @userId != 0 %>
+      <%= @userName %>
+    <%end%>
+
+    </td>

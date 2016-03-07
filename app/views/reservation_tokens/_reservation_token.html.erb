@@ -1,6 +1,6 @@
-<li id="reservation_token-<%= reservation_token.id %>" class="list-item">
+<li id="x">
   <p>
-    <% reservation_tar = ReservationTarget.find_by_id(reservation_token.reservation_target_id) %>
-    <%= link_to reservation_tar.name, reservation_tar %>
+    <% @rt = ReservationTarget.find_by_id(reservation_token.reservation_target_id) %>
+    Reservations for: <%= link_to @rt.name, @rt %>
   </p>
 </li>

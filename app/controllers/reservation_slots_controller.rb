@@ -1,4 +1,7 @@
 class ReservationSlotsController < ApplicationController
+
+  include ReservationSlotsHelper
+
   def new
     @reservation_slot = ReservationSlot.new
   end
@@ -16,6 +19,11 @@ class ReservationSlotsController < ApplicationController
 
   def destroy
   end
+
+  def show
+    @slotId = params[:id]
+  end
+
 
   private
 
