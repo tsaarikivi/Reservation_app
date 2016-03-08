@@ -1,38 +1,17 @@
 <div class="reservation-slot-list">
 
-<%
-  @freedSlot = 0
-  @theSlot = ReservationSlot.find_by_id(@slotId)
-  ah_current_user
-  @tokens = ReservationToken.where("user_id = ? and reservation_target_id = ?", @currentUserGlobal.id, @theSlot.reservation_target_id)
-  @tokens.each do |t|
-    if @theSlot.reservation_token_id == t.id
-      @theSlot.reservation_token_id = nil
-      @theSlot.save
-      @freedSlot = 1
-    end
-  end
-
-  if @freedSlot == 0
-
-    @freeToken = find_token_for_current_user(@slotId)
-    if @freeToken != nil
-      ah_reserve_slot(@slotId, @freeToken.id)
-      %>
-        Reservation success.
-      <%
-    else %>
-        No TOKEN for reservation.
-    <%
-    end
-  end
-
-  if @freedSlot == 1 %>
-      Reservation removed.
-    <%
-  end
-%>
-
+<% @result = handle_click_to_slot(@slotId) %>
+<% if (@result == 0) %>
+    ERROR = 0
+<% elsif @result == 1 %>
+    Reservation success.
+<% elsif @result == 2 %>
+    No TOKEN for reservation.
+<% elsif @result == 3 %>
+    Reservation removed.
+<% else %>
+    ERROR = <%=@result%>
+<% end %>
 </div>
 
 <%
