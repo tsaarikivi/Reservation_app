@@ -21,6 +21,15 @@ def find_token_for_current_user(iSlotId)
   end
 end
 
+## Return 1 if token is freed
+def try_to_free_token(tkn, slt)
+  if slt.reservation_token_id == tkn.id
+    slt.reservation_token_id = nil
+    slt.save
+    return 1
+  end
+end
+
 def handle_click_to_slot(iSlotId)
 
   @freedSlot = 0
@@ -28,9 +37,7 @@ def handle_click_to_slot(iSlotId)
   ah_current_user
   @tokens = ReservationToken.where("user_id = ? and reservation_target_id = ?", @currentUserGlobal.id, @theSlot.reservation_target_id)
   @tokens.each do |t|
-    if @theSlot.reservation_token_id == t.id
-      @theSlot.reservation_token_id = nil
-      @theSlot.save
+    if try_to_free_token(t,@theSlot) == 1
       @freedSlot = 1
     end
   end

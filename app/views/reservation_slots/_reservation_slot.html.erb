@@ -1,4 +1,12 @@
-  <td>
+    <%
+    @isNotToday = DateTime.now.strftime("%u").to_i != reservation_slot.day
+
+    if @isNotToday %>
+      <td>
+    <% else %>
+     <td style="background-color: lightblue">
+    <% end %>
+
     <%
     if reservation_slot.reservation_token_id != nil
       @userId = ReservationToken.find_by_id(reservation_slot.reservation_token_id).user_id
@@ -6,11 +14,9 @@
     else
       @userId = 0
     end
-    %>
 
-    <%
     ah_current_user
-     if @userId == @currentUserGlobal.id or reservation_slot.reservation_token_id == nil%>
+     if @isNotToday and (@userId == @currentUserGlobal.id or reservation_slot.reservation_token_id == nil)%>
       <%= link_to reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s, reservation_slot %>
     <% else %>
       <%= reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s %>
