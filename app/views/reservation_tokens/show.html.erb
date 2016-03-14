@@ -1,7 +1,11 @@
 <div class="reservation-token-list">
-  <% if @reservation_tokens.count > 0 %>
-    <%= render @reservation_tokens %>
-  <% else %>
-    No tokens to use. Please contact your resource administrator.
+  <% if @reservation_tokens != nil %>
+    <% if @reservation_tokens.count > 0 %>
+      <%= render @reservation_tokens %>
+      <% else %>
+        No tokens to use. Please contact your resource administrator.
+    <% end %>
+  <%else%>
+      You need to be logged in before using the application.
   <% end %>
 </div>

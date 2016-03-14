@@ -1,10 +1,10 @@
 <header>
   <div class="topbar">
-    <%= link_to "Taloyhtiöappi", root_path, id: "logo" %>
     <nav>
       <ul>
-        <% if logged_in? %>
-          <li><%= link_to "Kirjaudu ulos", logout_path, method: "delete" %></li>
+        <% if userlogged_in? %>
+          <%= link_to "Reservations ", root_path, id: "logo" %>
+          <%= link_to "Kirjaudu ulos", userlogout_path, method: "delete" %>
         <% end %>
       </ul>
     </nav>

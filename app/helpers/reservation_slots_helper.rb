@@ -3,8 +3,8 @@ module ReservationSlotsHelper
 def find_token_for_current_user(iSlotId)
 
     @theSlot = ReservationSlot.find_by_id(iSlotId)
-    ah_current_user
-    @iUserId = @currentUserGlobal.id
+    current_user
+    @iUserId = @current_user.id
     @iResTargetId = @theSlot.reservation_target_id
 
     @tokens = ReservationToken.where("user_id = ? and reservation_target_id = ?", @iUserId, @iResTargetId)
@@ -34,8 +34,8 @@ def handle_click_to_slot(iSlotId)
 
   @freedSlot = 0
   @theSlot = ReservationSlot.find_by_id(@slotId)
-  ah_current_user
-  @tokens = ReservationToken.where("user_id = ? and reservation_target_id = ?", @currentUserGlobal.id, @theSlot.reservation_target_id)
+  current_user
+  @tokens = ReservationToken.where("user_id = ? and reservation_target_id = ?", @current_user.id, @theSlot.reservation_target_id)
   @tokens.each do |t|
     if try_to_free_token(t,@theSlot) == 1
       @freedSlot = 1

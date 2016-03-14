@@ -1,5 +1,5 @@
 class ReservationTargetsController < ApplicationController
-  before_action :logged_in_admin, only: [:create, :destroy, :show]
+  before_action :logged_in_user, only: [:create, :destroy, :show]
   include ReservationTargetsHelper
 
   def new

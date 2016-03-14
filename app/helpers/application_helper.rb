@@ -8,8 +8,5 @@ module ApplicationHelper
     end
   end
 
-  def ah_current_user
-    @currentUserGlobal = User.find_by_id(25)
-  end
 
 end
