@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  get 'users/new'
-
   root 'reservation_tokens#show'
+
   get 'help' => 'static_pages#help'
   get 'about' => 'static_pages#about'
   get 'create_admin' => 'admins#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+  get 'userlogin'   => 'usersessions#new'
+  post 'userlogin'   => 'usersessions#create'
+  delete 'userlogout'  => 'usersessions#destroy'
 
   get 'varaus' => 'reservation_tokens#show'
 

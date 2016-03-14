@@ -13,6 +13,11 @@ class ActiveSupport::TestCase
     !session[:admin_id].nil?
   end
 
+  # Returns true if a test user is logged in.
+  def useris_logged_in?
+    !session[:user_id].nil?
+  end
+
   # Logs in a test admin.
   def log_in_as(admin, options = {})
     password    = options[:password]    || 'password'
