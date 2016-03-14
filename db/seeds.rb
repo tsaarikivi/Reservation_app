@@ -907,3 +907,135 @@ Su20_21 = ReservationSlot.create(
     startTime: 2000,
     endTime: 2100
     )
+
+#########################
+## Kuivaushuone
+########################
+KMa18_19 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 1,
+    startTime: 1800,
+    endTime: 1900
+    )
+KMa19_20 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 1,
+    startTime: 1900,
+    endTime: 2000,
+    reservation_token_id: A1_T2.id
+    )
+KMa20_21 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 1,
+    startTime: 2000,
+    endTime: 2100
+    )
+KTi18_19 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 2,
+    startTime: 1800,
+    endTime: 1900
+    )
+KTi19_20 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 2,
+    startTime: 1900,
+    endTime: 2000
+    )
+KTi20_21 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 2,
+    startTime: 2000,
+    endTime: 2100
+    )
+KKe18_19 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 3,
+    startTime: 1800,
+    endTime: 1900
+    )
+KKe19_20 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 3,
+    startTime: 1900,
+    endTime: 2000
+    )
+KKe20_21 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 3,
+    startTime: 2000,
+    endTime: 2100
+    )
+KTo18_19 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 4,
+    startTime: 1800,
+    endTime: 1900
+    )
+KTo19_20 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 4,
+    startTime: 1900,
+    endTime: 2000
+    )
+KTo20_21 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 4,
+    startTime: 2000,
+    endTime: 2100,
+    reservation_token_id: C25_T2.id
+    )
+KPe18_19 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 5,
+    startTime: 1800,
+    endTime: 1900
+    )
+KPe19_20 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 5,
+    startTime: 1900,
+    endTime: 2000
+    )
+KPe20_21 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 5,
+    startTime: 2000,
+    endTime: 2100
+    )
+KLa18_19 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 6,
+    startTime: 1800,
+    endTime: 1900
+    )
+KLa19_20 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 6,
+    startTime: 1900,
+    endTime: 2000
+    )
+KLa20_21 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 6,
+    startTime: 2000,
+    endTime: 2100
+    )
+KSu18_19 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 7,
+    startTime: 1800,
+    endTime: 1900
+    )
+KSu19_20 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 7,
+    startTime: 1900,
+    endTime: 2000
+    )
+KSu20_21 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 7,
+    startTime: 2000,
+    endTime: 2100
+    )

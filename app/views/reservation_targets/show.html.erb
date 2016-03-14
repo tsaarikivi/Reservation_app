@@ -1,39 +1,20 @@
-<div class="reservation-target-list">
-  <% if @reservation_slots.count > 0 %>
-  <Table style="width:100%">
+<% @dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+<% @todayDayNum = DateTime.now.strftime("%u").to_i %>
 
-    <% @dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
-    <% @todayDayNum = DateTime.now.strftime("%u").to_i %>
-    <% for @dayIndex in @todayDayNum..7 %>
-    <tr>
-      <%
-      if @dayIndex > 0 and @dayIndex < 8 %>
-        <% if @dayIndex != @todayDayNum %>
+<div class="reservation-target-list">
+  <Table style="width:100%">
+    <% for @dayIndex in 1..@target.timeWindowInDays %>
+        <tr>
+        <% if @dayIndex != 1 %>
           <td>
         <% else %>
           <td style="background-color: lightblue">
         <% end %>
-          <%= @dayNames[@dayIndex-1] %>
-        </td>
-      <% end %>
-      <%= render @reservation_slots.where("day = ?", @dayIndex) %>
-    </tr>
-    <% end %>
-    <% for @dayIndex in 1..(@todayDayNum-1) %>
-    <tr>
-      <%
-      if @dayIndex > 0 and @dayIndex < 8 %>
-        <% if @dayIndex != @todayDayNum %>
-          <td>
-        <% else %>
-          <td style="background-color: lightblue">
-        <% end %>
-          <%= @dayNames[@dayIndex-1] %>
-        </td>
-      <% end %>
-      <%= render @reservation_slots.where("day = ?", @dayIndex) %>
-    </tr>
+          <% @di = get_adjusted_day_index(@todayDayNum, @dayIndex) %>
+          <%= @dayNames[@di-1] %>
+          </td>
+        <%= render @reservation_slots.where("day = ?", @di) %>
+        </tr>
     <% end %>
   </table>
-  <% end %>
 </div>
