@@ -1,0 +1,33 @@
+.table-row {
+  background-color: pink;
+  width: 10%;
+  display: inline-block;
+  float: left;
+  td {
+    width: 100%;
+    display: block;
+    margin: 0;
+  }
+}
+
+.table-user-name {
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  font-size: 60%;
+}
+.table-time-slot{
+  font-size: 70%;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+.table-week-day{
+  font-weight: bold;
+  font-size: 80%;
+  color: green;
+}
+.table-week-today{
+  background-color: lightblue;
+}

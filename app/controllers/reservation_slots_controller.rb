@@ -22,6 +22,19 @@ class ReservationSlotsController < ApplicationController
 
   def show
     @slotId = params[:id]
+    @result = handle_click_to_slot(@slotId)
+    if (@result == 0)
+        flash[:danger]="ERROR"
+    elsif @result == 1
+        flash[:success]="Reservation success."
+    elsif @result == 2
+        flash[:danger]="No TOKEN for reservation."
+    elsif @result == 3
+        flash[:success]="Reservation removed."
+    else
+        flash[:danger]="ERROR"
+    end
+    redirect_to :back
   end
 
 

@@ -9,6 +9,7 @@
      <td style="background-color: lightblue">
     <% end %>
 
+<p class="table-time-slot">
     <%
     if reservation_slot.reservation_token_id != nil
       @userId = ReservationToken.find_by_id(reservation_slot.reservation_token_id).user_id
@@ -18,14 +19,15 @@
     end
 
     current_user
+
      if @target.category ==2 or (@isNotToday and (@userId == @current_user.id or reservation_slot.reservation_token_id == nil))%>
-      <%= link_to reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s, reservation_slot %>
+    <%= link_to reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s, reservation_slot %>
     <% else %>
       <%= reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s %>
     <% end %>
-
+</p>
     <% if @userId != 0 %>
-      <%= @userName %>
+    <p class="table-user-name"><%= @userName %> </p>
     <%end%>
 
     </td>

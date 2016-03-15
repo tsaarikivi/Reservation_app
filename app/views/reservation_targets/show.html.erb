@@ -4,11 +4,11 @@
 <div class="reservation-target-list">
   <Table style="width:100%">
     <% for @dayIndex in 1..@target.timeWindowInDays %>
-        <tr>
+        <tr class="table-row">
         <% if @dayIndex != 1 %>
-          <td>
+          <td class="table-week-day">
         <% else %>
-          <td style="background-color: lightblue">
+          <td class="table-week-today table-week-day">
         <% end %>
           <% @di = get_adjusted_day_index(@todayDayNum, @dayIndex) %>
           <%= @dayNames[@di-1] %>
