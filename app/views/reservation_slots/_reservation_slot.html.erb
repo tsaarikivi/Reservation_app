@@ -9,7 +9,6 @@
      <td style="background-color: lightblue">
     <% end %>
 
-<p class="table-time-slot">
     <%
     if reservation_slot.reservation_token_id != nil
       @userId = ReservationToken.find_by_id(reservation_slot.reservation_token_id).user_id
@@ -19,13 +18,28 @@
     end
 
     current_user
+    %>
 
-     if @target.category ==2 or (@isNotToday and (@userId == @current_user.id or reservation_slot.reservation_token_id == nil))%>
-    <%= link_to reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s, reservation_slot %>
+    <%if (@isNotToday) %>
+      <%if (@userId == @current_user.id) %>
+        <p class="table-slot-release">
+        <%= link_to reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s, reservation_slot %>
+        </p>
+      <%elsif (reservation_slot.reservation_token_id == nil) %>
+        <p class="table-slot-reserve">
+        <%= link_to reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s, reservation_slot %>
+      </p>
+      <%else%>
+      <p class="table-slot-noaction">
+        <%= reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s %>
+      </p>
+      <%end%>
     <% else %>
+    <p class="table-slot-noaction">
       <%= reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s %>
+    </p>
     <% end %>
-</p>
+
     <% if @userId != 0 %>
     <p class="table-user-name"><%= @userName %> </p>
     <%end%>

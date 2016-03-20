@@ -17,12 +17,53 @@
   display: inline-block;
   font-size: 60%;
 }
+
+.header-reservations {
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  font-size: 60%;
+  background-color: grey
+}
+
+.header-logout {
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  font-size: 60%;
+  background-color: grey
+}
+
 .table-time-slot{
   font-size: 70%;
   padding: 0;
   margin: 0;
   display: inline-block;
 }
+
+.table-slot-reserve{
+  font-size: 70%;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  background-color: green}
+
+.table-slot-release{
+  font-size: 70%;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  background-color: yellow}
+
+.table-slot-noaction{
+  font-size: 70%;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  background-color: gray}
+
 .table-week-day{
   font-weight: bold;
   font-size: 80%;

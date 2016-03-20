@@ -3,8 +3,8 @@
     <nav>
       <ul>
         <% if userlogged_in? %>
-          <%= link_to "Reservations ", root_path, id: "logo" %>
-          <%= link_to "Kirjaudu ulos", userlogout_path, method: "delete" %>
+          <p class="header-reservations"><%= link_to "Reservations", root_path, id: "logo" %></p>
+          <p class="header-logout"><%= link_to "Kirjaudu ulos", userlogout_path, method: "delete" %></p>
         <% end %>
       </ul>
     </nav>
