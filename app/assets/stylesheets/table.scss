@@ -1,12 +1,26 @@
+@import "variables";
+
 .table-row {
-  background-color: pink;
-  width: 10%;
+  margin: 3vw 2vw 0 2vw;
+  background-color: $tablenoday;
+  width: 96vw;
   display: inline-block;
   float: left;
+  box-shadow: 1px 3px 7px 0 $shadow;
+  border-radius: 1vw;
   td {
     width: 100%;
     display: block;
-    margin: 0;
+    margin: 1vw 0;
+    a {
+      text-decoration: none;
+      color: $reservclickable;
+      padding: 2vw;
+      font-size: 4vw;
+      display: inline-block;
+      position: relative;
+      width: 92vw;
+    }
   }
 }
 
@@ -15,60 +29,41 @@
   padding: 0;
   margin: 0;
   display: inline-block;
-  font-size: 60%;
+  font-size: 4vw;
 }
 
-.header-reservations {
+.table-time-slot, .table-slot-reserve, .table-slot-release, .table-slot-noaction {
+  font-size: 70%;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+.table-slot-reserve {
+  background-color: $reservblslt;
+}
+
+p.table-slot-release {
+  background-color: $releasedslt;
+  a {
+    width: 30vw;
+  }
+}
+
+.table-slot-noaction {
+  background-color: $noactionslt;
+  padding: 2vw;
+  font-size: 4vw;
+  display: inline-block;
+  position: relative;
+  width: 30vw;
+}
+
+.table-week-day {
   font-weight: bold;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  font-size: 60%;
-  background-color: grey
-}
-
-.header-logout {
-  font-weight: bold;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  font-size: 60%;
-  background-color: grey
-}
-
-.table-time-slot{
-  font-size: 70%;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-}
-
-.table-slot-reserve{
-  font-size: 70%;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  background-color: green}
-
-.table-slot-release{
-  font-size: 70%;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  background-color: yellow}
-
-.table-slot-noaction{
-  font-size: 70%;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  background-color: gray}
-
-.table-week-day{
-  font-weight: bold;
-  font-size: 80%;
-  color: green;
+  font-size: 5vw;
+  color: $weekdayheader;
 }
 .table-week-today{
-  background-color: lightblue;
+  background-color: $tabletoday;
 }

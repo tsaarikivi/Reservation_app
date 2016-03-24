@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+@import url(https://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic);
+@import "variables";
+
+body {
+  font-family: 'Istok Web', sans-serif;
+  background: $background;
+}
+
+small {
+  margin: 0;
+  padding: 2vw;
+  font-size: 3vw;
+}
+
+h1 {
+  margin: 0 2vw;
+}

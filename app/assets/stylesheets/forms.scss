@@ -1,0 +1,19 @@
+@import "variables";
+form {
+  margin: 2vw;
+  label {
+    font-size: 5vw;
+  }
+  input {
+    height: 10vw;
+    width: 96vw;
+    border-style: none;
+    border-bottom: 2px solid $border;
+    background: $forminput;
+    border-radius: 2px;
+    font-size: 5vw;
+  }
+  input.submit {
+    margin: 2vw 0;
+  }
+}

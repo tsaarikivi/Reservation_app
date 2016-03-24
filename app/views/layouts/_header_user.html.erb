@@ -1,12 +1,14 @@
 <header>
-  <div class="topbar">
-    <nav>
-      <ul>
-        <% if userlogged_in? %>
-          <p class="header-reservations"><%= link_to "Reservations", root_path, id: "logo" %></p>
-          <p class="header-logout"><%= link_to "Kirjaudu ulos", userlogout_path, method: "delete" %></p>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
+  <nav class="topbar">
+    <ul>
+      <% if userlogged_in? %>
+        <li>
+          <%= link_to "Reservations", root_path, id: "reservations-btn", class: "topbar-btn" %>
+        </li>
+        <li>
+          <%= link_to "Kirjaudu ulos", userlogout_path, method: "delete", id: "logout-btn", class: "topbar-btn" %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
 </header>
