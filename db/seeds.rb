@@ -43,6 +43,8 @@ sauna = ReservationTarget.create(
 
 ######################################################
 # Users
+token_type_permanent = 1
+token_type_use_once = 2
 ######################################################
 A1 = User.create(
     name: 'A1',
@@ -52,15 +54,18 @@ A1 = User.create(
     )
    A1_T10 = ReservationToken.create(
         user_id: A1.id,
-        reservation_target_id: sauna.id
+        reservation_target_id: sauna.id,
+        tokenType: token_type_permanent
         )
    A1_T11 = ReservationToken.create(
             user_id: A1.id,
-            reservation_target_id: sauna.id
+            reservation_target_id: sauna.id,
+            tokenType: token_type_use_once
             )
    A1_T2 = ReservationToken.create(
        user_id: A1.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 A2 = User.create(
@@ -71,11 +76,13 @@ A2 = User.create(
     )
    A2_T1 = ReservationToken.create(
        user_id: A2.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    A2_T2 = ReservationToken.create(
        user_id: A2.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 A3 = User.create(
@@ -86,11 +93,13 @@ A3 = User.create(
     )
    A3_T1 = ReservationToken.create(
        user_id: A3.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    A3_T2 = ReservationToken.create(
        user_id: A3.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 A4 = User.create(
@@ -101,11 +110,13 @@ A4 = User.create(
     )
    A4_T1 = ReservationToken.create(
        user_id: A4.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    A4_T2 = ReservationToken.create(
        user_id: A4.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 A5 = User.create(
@@ -116,11 +127,13 @@ A5 = User.create(
     )
    A5_T1 = ReservationToken.create(
        user_id: A5.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    A5_T2 = ReservationToken.create(
        user_id: A5.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 A6 = User.create(
@@ -131,11 +144,13 @@ A6 = User.create(
     )
    A6_T1 = ReservationToken.create(
        user_id: A6.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    A6_T2 = ReservationToken.create(
        user_id: A6.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 A7 = User.create(
@@ -146,11 +161,13 @@ A7 = User.create(
     )
    A7_T1 = ReservationToken.create(
        user_id: A7.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    A7_T2 = ReservationToken.create(
        user_id: A7.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 A8 = User.create(
@@ -161,11 +178,13 @@ A8 = User.create(
     )
    A8_T1 = ReservationToken.create(
        user_id: A8.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    A8_T2 = ReservationToken.create(
        user_id: A8.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 A9 = User.create(
@@ -176,11 +195,13 @@ A9 = User.create(
     )
    A9_T1 = ReservationToken.create(
        user_id: A9.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    A9_T2 = ReservationToken.create(
        user_id: A9.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 A10 = User.create(
@@ -191,11 +212,13 @@ A10 = User.create(
     )
    A10_T1 = ReservationToken.create(
        user_id: A10.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    A10_T2 = ReservationToken.create(
        user_id: A10.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 A11 = User.create(
@@ -206,11 +229,13 @@ A11 = User.create(
     )
    A11_T1 = ReservationToken.create(
        user_id: A11.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    A11_T2 = ReservationToken.create(
        user_id: A11.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 A12 = User.create(
@@ -221,11 +246,13 @@ A12 = User.create(
     )
    A12_T1 = ReservationToken.create(
        user_id: A12.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    A12_T2 = ReservationToken.create(
        user_id: A12.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 B13 = User.create(
@@ -236,11 +263,13 @@ B13 = User.create(
     )
    B13_T1 = ReservationToken.create(
        user_id: B13.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    B13_T2 = ReservationToken.create(
        user_id: B13.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 B14 = User.create(
@@ -251,11 +280,13 @@ B14 = User.create(
     )
    B14_T1 = ReservationToken.create(
        user_id: B14.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    B14_T2 = ReservationToken.create(
        user_id: B14.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 B15 = User.create(
@@ -266,11 +297,13 @@ B15 = User.create(
     )
    B15_T1 = ReservationToken.create(
        user_id: B15.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    B15_T2 = ReservationToken.create(
        user_id: B15.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 B16 = User.create(
@@ -281,11 +314,13 @@ B16 = User.create(
     )
    B16_T1 = ReservationToken.create(
        user_id: B16.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    B16_T2 = ReservationToken.create(
        user_id: B16.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 B17 = User.create(
@@ -296,11 +331,13 @@ B17 = User.create(
     )
    B17_T1 = ReservationToken.create(
        user_id: B17.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    B17_T2 = ReservationToken.create(
        user_id: B17.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 B18 = User.create(
@@ -311,11 +348,13 @@ B18 = User.create(
     )
    B18_T1 = ReservationToken.create(
        user_id: B18.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    B18_T2 = ReservationToken.create(
        user_id: B18.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 B19 = User.create(
@@ -326,11 +365,13 @@ B19 = User.create(
     )
    B19_T1 = ReservationToken.create(
        user_id: B19.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    B19_T2 = ReservationToken.create(
        user_id: B19.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 B20 = User.create(
@@ -341,11 +382,13 @@ B20 = User.create(
     )
    B20_T1 = ReservationToken.create(
        user_id: B20.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    B20_T2 = ReservationToken.create(
        user_id: B13.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 B21 = User.create(
@@ -356,11 +399,13 @@ B21 = User.create(
     )
    B21_T1 = ReservationToken.create(
        user_id: B21.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    B21_T2 = ReservationToken.create(
        user_id: B13.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 B22 = User.create(
@@ -371,11 +416,13 @@ B22 = User.create(
     )
    B22_T1 = ReservationToken.create(
        user_id: B22.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    B22_T2 = ReservationToken.create(
        user_id: B13.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 B23 = User.create(
@@ -386,11 +433,13 @@ B23 = User.create(
     )
    B23_T1 = ReservationToken.create(
        user_id: B23.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    B23_T2 = ReservationToken.create(
        user_id: B13.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 B24 = User.create(
@@ -401,11 +450,13 @@ B24 = User.create(
     )
    B24_T1 = ReservationToken.create(
        user_id: B24.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    B24_T2 = ReservationToken.create(
        user_id: B13.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 C25 = User.create(
@@ -416,19 +467,23 @@ C25 = User.create(
     )
     C25_T10 = ReservationToken.create(
         user_id: C25.id,
-        reservation_target_id: sauna.id
+        reservation_target_id: sauna.id,
+        tokenType: token_type_permanent
         )
         C25_T11 = ReservationToken.create(
             user_id: C25.id,
-            reservation_target_id: sauna.id
+            reservation_target_id: sauna.id,
+            tokenType: token_type_use_once
             )
             C25_T12 = ReservationToken.create(
                 user_id: C25.id,
-                reservation_target_id: sauna.id
+                reservation_target_id: sauna.id,
+                tokenType: token_type_use_once
                 )
    C25_T2 = ReservationToken.create(
        user_id: C25.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 C26 = User.create(
@@ -439,11 +494,13 @@ C26 = User.create(
     )
    C26_T1 = ReservationToken.create(
        user_id: C26.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    C26_T2 = ReservationToken.create(
        user_id: C26.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 C27 = User.create(
@@ -454,11 +511,13 @@ C27 = User.create(
     )
    C27_T1 = ReservationToken.create(
        user_id: C27.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    C27_T2 = ReservationToken.create(
        user_id: C27.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 C28 = User.create(
@@ -469,11 +528,13 @@ C28 = User.create(
     )
    C28_T1 = ReservationToken.create(
        user_id: C28.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    C28_T2 = ReservationToken.create(
        user_id: C28.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 C29 = User.create(
@@ -484,11 +545,13 @@ C29 = User.create(
     )
    C29_T1 = ReservationToken.create(
        user_id: C29.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    C29_T2 = ReservationToken.create(
        user_id: C29.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 C30 = User.create(
@@ -499,11 +562,13 @@ C30 = User.create(
     )
    C30_T1 = ReservationToken.create(
        user_id: C30.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    C30_T2 = ReservationToken.create(
        user_id: C30.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 C31 = User.create(
@@ -514,11 +579,13 @@ C31 = User.create(
     )
    C31_T1 = ReservationToken.create(
        user_id: C31.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    C31_T2 = ReservationToken.create(
        user_id: C31.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 C32 = User.create(
@@ -529,11 +596,13 @@ C32 = User.create(
     )
    C32_T1 = ReservationToken.create(
        user_id: C32.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    C32_T2 = ReservationToken.create(
        user_id: C32.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 C33 = User.create(
@@ -544,11 +613,13 @@ C33 = User.create(
     )
    C33_T1 = ReservationToken.create(
        user_id: C33.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    C33_T2 = ReservationToken.create(
        user_id: C33.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 C34 = User.create(
@@ -559,11 +630,13 @@ C34 = User.create(
     )
    C34_T1 = ReservationToken.create(
        user_id: C34.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    C34_T2 = ReservationToken.create(
        user_id: C34.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 C35 = User.create(
@@ -574,11 +647,13 @@ C35 = User.create(
     )
    C35_T1 = ReservationToken.create(
        user_id: C35.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    C35_T2 = ReservationToken.create(
        user_id: C35.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 C36 = User.create(
@@ -589,11 +664,13 @@ C36 = User.create(
     )
    C36_T1 = ReservationToken.create(
        user_id: C36.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    C36_T2 = ReservationToken.create(
        user_id: C36.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 D37 = User.create(
@@ -604,11 +681,13 @@ D37 = User.create(
     )
    D37_T1 = ReservationToken.create(
        user_id: D37.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    D37_T2 = ReservationToken.create(
        user_id: D37.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 D38 = User.create(
@@ -619,11 +698,13 @@ D38 = User.create(
     )
    D38_T1 = ReservationToken.create(
        user_id: D38.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    D38_T2 = ReservationToken.create(
        user_id: D38.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 D39 = User.create(
@@ -634,11 +715,13 @@ D39 = User.create(
     )
    D39_T1 = ReservationToken.create(
        user_id: D39.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    D39_T2 = ReservationToken.create(
        user_id: D39.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 D40 = User.create(
@@ -649,11 +732,13 @@ D40 = User.create(
     )
    D40_T1 = ReservationToken.create(
        user_id: D40.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    D40_T2 = ReservationToken.create(
        user_id: D40.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 D41 = User.create(
@@ -664,11 +749,13 @@ D41 = User.create(
     )
    D41_T1 = ReservationToken.create(
        user_id: D41.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    D41_T2 = ReservationToken.create(
        user_id: D41.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 D42 = User.create(
@@ -679,11 +766,13 @@ D42 = User.create(
     )
    D42_T1 = ReservationToken.create(
        user_id: D42.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    D42_T2 = ReservationToken.create(
        user_id: D42.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 D43 = User.create(
@@ -694,11 +783,13 @@ D43 = User.create(
     )
    D43_T1 = ReservationToken.create(
        user_id: D43.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    D43_T2 = ReservationToken.create(
        user_id: D43.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 D44 = User.create(
@@ -709,11 +800,13 @@ D44 = User.create(
     )
    D44_T1 = ReservationToken.create(
        user_id: D44.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    D44_T2 = ReservationToken.create(
        user_id: D44.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 D45 = User.create(
@@ -724,11 +817,13 @@ D45 = User.create(
     )
    D45_T1 = ReservationToken.create(
        user_id: D45.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    D45_T2 = ReservationToken.create(
        user_id: D45.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 D46 = User.create(
@@ -739,11 +834,13 @@ D46 = User.create(
     )
    D46_T1 = ReservationToken.create(
        user_id: D46.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    D46_T2 = ReservationToken.create(
        user_id: D46.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 D47 = User.create(
@@ -754,11 +851,13 @@ D47 = User.create(
     )
    D47_T1 = ReservationToken.create(
        user_id: D47.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    D47_T2 = ReservationToken.create(
        user_id: D47.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 D48 = User.create(
@@ -769,11 +868,13 @@ D48 = User.create(
     )
    D48_T1 = ReservationToken.create(
        user_id: D48.id,
-       reservation_target_id: sauna.id
+       reservation_target_id: sauna.id,
+       tokenType: token_type_permanent
        )
    D48_T2 = ReservationToken.create(
        user_id: D48.id,
-       reservation_target_id: kuivaushuone.id
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
        )
 
 #####################################################

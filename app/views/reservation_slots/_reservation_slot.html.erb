@@ -1,7 +1,7 @@
 
     <%
     @isNotToday = DateTime.now.strftime("%u").to_i != reservation_slot.day
-
+    @timeString = reservation_slot.startTime.to_s.slice(0..1) + ":" + reservation_slot.startTime.to_s.slice(2..3) + "-" + reservation_slot.endTime.to_s.slice(0..1) + ":" + reservation_slot.endTime.to_s.slice(2..3)
 
     if @isNotToday %>
       <td>
@@ -11,7 +11,8 @@
 
     <%
     if reservation_slot.reservation_token_id != nil
-      @userId = ReservationToken.find_by_id(reservation_slot.reservation_token_id).user_id
+      @tokenOfSlot = ReservationToken.find_by_id(reservation_slot.reservation_token_id)
+      @userId = @tokenOfSlot.user_id
       @userName = User.find_by_id(@userId).name
     else
       @userId = 0
@@ -22,26 +23,32 @@
 
     <%if (@isNotToday) %>
       <%if (@userId == @current_user.id) %>
-        <p class="table-slot-release">
-        <%= link_to reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s, reservation_slot %>
+        <% if (@tokenOfSlot.tokenType == token_type_permanent()) %>
+          <p class="table-slot-release-permanent">
+        <% else %>
+        <p class="table-slot-release-onetime">
+        <% end %>
+        <%= link_to @timeString, reservation_slot %>
         </p>
       <%elsif (reservation_slot.reservation_token_id == nil) %>
         <p class="table-slot-reserve">
-        <%= link_to reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s, reservation_slot %>
+        <%= link_to @timeString, reservation_slot %>
       </p>
       <%else%>
       <p class="table-slot-noaction">
-        <%= reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s %>
+        <%= @timeString %>
       </p>
       <%end%>
     <% else %>
     <p class="table-slot-noaction">
-      <%= reservation_slot.startTime.to_s + "-" + reservation_slot.endTime.to_s %>
+      <%= @timeString %>
     </p>
     <% end %>
 
     <% if @userId != 0 %>
-    <p class="table-user-name"><%= @userName %> </p>
+      <p class="table-user-name"><%= @userName %> </p>
+    <%else%>
+      <p class="table-user-name"> Vapaa </p>
     <%end%>
 
     </td>

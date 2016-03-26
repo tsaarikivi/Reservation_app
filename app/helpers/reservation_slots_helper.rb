@@ -1,5 +1,13 @@
 module ReservationSlotsHelper
 
+  def token_type_use_once
+    return 2
+  end
+
+  def token_type_permanent
+    return 1
+  end
+
 def find_token_for_current_user(iSlotId)
 
     @theSlot = ReservationSlot.find_by_id(iSlotId)
@@ -7,7 +15,7 @@ def find_token_for_current_user(iSlotId)
     @iUserId = @current_user.id
     @iResTargetId = @theSlot.reservation_target_id
 
-    @tokens = ReservationToken.where("user_id = ? and reservation_target_id = ?", @iUserId, @iResTargetId)
+    @tokens = ReservationToken.where("user_id = ? and reservation_target_id = ?", @iUserId, @iResTargetId).order(:tokenType)
     if @tokens.count > 0
       for @t in @tokens
         if (ReservationSlot.find_by reservation_token_id: @t.id) == nil
@@ -39,12 +47,20 @@ def handle_click_to_slot(iSlotId)
   @tokens.each do |t|
     if try_to_free_token(t,@theSlot) == 1
       @freedSlot = 1
+      break
     end
   end
   if @freedSlot == 0
     @freeToken = find_token_for_current_user(@slotId)
     if @freeToken != nil
-      ah_reserve_slot(@slotId, @freeToken.id)
+      @slotDay = ah_reserve_slot(@slotId, @freeToken.id)
+      @todayNum = DateTime.now.strftime("%u").to_i
+      if(@todayNum < @slotDay)
+        @freeToken.useDay = DateTime.now.advance(:days => (@slotDay - @todayNum))
+      else
+        @freeToken.useDay = DateTime.now.advance(:days => (7 + @slotDay - @todayNum))
+      end
+      @freeToken.save
       return 1
     else
       return 2

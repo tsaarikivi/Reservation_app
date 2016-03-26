@@ -13,7 +13,7 @@
           <% @di = get_adjusted_day_index(@todayDayNum, @dayIndex) %>
           <%= @dayNames[@di-1] %>
           </td>
-        <%= render @reservation_slots.where("day = ?", @di) %>
+        <%= render @reservation_slots.where("day = ?", @di).order(:startTime) %>
         </tr>
     <% end %>
   </table>

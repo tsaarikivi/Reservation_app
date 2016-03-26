@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314130200) do
+ActiveRecord::Schema.define(version: 20160326100219) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160314130200) do
     t.datetime "updated_at",            null: false
     t.integer  "reservation_target_id"
     t.datetime "useDay"
+    t.integer  "tokenType"
   end
 
   add_index "reservation_tokens", ["reservation_target_id"], name: "index_reservation_tokens_on_reservation_target_id"

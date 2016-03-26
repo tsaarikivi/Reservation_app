@@ -41,13 +41,28 @@
 
 .table-slot-reserve {
   background-color: $reservblslt;
+  padding: 2vw;
+  font-size: 4vw;
+  display: inline-block;
+  position: relative;
+  width: 30vw;
 }
 
-p.table-slot-release {
-  background-color: $releasedslt;
-  a {
-    width: 30vw;
-  }
+.table-slot-release-onetime {
+  background-color: $releaseotdslt;
+  padding: 2vw;
+  font-size: 4vw;
+  display: inline-block;
+  position: relative;
+  width: 30vw;
+}
+.table-slot-release-permanent {
+  background-color: $releasepdslt;
+  padding: 2vw;
+  font-size: 4vw;
+  display: inline-block;
+  position: relative;
+  width: 30vw;
 }
 
 .table-slot-noaction {
