@@ -30,7 +30,7 @@
         <% end %>
         <%= link_to @timeString, reservation_slot %>
         </p>
-      <%elsif (reservation_slot.reservation_token_id == nil) %>
+      <%elsif ((reservation_slot.reservation_token_id == nil) and @userHasTokensToUse) %>
         <p class="table-slot-reserve">
         <%= link_to @timeString, reservation_slot %>
       </p>

@@ -1,12 +1,7 @@
 module ReservationTargetsHelper
 
-  def token_type_use_once
-    return 2
-  end
+  include ReservationSlotsHelper
 
-  def token_type_permanent
-    return 1
-  end
 
 
   def current_owner
@@ -20,6 +15,17 @@ module ReservationTargetsHelper
       @returnValue -= 7
     end
     return @returnValue
+  end
+
+  def check_if_current_user_has_tokens(targetId)
+    current_user
+    @userTokens = ReservationToken.where("user_id = ? and reservation_target_id = ?", @current_user.id, targetId)
+    @userTokens.each do |t|
+      if(ReservationSlot.find_by(reservation_token_id: t.id) == nil)
+        return true
+      end
+    end
+    return false
   end
 
   def clear_old_one_time_tokens(iSlots)

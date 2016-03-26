@@ -20,53 +20,20 @@ class ReservationSlotsController < ApplicationController
   def destroy
   end
 
-  def reserve
-    @slotId = params[:id]
-    @result = handle_click_to_slot(@slotId)
-    if (@result == 0)
-        flash[:danger]="ERROR"
-    elsif @result == 1
-        flash[:success]="Reservation success."
-    elsif @result == 2
-        flash[:danger]="No TOKEN for reservation."
-    elsif @result == 3
-        flash[:success]="Reservation removed."
-    else
-        flash[:danger]="ERROR"
-    end
-    redirect_to :back
-  end
-
-  def release
-    @slotId = params[:id]
-    @result = handle_click_to_slot(@slotId)
-    if (@result == 0)
-        flash[:danger]="ERROR"
-    elsif @result == 1
-        flash[:success]="Reservation success."
-    elsif @result == 2
-        flash[:danger]="No TOKEN for reservation."
-    elsif @result == 3
-        flash[:success]="Reservation removed."
-    else
-        flash[:danger]="ERROR"
-    end
-    redirect_to :back
-  end
 
   def show
     @slotId = params[:id]
     @result = handle_click_to_slot(@slotId)
     if (@result == 0)
-        flash[:danger]="ERROR"
+        flash[:danger]="VIRHE"
     elsif @result == 1
-        flash[:success]="Reservation success."
+        flash[:success]="Varaus onnistui."
     elsif @result == 2
-        flash[:danger]="No TOKEN for reservation."
+        flash[:danger]="Kaikki varaukset käytössä."
     elsif @result == 3
-        flash[:success]="Reservation removed."
+        flash[:success]="Varaus poistettu."
     else
-        flash[:danger]="ERROR"
+        flash[:danger]="VIRHE"
     end
     redirect_to :back
   end

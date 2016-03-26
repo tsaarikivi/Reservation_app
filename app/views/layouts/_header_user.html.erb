@@ -3,7 +3,7 @@
     <ul>
       <% if userlogged_in? %>
         <li>
-          <%= link_to "Reservations", root_path, id: "reservations-btn", class: "topbar-btn" %>
+          <%= link_to "Varaukset", root_path, id: "reservations-btn", class: "topbar-btn" %>
         </li>
         <li>
           <%= link_to "Kirjaudu ulos", userlogout_path, method: "delete", id: "logout-btn", class: "topbar-btn" %>
