@@ -2,7 +2,7 @@
 <% @todayDayNum = DateTime.now.strftime("%u").to_i %>
 
 <div class="reservation-target-list">
-  <Table style="width:100%">
+  <table>
     <% for @dayIndex in 1..@target.timeWindowInDays %>
         <tr class="table-row">
         <% if @dayIndex != 1 %>

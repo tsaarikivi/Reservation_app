@@ -1,84 +1,158 @@
 @import "variables";
 
-.table-row {
-  margin: 3vw 2vw 0 2vw;
-  background-color: $tablenoday;
-  width: 96vw;
-  display: inline-block;
-  float: left;
-  box-shadow: 1px 3px 7px 0 $shadow;
-  border-radius: 1vw;
-  td {
-    width: 100%;
-    display: block;
-    margin: 1vw 0;
-    a {
-      text-decoration: none;
-      color: $reservclickable;
-      padding: 2vw;
-      font-size: 4vw;
-      display: inline-block;
-      position: relative;
-      width: 92vw;
+/*MOBILE*/
+@media only screen and (max-width: 780px) {
+  .table-row {
+    margin: 3vw 2vw 0 2vw;
+    background-color: $tablenoday;
+    width: 96vw;
+    display: inline-block;
+    float: left;
+    box-shadow: 1px 3px 7px 0 $shadow;
+    border-radius: 1vw;
+    td {
+      width: 100%;
+      display: block;
+      margin: 1vw 0;
+      a {
+        text-decoration: none;
+        color: $reservclickable;
+        padding: 4vw;
+        font-size: 4vw;
+        display: inline-block;
+        position: relative;
+        width: 90vw;
+      }
     }
+  }
+
+  .table-user-name {
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    font-size: 4vw;
+  }
+
+  .table-time-slot,
+  .table-slot-reserve,
+  .table-slot-noaction,
+  .table-slot-release-onetime,
+  .table-slot-release-permanent {
+    font-size: 4vw;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    width: 34vw;
+    border-radius: 4px;
+  }
+
+  .table-slot-reserve {
+    background-color: $reservblslt;
+  }
+
+  .table-slot-release-onetime {
+    background-color: $releaseotdslt;
+  }
+  .table-slot-release-permanent {
+    background-color: $releasepdslt;
+  }
+
+  .table-slot-noaction {
+    background-color: $noactionslt;
+    padding: 4vw;
+    width: 26vw;
+  }
+
+  .table-week-day {
+    font-weight: bold;
+    font-size: 5vw;
+    color: $weekdayheader;
+  }
+  .table-week-today{
+    background-color: $tabletoday;
   }
 }
 
-.table-user-name {
-  font-weight: bold;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  font-size: 4vw;
-}
+/*DESKTOP*/
+@media only screen and (min-width: 781px) {
+  table {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .table-row {
+    background-color: $tablenoday;
+    width: 100%;
+    display: inline-block;
+    float: left;
+    border-bottom: 2px solid $border;
+    td {
+      width: 100%;
+      max-width: 150px;
+      display: inline-block;
+      margin: 15px 0;
+      a {
+        text-decoration: none;
+        color: $reservclickable;
+        padding: 10px;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        max-width: 150px;
+      }
+    }
+  }
 
-.table-time-slot, .table-slot-reserve, .table-slot-release, .table-slot-noaction {
-  font-size: 70%;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-}
+  .table-user-name {
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    font-size: 18px;
+  }
 
-.table-slot-reserve {
-  background-color: $reservblslt;
-  padding: 2vw;
-  font-size: 4vw;
-  display: inline-block;
-  position: relative;
-  width: 30vw;
-}
+  .table-time-slot,
+  .table-slot-reserve,
+  .table-slot-noaction,
+  .table-slot-release-onetime,
+  .table-slot-release-permanent {
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    max-width: 150px;
+    border-radius: 4px;
+  }
 
-.table-slot-release-onetime {
-  background-color: $releaseotdslt;
-  padding: 2vw;
-  font-size: 4vw;
-  display: inline-block;
-  position: relative;
-  width: 30vw;
-}
-.table-slot-release-permanent {
-  background-color: $releasepdslt;
-  padding: 2vw;
-  font-size: 4vw;
-  display: inline-block;
-  position: relative;
-  width: 30vw;
-}
+  .table-slot-reserve {
+    background-color: $reservblslt;
+  }
 
-.table-slot-noaction {
-  background-color: $noactionslt;
-  padding: 2vw;
-  font-size: 4vw;
-  display: inline-block;
-  position: relative;
-  width: 30vw;
-}
+  .table-slot-release-onetime {
+    background-color: $releaseotdslt;
+  }
+  .table-slot-release-permanent {
+    background-color: $releasepdslt;
+  }
 
-.table-week-day {
-  font-weight: bold;
-  font-size: 5vw;
-  color: $weekdayheader;
-}
-.table-week-today{
-  background-color: $tabletoday;
+  .table-slot-noaction {
+    background-color: $noactionslt;
+    padding: 10px;
+    width: 100%;
+    max-width: 130px;
+  }
+
+  .table-week-day {
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    color: $weekdayheader;
+  }
+  .table-week-today{
+    background-color: $tabletoday;
+  }
 }

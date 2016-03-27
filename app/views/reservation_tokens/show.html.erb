@@ -1,7 +1,9 @@
-<div class="reservation-token-list">
+<div class="reservation-token-list-container">
   <% if @reservation_tokens != nil %>
     <% if @reservation_tokens.count > 0 %>
-      <%= render @reservation_tokens %>
+      <ul class="reservation-token-list">
+        <%= render @reservation_tokens %>
+      </ul>
       <% else %>
         Sinulla ei ole oikeutta varauksiin. Ole yhteydessä isännöitsijään.
     <% end %>

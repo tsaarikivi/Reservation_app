@@ -21,20 +21,39 @@ body {
   background: $background;
 }
 
-small {
-  margin: 0;
-  padding: 2vw;
-  font-size: 3vw;
+/*MOBILE*/
+@media only screen and (max-width: 780px) {
+
+  small {
+    margin: 0;
+    padding: 2vw;
+    font-size: 3vw;
+  }
+
+  h1 {
+    margin: 0 2vw;
+    font-size: 7vw;
+  }
+
+  div.flash {
+    margin: 0;
+    padding: 0 2vw;
+    font-size: 4vw;
+    color: $flash;
+  }
 }
 
-h1 {
-  margin: 0 2vw;
-  font-size: 7vw;
-}
+/*DESKTOP*/
+@media only screen and (min-width: 781px) {
+ h1 {
+   text-align: center;
+   font-size: 40px;
+ }
 
-div.flash {
-  margin: 0;
-  padding: 0 2vw;
-  font-size: 4vw;
-  color: $flash;
+ div.flash {
+   margin: 0;
+   text-align: center;
+   font-size: 18px;
+   color: $flash;
+ }
 }

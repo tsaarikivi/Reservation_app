@@ -1,22 +1,63 @@
 @import "variables";
 
-p.res-token-pre {
-  padding: 2vw;
-  margin: 0;
-  color: $listpre;
-  font-size: 6vw;
+/*MOBILE*/
+@media only screen and (max-width: 780px) {
+  ul.reservation-token-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  p.res-token-pre {
+    padding: 2vw;
+    margin: 0;
+    color: $listpre;
+    font-size: 6vw;
+  }
+
+  a.res-token {
+    width: 100%;
+    padding: 4vw 0;
+    background: $listbtn;
+    display: block;
+    margin: 3vw 0 0 0;
+    text-decoration: none;
+    color: $listclick;
+    font-size: 7vw;
+    border-radius: 2px;
+    text-align: center;
+    box-shadow: 1px 3px 7px 0 $shadow;
+  }
 }
 
-a.res-token {
-  width: 100%;
-  padding: 4vw 0;
-  background: $listbtn;
-  display: block;
-  margin: 3vw 0 0 0;
-  text-decoration: none;
-  color: $listclick;
-  font-size: 7vw;
-  border-radius: 2px;
-  text-align: center;
-  box-shadow: 1px 3px 7px 0 $shadow;
+/*DESKTOP*/
+@media only screen and (min-width: 781px) {
+  ul.reservation-token-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  p.res-token-pre {
+    padding: 0;
+    margin: 0;
+    color: $listpre;
+    font-size: 40px;
+  }
+
+  a.res-token {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px 0;
+    background: $listbtn;
+    display: block;
+    margin: 10px auto;
+    text-decoration: none;
+    color: $listclick;
+    font-size: 30px;
+    border-radius: 2px;
+    text-align: center;
+    box-shadow: 1px 3px 7px 0 $shadow;
+  }
 }

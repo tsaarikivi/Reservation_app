@@ -1,19 +1,60 @@
 @import "variables";
-form {
-  margin: 2vw;
-  label {
-    font-size: 5vw;
+
+/*MOBILE*/
+@media only screen and (max-width: 780px) {
+  form {
+    margin: 2vw;
+    label {
+      font-size: 5vw;
+    }
+    input {
+      height: 10vw;
+      width: 94vw;
+      border-style: none;
+      border-bottom: 2px solid $border;
+      background: $forminput;
+      border-radius: 2px;
+      font-size: 5vw;
+      padding: 0 0 0 2vw;
+    }
+    input.submit {
+      margin: 2vw 0;
+      border: 2px solid $border;
+      width: 96vw;
+    }
   }
-  input {
-    height: 10vw;
-    width: 96vw;
-    border-style: none;
-    border-bottom: 2px solid $border;
-    background: $forminput;
-    border-radius: 2px;
-    font-size: 5vw;
-  }
-  input.submit {
-    margin: 2vw 0;
+}
+
+/*DESKTOP*/
+@media only screen and (min-width: 781px) {
+  form {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    label {
+      display: block;
+      padding: 5px;
+      float: left;
+      font-size: 30px;
+    }
+    input {
+      height: 60px;
+      width: 100%;
+      max-width: 400px;
+      border-style: none;
+      border-bottom: 2px solid $border;
+      background: $forminput;
+      border-radius: 2px;
+      font-size: 30px;
+      padding: 0 0 0 2vw;
+    }
+    input.submit {
+      margin: 15px 0 0 20px;
+      padding: 0;
+      border: 2px solid $border;
+      width: 100%;
+      max-width: 400px;
+    }
   }
 }
