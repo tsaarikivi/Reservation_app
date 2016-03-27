@@ -70,16 +70,7 @@ A2 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
-   A2_T1 = ReservationToken.create(
-       user_id: A2.id,
-       reservation_target_id: sauna.id,
-       tokenType: token_type_permanent
-       )
-   A2_T2 = ReservationToken.create(
-       user_id: A2.id,
-       reservation_target_id: kuivaushuone.id,
-       tokenType: token_type_use_once
-       )
+
 
 A3 = User.create(
     name: 'A3',
@@ -1078,8 +1069,7 @@ KTo20_21 = ReservationSlot.create(
     reservation_target_id: kuivaushuone.id,
     day: 4,
     startTime: 2000,
-    endTime: 2100,
-    reservation_token_id: C25_T2.id
+    endTime: 2100
     )
 KPe18_19 = ReservationSlot.create(
     reservation_target_id: kuivaushuone.id,

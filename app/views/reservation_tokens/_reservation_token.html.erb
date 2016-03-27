@@ -1,6 +1,6 @@
 <li id="x">
   <p class="res-token-pre">
     <% @rt = ReservationTarget.find_by_id(reservation_token.reservation_target_id) %>
-    Reservations for: <%= link_to @rt.name, @rt, class: "res-token" %>
+    Varaukset: <%= link_to @rt.name, @rt, class: "res-token" %>
   </p>
 </li>

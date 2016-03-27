@@ -1,19 +1,1 @@
-<div class="reservation-slot-list">
 
-<% @result = handle_click_to_slot(@slotId) %>
-<% if (@result == 0) %>
-    ERROR = 0
-<% elsif @result == 1 %>
-    Reservation success.
-<% elsif @result == 2 %>
-    No TOKEN for reservation.
-<% elsif @result == 3 %>
-    Reservation removed.
-<% else %>
-    ERROR = <%=@result%>
-<% end %>
-</div>
-
-<%
-go_back_to_reservation_target(@slotId)
-%>

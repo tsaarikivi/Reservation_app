@@ -33,6 +33,7 @@ module ReservationTargetsHelper
 
     @countS = iSlots.count
     iSlots.each do |s|
+
       if(s.reservation_token_id != nil)
         @token = ReservationToken.find_by_id(s.reservation_token_id)
         if(@token.tokenType == token_type_use_once())

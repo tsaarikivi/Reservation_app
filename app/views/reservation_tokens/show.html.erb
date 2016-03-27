@@ -3,9 +3,9 @@
     <% if @reservation_tokens.count > 0 %>
       <%= render @reservation_tokens %>
       <% else %>
-        No tokens to use. Please contact your resource administrator.
+        Sinulla ei ole oikeutta varauksiin. Ole yhteydessä isännöitsijään.
     <% end %>
   <%else%>
-      You need to be logged in before using the application.
+      Sinun täytyy ensin kirjautua sisään, jotta voit käyttää tätä sovellusta.
   <% end %>
 </div>
