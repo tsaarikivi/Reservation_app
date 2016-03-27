@@ -12,5 +12,6 @@ module ApplicationHelper
     return @reservation_slot.day
   end
 
+  @ShowReservationsButton = true
 
 end

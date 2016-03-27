@@ -30,6 +30,15 @@ module UsersessionsHelper
     !current_user.nil?
   end
 
+  def userhasmultipletargets?
+    current_user
+    @tokesforuser = ReservationToken.where(user_id: @current_user.id).select(:reservation_target_id).distinct
+    if @tokesforuser.length > 1
+      return true
+    end
+    return false
+  end
+
   # Forgets a persistent session.
   def forget(user)
     user.forget

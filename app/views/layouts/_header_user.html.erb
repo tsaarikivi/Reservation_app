@@ -2,9 +2,11 @@
   <nav class="topbar">
     <ul>
       <% if userlogged_in? %>
+        <%if userhasmultipletargets? %>
         <li>
           <%= link_to "Varaukset", root_path, id: "reservations-btn", class: "topbar-btn" %>
         </li>
+        <% end %>
         <li>
           <%= link_to "Kirjaudu ulos", userlogout_path, method: "delete", id: "logout-btn", class: "topbar-btn" %>
         </li>

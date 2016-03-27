@@ -62,7 +62,11 @@ A1 = User.create(
             reservation_target_id: sauna.id,
             tokenType: token_type_use_once
             )
-
+   A1_T2 = ReservationToken.create(
+       user_id: A1.id,
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
+       )
 
 A2 = User.create(
     name: 'A2',
@@ -1018,7 +1022,8 @@ KMa19_20 = ReservationSlot.create(
     reservation_target_id: kuivaushuone.id,
     day: 1,
     startTime: 1900,
-    endTime: 2000
+    endTime: 2000,
+    reservation_token_id: A1_T2.id
     )
 KMa20_21 = ReservationSlot.create(
     reservation_target_id: kuivaushuone.id,
