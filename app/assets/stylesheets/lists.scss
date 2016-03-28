@@ -28,24 +28,14 @@
     color: $listclick;
     font-size: 7vw;
     font-weight: 400;
-    border-radius: 2px;
+    border-radius: 5px;
     text-align: center;
-    box-shadow: 1px 3px 7px 0 $shadow;
+    box-shadow: 0 0 1px $shadow;
   }
 }
 
 /*DESKTOP*/
 @media only screen and (min-width: 781px) {
-  div.reservation-token-list-container {
-    div.page-header {
-      margin: 0 auto;
-      width: 100%;
-      max-width: 400px;
-      h1 {
-        text-align: left;
-      }
-    }
-  }
 
   ul.reservation-token-list {
     list-style: none;
@@ -77,6 +67,7 @@
     font-weight: 300;
     border-radius: 2px;
     text-align: center;
-    box-shadow: 1px 3px 7px 0 $shadow;
+    box-shadow: 0 0 1px $shadow;
+    border-radius: 5px;
   }
 }

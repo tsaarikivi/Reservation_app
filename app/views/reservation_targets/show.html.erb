@@ -1,7 +1,9 @@
 <% @dayNames = ["Maanantai", "Tiistai", "Keskiviikko", "Torstai", "Perjantai", "Lauantai", "Sunnuntai"] %>
 <% @todayDayNum = DateTime.now.strftime("%u").to_i %>
-
 <div class="reservation-target-list">
+  <div class="page-header-wide">
+    <h1 class=""><%= @target.name %></h1>
+  </div>
   <table>
     <% for @dayIndex in 1..@target.timeWindowInDays %>
         <tr class="table-row">
@@ -13,7 +15,7 @@
           <% @di = get_adjusted_day_index(@todayDayNum, @dayIndex) %>
           <%= @dayNames[@di-1] %>
           </td>
-        <%= render @reservation_slots.where("day = ?", @di).order(:startTime) %>
+            <%= render @reservation_slots.where("day = ?", @di).order(:startTime) %>
         </tr>
     <% end %>
   </table>

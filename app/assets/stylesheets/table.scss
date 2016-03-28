@@ -12,7 +12,7 @@
     td {
       width: 80%;
       display: block;
-      margin: 1vw 0 2vw 2vw;
+      margin: 0 0 1.2vw 2vw;
       a {
         text-decoration: none;
         color: $reservclickable;
@@ -161,12 +161,16 @@
     max-width: 100px;
   }
 
-  .table-week-day {
+  td.table-week-day {
+    width: 100%;
     padding-left: 10px;
     font-weight: 400;
     font-style: italic;
     font-size: 24px;
     color: $weekdayheader;
+    display: block;
+    margin: 20px 0 0 0;
+    padding: 0;
   }
   .table-week-today{
     background-color: $tabledaystart;
