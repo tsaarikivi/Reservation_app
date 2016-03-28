@@ -867,12 +867,18 @@ D48 = User.create(
 #####################################################
 # Reservation slots
 #####################################################
-Ma18_19 = ReservationSlot.create(
+Ma17_18 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 1,
-    startTime: 1800,
-    endTime: 1900
+    startTime: 1700,
+    endTime: 1800
     )
+Ma18_19 = ReservationSlot.create(
+        reservation_target_id: sauna.id,
+        day: 1,
+        startTime: 1800,
+        endTime: 1900
+        )
 Ma19_20 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 1,
@@ -885,6 +891,18 @@ Ma20_21 = ReservationSlot.create(
     day: 1,
     startTime: 2000,
     endTime: 2100
+    )
+Ma21_22 = ReservationSlot.create(
+        reservation_target_id: sauna.id,
+        day: 1,
+        startTime: 2100,
+        endTime: 2200
+        )
+Ti17_18 = ReservationSlot.create(
+    reservation_target_id: sauna.id,
+    day: 2,
+    startTime: 1700,
+    endTime: 1800
     )
 Ti18_19 = ReservationSlot.create(
     reservation_target_id: sauna.id,
@@ -904,6 +922,12 @@ Ti20_21 = ReservationSlot.create(
     startTime: 2000,
     endTime: 2100
     )
+Ke17_18 = ReservationSlot.create(
+    reservation_target_id: sauna.id,
+    day: 3,
+    startTime: 1700,
+    endTime: 1800
+    )
 Ke18_19 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 3,
@@ -917,10 +941,22 @@ Ke19_20 = ReservationSlot.create(
     endTime: 2000
     )
 Ke20_21 = ReservationSlot.create(
+  reservation_target_id: sauna.id,
+  day: 3,
+  startTime: 2000,
+  endTime: 2100
+)
+Ke21_22 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 3,
-    startTime: 2000,
-    endTime: 2100
+    startTime: 2100,
+    endTime: 2200
+    )
+Ke22_23 = ReservationSlot.create(
+    reservation_target_id: sauna.id,
+    day: 3,
+    startTime: 2200,
+    endTime: 2300
     )
 To18_19 = ReservationSlot.create(
     reservation_target_id: sauna.id,
