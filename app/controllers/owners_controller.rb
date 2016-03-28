@@ -8,6 +8,8 @@ class OwnersController < ApplicationController
   def show
     @owner = Owner.find(params[:id])
     @reservation_targets = @owner.reservation_targets
+    @logentries = Reservationlog.last(100)
+    #@logentries.order(:created_at)
   end
 
   def create

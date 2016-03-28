@@ -8,4 +8,8 @@
       <%= render @reservation_targets %>
     </ol>
   <% end %>
+  <h3> Tapahtumat: </h3>
+  <% @logentries.each do |e| %>
+    <li><%= e.logstr %> </li>
+  <% end %>
 </div>

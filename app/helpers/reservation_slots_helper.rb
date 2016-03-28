@@ -1,11 +1,21 @@
 module ReservationSlotsHelper
 
+
   def token_type_use_once
     return 2
   end
 
   def token_type_permanent
     return 1
+  end
+
+  def token_type_to_s(typ)
+    if(typ == token_type_use_once())
+      return "KERTA"
+    end
+    if(typ == token_type_permanent())
+      return "PYSYVÄ"
+    end
   end
 
 def find_token_for_current_user(iSlotId)
@@ -29,11 +39,25 @@ def find_token_for_current_user(iSlotId)
   end
 end
 
+
+def write_log_entry(oper, tkn, slt)
+  $target = ReservationTarget.find_by_id(tkn.reservation_target_id)
+
+  @theevent = oper + token_type_to_s(tkn.tokenType) + " Käyttäjä: " + current_user.name + " Kohde: " + $target.name + " Päivä: " + slt.day.to_s + " Aika: " + slt.startTime.to_s.slice(0..1) + ":" + slt.startTime.to_s.slice(2..3) + "-" + slt.endTime.to_s.slice(0..1) + ":" + slt.endTime.to_s.slice(2..3) + " käyttöpäivä: " + tkn.useDay.to_s
+
+  Reservationlog.create!(owner_id: @current_user.owner_id, logstr: @theevent).save
+
+end
+
 ## Return 1 if token is freed
 def try_to_free_token(tkn, slt)
+
   if slt.reservation_token_id == tkn.id
     slt.reservation_token_id = nil
     slt.save
+
+    write_log_entry("VAPAUTUS: ", tkn, slt)
+
     return 1
   end
 end
@@ -53,7 +77,7 @@ def handle_click_to_slot(iSlotId)
   if @freedSlot == 0
     @freeToken = find_token_for_current_user(@slotId)
     if @freeToken != nil and @theSlot.reservation_token_id == nil
-      @slotDay = ah_reserve_slot(@slotId, @freeToken.id)
+      @slotDay = ah_reserve_slot(@theSlot, @freeToken.id)
 
       @todayNum = DateTime.now.strftime("%u").to_i
       if(@todayNum < @slotDay)
@@ -62,6 +86,7 @@ def handle_click_to_slot(iSlotId)
         @freeToken.useDay = DateTime.now.advance(:days => (7 + @slotDay - @todayNum)).noon
       end
       @freeToken.save
+      write_log_entry("VARAUS: ", @freeToken, @theSlot)
       return 1
     else
       return 2
