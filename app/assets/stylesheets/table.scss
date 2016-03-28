@@ -3,32 +3,32 @@
 /*MOBILE*/
 @media only screen and (max-width: 780px) {
   .table-row {
-    margin: 3vw 2vw 0 2vw;
-    background-color: $tablenoday;
-    width: 96vw;
+    margin: 3vw 0 0 0;
+    background-color: $tabledaystart;
+    width: 100%;
     display: inline-block;
     float: left;
-    box-shadow: 1px 3px 7px 0 $shadow;
-    border-radius: 1vw;
+    border-bottom: 2px solid $border;
     td {
-      width: 100%;
+      width: 80%;
       display: block;
-      margin: 1vw 0;
+      margin: 1vw 0 2vw 2vw;
       a {
         text-decoration: none;
         color: $reservclickable;
-        padding: 4vw;
+        margin: 0;
+        padding: 4vw 55vw 4vw 9vw;
         font-size: 4vw;
         display: inline-block;
         position: relative;
-        width: 90vw;
+        width: 90%;
       }
     }
   }
 
   .table-user-name {
-    font-weight: bold;
-    padding: 0;
+    font-weight: 400;
+    padding: 0 1vw;
     margin: 0;
     display: inline-block;
     font-size: 4vw;
@@ -40,11 +40,12 @@
   .table-slot-release-onetime,
   .table-slot-release-permanent {
     font-size: 4vw;
+    font-weight: 300;
     padding: 0;
     margin: 0;
     display: inline-block;
     position: relative;
-    width: 34vw;
+    width: 37vw;
     border-radius: 4px;
   }
 
@@ -61,17 +62,22 @@
 
   .table-slot-noaction {
     background-color: $noactionslt;
-    padding: 4vw;
+    padding: 4vw 2vw 4vw 9vw;
     width: 26vw;
   }
 
-  .table-week-day {
-    font-weight: bold;
+  td.table-week-day {
+    font-weight: 400;
+    font-style: italic;
     font-size: 5vw;
     color: $weekdayheader;
+    padding: 0;
+    width: 70%;
   }
-  .table-week-today{
-    background-color: $tabletoday;
+  td.table-week-today{
+    background-color: $tabledaystart;
+    padding: 0;
+    width: 70%;
   }
 }
 
@@ -83,31 +89,39 @@
     margin: 0 auto;
   }
   .table-row {
-    background-color: $tablenoday;
+    background-color: $tabledaystart;
+/*
+    background-color: $tabledaystart;
+    background: -webkit-linear-gradient(left, $tabledaystart, $tabledayend);
+    background: -o-linear-gradient(right, $tabledaystart, $tabledayend);
+    background: -moz-linear-gradient(right, $tabledaystart, $tabledayend);
+    background: linear-gradient(to right, $tabledaystart, $tabledayend);
+*/
     width: 100%;
     display: inline-block;
     float: left;
     border-bottom: 2px solid $border;
+    margin-top: 20px;
     td {
       width: 100%;
-      max-width: 150px;
+      max-width: 125px;
       display: inline-block;
       margin: 15px 0;
       a {
         text-decoration: none;
         color: $reservclickable;
-        padding: 10px;
+        padding: 10px 0 10px 14px;
         display: inline-block;
         position: relative;
         width: 100%;
-        max-width: 150px;
+        max-width: 100px;
       }
     }
   }
 
   .table-user-name {
-    font-weight: bold;
-    padding: 0;
+    font-weight: 400;
+    padding: 0 0 0 14px;
     margin: 0;
     display: inline-block;
     font-size: 18px;
@@ -119,12 +133,13 @@
   .table-slot-release-onetime,
   .table-slot-release-permanent {
     font-size: 18px;
+    font-weight: 300;
     padding: 0;
     margin: 0;
     display: inline-block;
     position: relative;
     width: 100%;
-    max-width: 150px;
+    max-width: 114px;
     border-radius: 4px;
   }
 
@@ -141,18 +156,19 @@
 
   .table-slot-noaction {
     background-color: $noactionslt;
-    padding: 10px;
+    padding: 10px 0 10px 14px;
     width: 100%;
-    max-width: 130px;
+    max-width: 100px;
   }
 
   .table-week-day {
     padding-left: 10px;
-    font-weight: bold;
+    font-weight: 400;
+    font-style: italic;
     font-size: 24px;
     color: $weekdayheader;
   }
   .table-week-today{
-    background-color: $tabletoday;
+    background-color: $tabledaystart;
   }
 }

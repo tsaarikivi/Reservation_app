@@ -5,6 +5,7 @@
   header {
     background: $topbar;
     width: 100%;
+    height: 16vw;
     margin: 0;
     padding: 0;
     ul {
@@ -15,26 +16,26 @@
   }
 
   .topbar-btn {
-    font-weight: bold;
+    font-weight: 300;
     font-size: 5vw;
-    margin: 0;
-    padding: 4vw 0;
+    margin: 2% 4% 0 4%;
+    padding: 2% 0;
     display: inline-block;
     color: $topbtntext;
     background-color: $navbtn;
     text-decoration: none;
-    float: left;
     text-align: center;
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid $topbtntext;
   }
 
   #reservations-btn {
-    width: 60%;
-    background: $reservationbtn;
+    width: 42%;
+    float: left;
   }
 
   #logout-btn {
-    width: 40%;
+    width: 42%;
+    float: right;
   }
 }
 
@@ -55,23 +56,24 @@
   }
 
   .topbar-btn {
-    font-weight: bold;
+    font-weight: 300;
     font-size: 26px;
-    padding: 21px 0;
+    padding: 20px 0 12px 0;
     margin: 0 4px;
     color: $topbtntext;
+    width: 200px;
     background-color: $navbtn;
     text-decoration: none;
     text-align: center;
     display: block;
-    float: left;
+    border-bottom: 1px solid $topbtntext;
   }
 
   #reservations-btn {
-    width: 200px;
+    float: left;
   }
 
   #logout-btn {
-    width: 200px;
+    float: right;
   }
 }
