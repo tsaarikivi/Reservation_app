@@ -1,9 +1,16 @@
 
     <%
-    @isNotToday = DateTime.now.strftime("%u").to_i != reservation_slot.day
+    @isNotInHistory = true
+    if( DateTime.now.strftime("%u").to_i == reservation_slot.day)
+      @timenow = DateTime.now.strftime("%k").to_i * 100 + DateTime.now.strftime("%M").to_i
+      if(reservation_slot.startTime < @timenow)
+        @isNotInHistory = false
+      end
+    end
+
     @timeString = reservation_slot.startTime.to_s.slice(0..1) + ":" + reservation_slot.startTime.to_s.slice(2..3) + "-" + reservation_slot.endTime.to_s.slice(0..1) + ":" + reservation_slot.endTime.to_s.slice(2..3)
 
-    if @isNotToday %>
+    if @isNotInHistory %>
       <td>
     <% else %>
      <td>
@@ -21,7 +28,7 @@
     current_user
     %>
 
-    <%if (@isNotToday) %>
+    <%if (@isNotInHistory) %>
       <%if (@userId == @current_user.id) %>
         <% if (@tokenOfSlot.tokenType == token_type_permanent()) %>
           <p class="table-slot-release-permanent">
