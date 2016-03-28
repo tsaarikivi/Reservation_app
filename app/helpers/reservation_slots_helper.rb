@@ -52,8 +52,9 @@ def handle_click_to_slot(iSlotId)
   end
   if @freedSlot == 0
     @freeToken = find_token_for_current_user(@slotId)
-    if @freeToken != nil
+    if @freeToken != nil and @theSlot.reservation_token_id == nil
       @slotDay = ah_reserve_slot(@slotId, @freeToken.id)
+
       @todayNum = DateTime.now.strftime("%u").to_i
       if(@todayNum < @slotDay)
         @freeToken.useDay = DateTime.now.advance(:days => (@slotDay - @todayNum)).noon

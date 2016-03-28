@@ -867,6 +867,12 @@ D48 = User.create(
 #####################################################
 # Reservation slots
 #####################################################
+Ma13_14 = ReservationSlot.create(
+    reservation_target_id: sauna.id,
+    day: 1,
+    startTime: 1300,
+    endTime: 1400
+    )
 Ma17_18 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 1,
