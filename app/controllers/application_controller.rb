@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
   def logged_in_admin
     unless logged_in?
       #store_location
-      flash[:danger] = "Please log in."
       redirect_to login_url
     end
   end
@@ -19,7 +18,6 @@ class ApplicationController < ActionController::Base
   def logged_in_user
     unless userlogged_in?
       #store_location
-      flash[:danger] = "Please log in."
       redirect_to userlogin_url
     end
   end

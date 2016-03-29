@@ -10,7 +10,7 @@ class UsersessionsController < ApplicationController
       remember user
       redirect_to root_url
     else
-      flash.now[:danger] = 'Invalid email/password combination'
+      flash.now[:danger] = 'Väärä käyttäjä/salasana.'
       render 'new'
     end
   end

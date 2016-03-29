@@ -1,19 +1,19 @@
 
 <div class="page-header-narrow">
-  <h1>Log in</h1>
+  <h1>Kirjaudu sisään</h1>
 </div>
 
 <div>
   <%= form_for(:usersession, url: userlogin_path) do |f| %>
 
-    <%= f.label :name %>
+    <%= f.label :name, "käyttäjä" %>
     <br>
     <%= f.text_field :name %>
     <br>
-    <%= f.label :password %>
+    <%= f.label :password, "salasana" %>
     <br>
     <%= f.password_field :password %>
     <br>
-    <%= f.submit "Log in", class: "submit" %>
+    <%= f.submit "kirjaudu", class: "submit" %>
   <% end %>
 </div>
