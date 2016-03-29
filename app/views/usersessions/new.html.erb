@@ -6,14 +6,14 @@
 <div>
   <%= form_for(:usersession, url: userlogin_path) do |f| %>
 
-    <%= f.label :name, "käyttäjä" %>
+    <%= f.label :name, "Käyttäjä" %>
     <br>
     <%= f.text_field :name %>
     <br>
-    <%= f.label :password, "salasana" %>
+    <%= f.label :password, "Salasana" %>
     <br>
     <%= f.password_field :password %>
     <br>
-    <%= f.submit "kirjaudu", class: "submit" %>
+    <%= f.submit "Kirjaudu", class: "submit" %>
   <% end %>
 </div>
