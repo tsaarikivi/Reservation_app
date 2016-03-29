@@ -5,18 +5,25 @@
     <h1 class=""><%= @target.name %></h1>
   </div>
   <table>
-    <% for @dayIndex in 1..@target.timeWindowInDays %>
-        <tr class="table-row">
-        <% if @dayIndex != 1 %>
-          <td class="table-week-day">
-        <% else %>
-          <td class="table-week-today table-week-day">
-        <% end %>
-          <% @di = get_adjusted_day_index(@todayDayNum, @dayIndex) %>
-          <%= @dayNames[@di-1] %>
-          </td>
-            <%= render @reservation_slots.where("day = ?", @di).order(:startTime) %>
-        </tr>
-    <% end %>
+    <%
+        for @dayIndex in 1..@target.timeWindowInDays
+          @di = get_adjusted_day_index(@todayDayNum, @dayIndex)
+          @slotsForTheDay = @reservation_slots.where("day = ?", @di).order(:startTime)
+          if(@slotsForTheDay.count > 0)
+    %>
+            <tr class="table-row">
+            <% if @dayIndex != 1 %>
+              <td class="table-week-day">
+            <% else %>
+              <td class="table-week-today table-week-day">
+            <% end %>
+            <%= @dayNames[@di-1] %>
+            </td>
+            <%= render @slotsForTheDay %>
+            </tr>
+    <%
+          end
+        end
+    %>
   </table>
 </div>
