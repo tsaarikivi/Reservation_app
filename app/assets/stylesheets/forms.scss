@@ -25,10 +25,11 @@
     input.submit {
       margin: 2vw 0;
       font-size: 5vw;
-      font-weight: 300;
-      border: 1px solid $border;
+      font-weight: 400;
+      border-bottom-style: none;
       width: 96vw;
       background: $button;
+      color: $buttontext;
     }
   }
 }

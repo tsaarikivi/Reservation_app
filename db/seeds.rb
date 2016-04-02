@@ -27,6 +27,13 @@ sauna = ReservationTarget.create(
     owner_id: omistaja.id
     )
 
+kuivaushuone = ReservationTarget.create(
+    name: 'Kuivaushuone',
+    timeWindowInDays: 7,
+    category: 1,
+    owner_id: omistaja.id
+    )
+
 ######################################################
 # Users
 token_type_permanent = 1
@@ -295,6 +302,11 @@ C25 = User.create(
     C25_TO_1 = ReservationToken.create(
         user_id: C25.id,
         reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    C25_TO_2 = ReservationToken.create(
+        user_id: C25.id,
+        reservation_target_id: kuivaushuone.id,
         tokenType: token_type_use_once
         )
 

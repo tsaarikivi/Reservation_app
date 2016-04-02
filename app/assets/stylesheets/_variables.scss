@@ -2,6 +2,7 @@
 $background: #fff;
 $secondarybg: #f8f8f8;
 $honebg: #fff;
+$hone: #444;
 
 $tabledaystart: $background;
 $tabledayend: $background;
@@ -12,6 +13,10 @@ $flashbg: $topbar;
 $flash: #fff;
 
 $datebg: $background;
+$date: #555;
+$timetext: #333;
+$usertext: #666;
+$statetext: #888;
 $othersslot: $secondarybg;
 $ownslot: #cceeff;
 $freeslot: $secondarybg;
@@ -19,9 +24,7 @@ $freeind: #009900;
 $weeklyind: #0099ff;
 $onetimeind: #ff9900;
 $reservedind: #aaa;
-$timetext: #111;
-$usertext: #555;
-$statetext: #777;
+
 
 $weekdayheader: #333;
 
@@ -36,7 +39,8 @@ $border: #ccc;
 $listpre: #333;
 $listclick: #333;
 $listbtn: $secondarybg;
-$button: #eee;
+$button: $topbar;
+$buttontext: #fff;
 
 $forminput: $background;
 

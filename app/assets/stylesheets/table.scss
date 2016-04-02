@@ -16,6 +16,7 @@
     p.date {
       width: 100%;
       background: $datebg;
+      color: $date;
       margin: 1px 0 0 0;
       padding: 1vw 0;
       font-size: 5.5vw;
@@ -109,7 +110,7 @@
       margin: 0 0 0 2vw;
       padding: 0;
       font-size: 4vw;
-      
+
       color: $statetext;
     }
 
