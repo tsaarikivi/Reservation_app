@@ -45,23 +45,24 @@
   p.res-token-pre {
     padding: 0;
     margin: 0;
-    color: $listpre;
   }
 
   a.res-token {
     width: 100%;
     max-width: 400px;
     padding: 15px 0;
-    background: $listbtn;
+    background: $button;
     display: block;
     margin: 30px auto;
     text-decoration: none;
-    color: $listclick;
+    color: $buttontext;
     font-size: 30px;
     font-weight: 300;
     border-radius: 2px;
     text-align: center;
-    border: 1px solid $border;
-    border-radius: 5px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
   }
 }

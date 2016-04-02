@@ -45,7 +45,8 @@
       display: block;
       padding: 5px;
       float: left;
-      font-size: 30px;
+      font-size: 22px;
+      font-weight: 300;
     }
     input {
       height: 60px;
@@ -53,17 +54,23 @@
       max-width: 400px;
       border-style: none;
       border-bottom: 2px solid $border;
-      background: $forminput;
+      background: $background;
       border-radius: 2px;
-      font-size: 30px;
-      padding: 0 0 0 2vw;
+      font-size: 22px;
+      font-weight: 300;
+      padding: 0 0 0 8px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
     }
     input.submit {
-      margin: 15px 0 0 10px;
+      margin: 10px 0;
       padding: 0;
-      border: 2px solid $border;
+      border-bottom-style: none;
       width: 100%;
       max-width: 400px;
+      background: $button;
+      color: $buttontext;
     }
   }
 }
