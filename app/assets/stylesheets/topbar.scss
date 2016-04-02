@@ -3,9 +3,13 @@
 /*MOBILE*/
 @media only screen and (max-width: 780px) {
   header {
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 1000;
     background: $topbar;
     width: 100%;
-    height: 16vw;
+    height: $topbarheight;
     margin: 0;
     padding: 0;
     ul {
@@ -16,25 +20,29 @@
   }
 
   .topbar-btn {
-    font-weight: 300;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-weight: 400;
     font-size: 5vw;
-    margin: 2% 4% 0 4%;
-    padding: 2% 0;
+    margin: 0 3%;
+    padding: 3vw 0 2vw 0;
     display: inline-block;
     color: $topbtntext;
     background-color: $navbtn;
     text-decoration: none;
+    text-transform: uppercase;
     text-align: center;
     border-bottom: 1px solid $topbtntext;
   }
 
   #reservations-btn {
-    width: 42%;
+    width: 44%;
     float: left;
   }
 
   #logout-btn {
-    width: 42%;
+    width: 44%;
     float: right;
   }
 }

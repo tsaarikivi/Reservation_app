@@ -9,28 +9,28 @@
   }
 
   p.res-token-pre {
-    padding: 2vw 10vw;
+    padding: 0;
     margin: 0;
     color: $listpre;
   }
 
   a.res-token {
-    width: 100%;
-    padding: 4vw 0;
-    background: $listbtnstart;
-    background: -webkit-linear-gradient(left top, $listbtnstart, $listbtnend);
-    background: -o-linear-gradient(bottom right, $listbtnstart, $listbtnend);
-    background: -moz-linear-gradient(bottom right, $listbtnstart, $listbtnend);
-    background: linear-gradient(to bottom right, $listbtnstart, $listbtnend);
+    width: 90%;
+    padding: 3vw 0;
+    background: $button;
     display: block;
-    margin: 3vw 0 0 0;
+    margin: 10px auto;
     text-decoration: none;
     color: $listclick;
-    font-size: 7vw;
-    font-weight: 400;
-    border-radius: 5px;
+    font-size: 8vw;
+    font-weight: 300;
+    font-style: italic;
+    border-radius: 2px;
     text-align: center;
-    box-shadow: 0 0 1px $shadow;
+    border: 1px solid $border;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
   }
 }
 
@@ -54,11 +54,7 @@
     width: 100%;
     max-width: 400px;
     padding: 15px 0;
-    background: $listbtnstart;
-    background: -webkit-linear-gradient(left top, $listbtnstart, $listbtnend);
-    background: -o-linear-gradient(bottom right, $listbtnstart, $listbtnend);
-    background: -moz-linear-gradient(bottom right, $listbtnstart, $listbtnend);
-    background: linear-gradient(to bottom right, $listbtnstart, $listbtnend);
+    background: $listbtn;
     display: block;
     margin: 30px auto;
     text-decoration: none;
@@ -67,7 +63,7 @@
     font-weight: 300;
     border-radius: 2px;
     text-align: center;
-    box-shadow: 0 0 1px $shadow;
+    border: 1px solid $border;
     border-radius: 5px;
   }
 }

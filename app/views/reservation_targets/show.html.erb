@@ -4,26 +4,23 @@
   <div class="page-header-wide">
     <h1 class=""><%= @target.name %></h1>
   </div>
-  <table>
-    <%
-        for @dayIndex in 1..@target.timeWindowInDays
+
+
+    <% for @dayIndex in 1..@target.timeWindowInDays
           @di = get_adjusted_day_index(@todayDayNum, @dayIndex)
           @slotsForTheDay = @reservation_slots.where("day = ?", @di).order(:startTime)
-          if(@slotsForTheDay.count > 0)
-    %>
-            <tr class="table-row">
-            <% if @dayIndex != 1 %>
-              <td class="table-week-day">
-            <% else %>
-              <td class="table-week-today table-week-day">
-            <% end %>
-            <%= @dayNames[@di-1] %>
-            </td>
-            <%= render @slotsForTheDay %>
-            </tr>
-    <%
-          end
-        end
-    %>
-  </table>
+          if(@slotsForTheDay.count > 0) %>
+
+            <div class="schema-day-container">
+              <div class="date-container">
+                <p class="date"><%= @dayNames[@di-1] %></p>
+              </div>
+              <div class="slots-container">
+                <%= render @slotsForTheDay %>
+              </div>
+            </div>
+          <% end
+       end %>
+
+
 </div>

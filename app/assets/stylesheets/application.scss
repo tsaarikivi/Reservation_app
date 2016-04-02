@@ -21,30 +21,43 @@ body {
   background: $background;
 }
 
+div.body-container {
+  margin: $topbarheight 0 0 0;
+  padding: 0;
+}
+
 /*MOBILE*/
 @media only screen and (max-width: 780px) {
 
   small {
     display: block;
     margin: 0;
-    padding: 4vw;
+    padding: 4.5vw;
     font-size: 3vw;
   }
 
   h1 {
-    margin: 0 2vw;
-    font-size: 7vw;
-    font-weight: 400;
+    margin: 1px 0 0 0;
+    padding: 3vw 0;
+    width: 100%;
+    text-align: center;
+    font-size: 8vw;
+    font-weight: 300;
     font-style: italic;
+    background: $honebg;
+
   }
 
   div.flash {
     margin: 0;
-    padding: 0 2vw;
-    font-size: 5vw;
+    padding: 0;
+    text-align: center;
+    font-size: 4vw;
     color: $flash;
     font-style: italic;
-    font-weight: 300;
+    text-transform: uppercase;
+    font-weight: 400;
+    background: $flashbg;
   }
 }
 

@@ -1,21 +1,46 @@
-$background: #fdfdff;
+/* colors */
+$background: #fff;
+$secondarybg: #f8f8f8;
+$honebg: #fff;
+
 $tabledaystart: $background;
 $tabledayend: $background;
-$topbar: $background;
+
+$topbar: #0088ee;
 $navbtn: $topbar;
-$reservblslt: lightgreen;
-$releaseotdslt: #ffe296;
-$releasepdslt: #95cde8;
-$noactionslt: lightgray;
-$reservclickable: #333;
+$flashbg: $topbar;
+$flash: #fff;
+
+$datebg: $background;
+$othersslot: $secondarybg;
+$ownslot: #cceeff;
+$freeslot: $secondarybg;
+$freeind: #009900;
+$weeklyind: #0099ff;
+$onetimeind: #ff9900;
+$reservedind: #aaa;
+$timetext: #111;
+$usertext: #555;
+$statetext: #777;
+
 $weekdayheader: #333;
+
 $shadow: #888;
-$topbtntext: #333;
+
+$topbtntext: #fff;
+
 $reservationbtn: #eee;
-$border: #bbb;
+
+$border: #ccc;
+
 $listpre: #333;
 $listclick: #333;
-$listbtnstart: #fafafa;
-$listbtnend: $background;
-$forminput: #fff;
-$flash: #dd8833;
+$listbtn: $secondarybg;
+$button: #eee;
+
+$forminput: $background;
+
+
+/* math */
+$slotsize: 20vw;
+$topbarheight: 14vw;

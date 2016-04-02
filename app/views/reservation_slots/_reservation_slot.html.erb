@@ -10,52 +10,94 @@
 
     @timeString = reservation_slot.startTime.to_s.slice(0..1) + ":" + reservation_slot.startTime.to_s.slice(2..3) + "-" + reservation_slot.endTime.to_s.slice(0..1) + ":" + reservation_slot.endTime.to_s.slice(2..3)
 
-    if @isNotInHistory %>
-      <td>
-    <% else %>
-     <td>
-    <% end %>
-
-    <%
-    if reservation_slot.reservation_token_id != nil
-      @tokenOfSlot = ReservationToken.find_by_id(reservation_slot.reservation_token_id)
-      @userId = @tokenOfSlot.user_id
-      @userName = User.find_by_id(@userId).name
-    else
-      @userId = 0
-    end
-
-    current_user
     %>
 
-    <%if (@isNotInHistory) %>
-      <%if (@userId == @current_user.id) %>
+    <%# reserved slots %>
+    <% if reservation_slot.reservation_token_id != nil %>
+
+      <%
+        @tokenOfSlot = ReservationToken.find_by_id(reservation_slot.reservation_token_id)
+        @userId = @tokenOfSlot.user_id
+        @userName = User.find_by_id(@userId).name
+      %>
+
+      <%# other reserves %>
+      <% if @userId != current_user.id %>
+
         <% if (@tokenOfSlot.tokenType == token_type_permanent()) %>
-          <p class="table-slot-release-permanent">
+
+          <%# reserved nonclickable slot weekly %>
+          <%= link_to(reservation_slot, class: "others-slot nonclickable") do %>
+            <div class="indicator weekly-ind"></div>
+              <%= render 'reservation_slots/resinfo' %>
+                <p class="slot-state">
+                  vakiovuoro
+                </p>
+              </div>
+          <% end %>
+
         <% else %>
-        <p class="table-slot-release-onetime">
+
+          <%# reserved nonclickable slot one time%>
+          <%= link_to(reservation_slot, class: "others-slot nonclickable") do %>
+            <div class="indicator onetime-ind"></div>
+              <%= render 'reservation_slots/resinfo' %>
+                <p class="slot-state">
+                  kertavuoro
+                </p>
+              </div>
+          <% end %>
+
         <% end %>
-        <%= link_to @timeString, reservation_slot %>
-        </p>
-      <%elsif ((reservation_slot.reservation_token_id == nil) and @userHasTokensToUse) %>
-        <p class="table-slot-reserve">
-        <%= link_to @timeString, reservation_slot %>
-      </p>
-      <%else%>
-      <p class="table-slot-noaction">
-        <%= @timeString %>
-      </p>
-      <%end%>
+
+
+      <%# own reserves %>
+      <% else %>
+
+        <% if (@tokenOfSlot.tokenType == token_type_permanent()) %>
+
+          <%# reserved clickable slot weekly %>
+          <%= link_to(reservation_slot, class: "own-slot") do %>
+            <div class="indicator weekly-ind"></div>
+              <%= render 'reservation_slots/resinfo' %>
+                <p class="slot-state">
+                  vakiovuoro
+                </p>
+              </div>
+          <% end %>
+
+        <% else %>
+
+          <%# reserved clickable slot one time %>
+          <%= link_to(reservation_slot, class: "own-slot") do %>
+            <div class="indicator onetime-ind"></div>
+              <%= render 'reservation_slots/resinfo' %>
+                <p class="slot-state">
+                  kertavuoro
+                </p>
+              </div>
+          <% end %>
+
+        <% end %>
+
+
+
+      <% end %>
+
+    <%# free slots %>
     <% else %>
-    <p class="table-slot-noaction">
-      <%= @timeString %>
-    </p>
+
+      <% @userName = "-" %>
+      <%# free clickable slot %>
+      <%= link_to(reservation_slot, class: "free-slot") do %>
+        <div class="indicator free-ind"></div>
+          <div class="res-info-container">
+            <p class="res-time"><%= @timeString %></p>
+            <p class="res-username hidden"><%= @userName %></p>
+            <p class="slot-state">
+              vapaa
+            </p>
+          </div>
+      <% end %>
+
     <% end %>
-
-    <% if @userId != 0 %>
-      <p class="table-user-name"><%= @userName %> </p>
-    <%else%>
-      <p class="table-user-name"> Vapaa </p>
-    <%end%>
-
-    </td>

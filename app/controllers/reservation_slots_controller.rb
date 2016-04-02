@@ -29,7 +29,7 @@ class ReservationSlotsController < ApplicationController
     elsif @result == 1
         flash[:success]="Varaus onnistui."
     elsif @result == 2
-        flash[:danger]="Kaikki varaukset käytössä."
+        flash[:danger]="Ei varauksia."
     elsif @result == 3
         flash[:success]="Varaus poistettu."
     else

@@ -2,177 +2,171 @@
 
 /*MOBILE*/
 @media only screen and (max-width: 780px) {
-  .table-row {
-    margin: 3vw 0 0 0;
-    background-color: $tabledaystart;
-    width: 100%;
-    display: inline-block;
-    float: left;
-    border-bottom: 2px solid $border;
-    td {
-      width: 80%;
-      display: block;
-      margin: 0 0 1.2vw 2vw;
-      a {
-        text-decoration: none;
-        color: $reservclickable;
-        margin: 0;
-        padding: 4vw 55vw 4vw 9vw;
-        font-size: 4vw;
-        display: inline-block;
-        position: relative;
-        width: 90%;
-      }
+  div.reservation-target-list {
+
+  }
+
+  div.schema-day-container {
+    display: block;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  div.date-container {
+    p.date {
+      width: 100%;
+      background: $datebg;
+      margin: 1px 0 0 0;
+      padding: 1vw 0;
+      font-size: 5.5vw;
+      font-weight: 300;
+      font-style: italic;
+      text-align: center;
+      
     }
   }
 
-  .table-user-name {
-    font-weight: 400;
-    padding: 0 1vw;
-    margin: 0;
-    display: inline-block;
-    font-size: 4vw;
-  }
+  div.slots-container {
+    a {
+      display: block;
+      position: relative;
+      height: $slotsize;
+      margin-top: 1px;
+      text-decoration: none;
+    }
 
-  .table-time-slot,
-  .table-slot-reserve,
-  .table-slot-noaction,
-  .table-slot-release-onetime,
-  .table-slot-release-permanent {
-    font-size: 4vw;
-    font-weight: 300;
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-    position: relative;
-    width: 37vw;
-    border-radius: 4px;
-  }
+    .nonclickable {
+      pointer-events: none;
+      cursor: default;
+    }
 
-  .table-slot-reserve {
-    background-color: $reservblslt;
-  }
+    a.others-slot {
+      .res-info-container {
+        background: $othersslot;
+      }
+    }
 
-  .table-slot-release-onetime {
-    background-color: $releaseotdslt;
-  }
-  .table-slot-release-permanent {
-    background-color: $releasepdslt;
-  }
+    a.own-slot {
+      .res-info-container {
+        background: $ownslot;
+      }
+    }
 
-  .table-slot-noaction {
-    background-color: $noactionslt;
-    padding: 4vw 2vw 4vw 9vw;
-    width: 26vw;
-  }
+    a.free-slot {
+      .res-info-container {
+        background: $freeslot;
+      }
+    }
 
-  td.table-week-day {
-    font-weight: 400;
-    font-style: italic;
-    font-size: 5vw;
-    color: $weekdayheader;
-    padding: 0;
-    width: 70%;
-  }
-  td.table-week-today{
-    background-color: $tabledaystart;
-    padding: 0;
-    width: 70%;
+    div.indicator {
+      width: 3%;
+      height: $slotsize;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      float: left;
+    }
+
+    div.weekly-ind {
+      background: $weeklyind;
+    }
+
+    div.onetime-ind {
+      background: $onetimeind;
+    }
+
+    div.reserved-ind {
+      background: $reservedind;
+    }
+
+    div.free-ind {
+      background: $freeind;
+    }
+
+    div.res-info-container {
+      width: 97%;
+      height: $slotsize;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      float: left;
+    }
+
+    p.res-time {
+      margin: 1vw 0 0 2vw;
+      padding: 0;
+      font-size: 5.5vw;
+      font-weight: 300;
+      color: $timetext;
+    }
+
+    p.res-username {
+      margin: 0 0 0 2vw;
+      padding: 0;
+      font-size: 4vw;
+      color: $usertext;
+    }
+
+    p.slot-state {
+      margin: 0 0 0 2vw;
+      padding: 0;
+      font-size: 4vw;
+      color: $statetext;
+    }
+
+    p.hidden {
+      color: transparent;
+    }
   }
 }
 
 /*DESKTOP*/
 @media only screen and (min-width: 781px) {
-  table {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+  div.reservation-target-list {
+
   }
-  .table-row {
-    background-color: $tabledaystart;
-/*
-    background-color: $tabledaystart;
-    background: -webkit-linear-gradient(left, $tabledaystart, $tabledayend);
-    background: -o-linear-gradient(right, $tabledaystart, $tabledayend);
-    background: -moz-linear-gradient(right, $tabledaystart, $tabledayend);
-    background: linear-gradient(to right, $tabledaystart, $tabledayend);
-*/
-    width: 100%;
-    display: inline-block;
-    float: left;
-    border-bottom: 2px solid $border;
-    margin-top: 20px;
-    td {
-      width: 100%;
-      max-width: 125px;
-      display: inline-block;
-      margin: 15px 0;
-      a {
-        text-decoration: none;
-        color: $reservclickable;
-        padding: 10px 0 10px 14px;
-        display: inline-block;
-        position: relative;
-        width: 100%;
-        max-width: 100px;
-      }
+
+  div.schema-day-container {
+
+  }
+
+  div.date-container {
+    p.date {
+
     }
   }
 
-  .table-user-name {
-    font-weight: 400;
-    padding: 0 0 0 14px;
-    margin: 0;
-    display: inline-block;
-    font-size: 18px;
-  }
+  div.slots-container {
+    a {
 
-  .table-time-slot,
-  .table-slot-reserve,
-  .table-slot-noaction,
-  .table-slot-release-onetime,
-  .table-slot-release-permanent {
-    font-size: 18px;
-    font-weight: 300;
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    max-width: 114px;
-    border-radius: 4px;
-  }
+    }
 
-  .table-slot-reserve {
-    background-color: $reservblslt;
-  }
+    a.reserved-slot {
 
-  .table-slot-release-onetime {
-    background-color: $releaseotdslt;
-  }
-  .table-slot-release-permanent {
-    background-color: $releasepdslt;
-  }
+    }
 
-  .table-slot-noaction {
-    background-color: $noactionslt;
-    padding: 10px 0 10px 14px;
-    width: 100%;
-    max-width: 100px;
-  }
+    a.free-slot {
 
-  td.table-week-day {
-    width: 100%;
-    padding-left: 10px;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 24px;
-    color: $weekdayheader;
-    display: block;
-    margin: 20px 0 0 0;
-    padding: 0;
-  }
-  .table-week-today{
-    background-color: $tabledaystart;
+    }
+
+    div.indicator {
+
+    }
+
+    div.reserved-ind {
+
+    }
+
+    div.free-ind {
+
+    }
+
+    p.res-time {
+
+    }
+
+    p.res-username {
+
+    }
   }
 }

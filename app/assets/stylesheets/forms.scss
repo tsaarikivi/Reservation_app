@@ -6,21 +6,29 @@
     margin: 2vw;
     label {
       font-size: 5vw;
+      font-weight: 300;
     }
     input {
       height: 10vw;
-      width: 94vw;
+      width: 100%;
       border-style: none;
-      border-bottom: 2px solid $border;
+      border-bottom: 1px solid $border;
       background: $forminput;
       border-radius: 2px;
       font-size: 5vw;
+      font-weight: 300;
       padding: 0 0 0 2vw;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
     }
     input.submit {
       margin: 2vw 0;
-      border: 2px solid $border;
+      font-size: 5vw;
+      font-weight: 300;
+      border: 1px solid $border;
       width: 96vw;
+      background: $button;
     }
   }
 }
