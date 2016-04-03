@@ -1,26 +1,39 @@
-<% @dayNames = ["Maanantai", "Tiistai", "Keskiviikko", "Torstai", "Perjantai", "Lauantai", "Sunnuntai"] %>
-<% @todayDayNum = DateTime.now.strftime("%u").to_i %>
-<div class="reservation-target-list">
-  <div class="page-header-wide">
-    <h1 class=""><%= @target.name %></h1>
-  </div>
+<%
+  @dayNames = ["Maanantai", "Tiistai", "Keskiviikko", "Torstai", "Perjantai", "Lauantai", "Sunnuntai"]
+  @todayDayNum = DateTime.now.strftime("%u").to_i
+%>
 
 
-    <% for @dayIndex in 1..@target.timeWindowInDays
-          @di = get_adjusted_day_index(@todayDayNum, @dayIndex)
-          @slotsForTheDay = @reservation_slots.where("day = ?", @di).order(:startTime)
-          if(@slotsForTheDay.count > 0) %>
+<%if(@showList)%>
+<l>
+  <% @targetList.each do |t| %>
+    <%=render t %>
+    <%end%>
+</l>
+<%else%>
+    <div class="reservation-target-list">
+      <div class="page-header-wide">
+        <h1 class=""><%= @target.name %></h1>
+      </div>
 
-            <div class="schema-day-container">
-              <div class="date-container">
-                <p class="date"><%= @dayNames[@di-1] %></p>
-              </div>
-              <div class="slots-container">
-                <%= render @slotsForTheDay %>
-              </div>
-            </div>
-          <% end
-       end %>
+        <%= render @userTokens%>
+
+        <% for @dayIndex in 1..@target.timeWindowInDays
+              @di = get_adjusted_day_index(@todayDayNum, @dayIndex)
+              @slotsForTheDay = @reservation_slots.where("day = ?", @di).order(:startTime)
+              if(@slotsForTheDay.count > 0) %>
+
+                <div class="schema-day-container">
+                  <div class="date-container">
+                    <p class="date"><%= @dayNames[@di-1] %></p>
+                  </div>
+                  <div class="slots-container">
+                    <%= render @slotsForTheDay %>
+                  </div>
+                </div>
+              <% end
+           end %>
 
 
-</div>
+    </div>
+<%end%>

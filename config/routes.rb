@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'reservation_tokens#show'
+  root 'reservation_targets#show'
 
   get 'help' => 'static_pages#help'
   get 'about' => 'static_pages#about'

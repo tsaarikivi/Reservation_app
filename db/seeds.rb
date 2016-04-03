@@ -27,6 +27,14 @@ sauna = ReservationTarget.create(
     owner_id: omistaja.id
     )
 
+kuivaushuone = ReservationTarget.create(
+    name: 'Kuivaushuone',
+    timeWindowInDays: 7,
+    category: 2,
+    owner_id: omistaja.id
+    )
+
+
 ######################################################
 # Users
 token_type_permanent = 1
@@ -49,6 +57,11 @@ Hallitus = User.create(
         tokenType: token_type_use_once
         )
 
+    Hallitus__kh_TO_1 = ReservationToken.create(
+            user_id: Hallitus.id,
+            reservation_target_id: kuivaushuone.id,
+            tokenType: token_type_use_once
+            )
 
 
 A1 = User.create(
@@ -511,19 +524,22 @@ Ke17_18 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 3,
     startTime: 1700,
-    endTime: 1800
+    endTime: 1800,
+    slotStatus: 0
     )
 Ke18_19 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 3,
     startTime: 1800,
-    endTime: 1900
+    endTime: 1900,
+    slotStatus: 0
     )
 Ke19_20 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 3,
     startTime: 1900,
     endTime: 2000,
+    slotStatus: 1,
     reservation_token_id: A9_TP_1.id
     )
 Ke20_21 = ReservationSlot.create(
@@ -531,6 +547,7 @@ Ke20_21 = ReservationSlot.create(
   day: 3,
   startTime: 2000,
   endTime: 2100,
+  slotStatus: 1,
   reservation_token_id: C34_TP_1.id
 )
 Ke21_22 = ReservationSlot.create(
@@ -538,6 +555,7 @@ Ke21_22 = ReservationSlot.create(
     day: 3,
     startTime: 2100,
     endTime: 2200,
+    slotStatus: 1,
     reservation_token_id: C26_TP_1.id
     )
 ############33
@@ -545,19 +563,22 @@ To17_18 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 4,
     startTime: 1700,
-    endTime: 1800
+    endTime: 1800,
+    slotStatus: 0
     )
 To18_19 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 4,
     startTime: 1800,
-    endTime: 1900
+    endTime: 1900,
+    slotStatus: 0
     )
 To19_20 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 4,
     startTime: 1900,
     endTime: 2000,
+    slotStatus: 1,
     reservation_token_id: A6_TP_1.id
     )
 To20_21 = ReservationSlot.create(
@@ -565,6 +586,7 @@ To20_21 = ReservationSlot.create(
   day: 4,
   startTime: 2000,
   endTime: 2100,
+  slotStatus: 1,
   reservation_token_id: C25_TP_1.id
 )
 To21_22 = ReservationSlot.create(
@@ -572,6 +594,7 @@ To21_22 = ReservationSlot.create(
     day: 4,
     startTime: 2100,
     endTime: 2200,
+    slotStatus: 1,
     reservation_token_id: B20_TP_1.id
     )
 
@@ -581,6 +604,7 @@ Pe17_18 = ReservationSlot.create(
     day: 5,
     startTime: 1700,
     endTime: 1800,
+    slotStatus: 1,
     reservation_token_id: D38_TP_1.id
     )
 Pe18_19 = ReservationSlot.create(
@@ -588,6 +612,7 @@ Pe18_19 = ReservationSlot.create(
     day: 5,
     startTime: 1800,
     endTime: 1900,
+    slotStatus: 1,
     reservation_token_id: B14_TP_1.id
     )
 Pe19_20 = ReservationSlot.create(
@@ -595,6 +620,7 @@ Pe19_20 = ReservationSlot.create(
     day: 5,
     startTime: 1900,
     endTime: 2000,
+    slotStatus: 1,
     reservation_token_id: C28_TP_1.id
     )
 Pe20_21 = ReservationSlot.create(
@@ -602,13 +628,15 @@ Pe20_21 = ReservationSlot.create(
   day: 5,
   startTime: 2000,
   endTime: 2100,
+  slotStatus: 1,
   reservation_token_id: A2_TP_1.id
 )
 Pe21_22 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 5,
     startTime: 2100,
-    endTime: 2200
+    endTime: 2200,
+    slotStatus: 0
     )
 
 ##################
@@ -616,13 +644,15 @@ La17_18 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 6,
     startTime: 1700,
-    endTime: 1800
+    endTime: 1800,
+    slotStatus: 0
     )
 La18_19 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 6,
     startTime: 1800,
     endTime: 1900,
+    slotStatus: 1,
     reservation_token_id: C34_TP_2.id
     )
 La19_20 = ReservationSlot.create(
@@ -630,17 +660,128 @@ La19_20 = ReservationSlot.create(
     day: 6,
     startTime: 1900,
     endTime: 2000,
+    slotStatus: 1,
     reservation_token_id: B24_TP_1.id
     )
 La20_21 = ReservationSlot.create(
   reservation_target_id: sauna.id,
   day: 6,
   startTime: 2000,
-  endTime: 2100
+  endTime: 2100,
+  slotStatus: 0
 )
 La21_22 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 6,
     startTime: 2100,
-    endTime: 2200
+    endTime: 2200,
+    slotStatus: 0
+    )
+
+###################################################
+
+Kuivaushuone_Ma_8_13 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 1,
+    startTime: 800,
+    endTime: 1300,
+    slotStatus: 1
+    )
+Kuivaushuone_Ma_13_18 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 1,
+    startTime: 1300,
+    endTime: 1800,
+    slotStatus: 1
+    )
+
+##
+Kuivaushuone_Ti_8_13 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 2,
+    startTime: 800,
+    endTime: 1300,
+    slotStatus: 1
+    )
+Kuivaushuone_Ti_13_18 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 2,
+    startTime: 1300,
+    endTime: 1800,
+    slotStatus: 1
+    )
+##
+Kuivaushuone_Ke_8_13 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 3,
+    startTime: 800,
+    endTime: 1300,
+    slotStatus: 1
+    )
+Kuivaushuone_Ke_13_18 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 3,
+    startTime: 1300,
+    endTime: 1800,
+    slotStatus: 1
+    )
+##
+Kuivaushuone_To_8_13 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 4,
+    startTime: 800,
+    endTime: 1300,
+    slotStatus: 1
+    )
+Kuivaushuone_To_13_18 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 4,
+    startTime: 1300,
+    endTime: 1800,
+    slotStatus: 1
+    )
+##
+Kuivaushuone_Pe_8_13 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 5,
+    startTime: 800,
+    endTime: 1300,
+    slotStatus: 1
+    )
+Kuivaushuone_Pe_13_18 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 5,
+    startTime: 1300,
+    endTime: 1800,
+    slotStatus: 1
+    )
+##
+Kuivaushuone_La_8_13 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 6,
+    startTime: 800,
+    endTime: 1300,
+    slotStatus: 1
+    )
+Kuivaushuone_La_13_18 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 6,
+    startTime: 1300,
+    endTime: 1800,
+    slotStatus: 1
+    )
+##
+Kuivaushuone_Su_8_13 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 7,
+    startTime: 800,
+    endTime: 1300,
+    slotStatus: 1
+    )
+Kuivaushuone_Su_13_18 = ReservationSlot.create(
+    reservation_target_id: kuivaushuone.id,
+    day: 7,
+    startTime: 1300,
+    endTime: 1800,
+    slotStatus: 1
     )
