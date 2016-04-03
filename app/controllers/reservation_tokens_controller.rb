@@ -1,5 +1,9 @@
 class ReservationTokensController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :show]
+
+  include ReservationSlotsHelper
+
+
   def new
   end
 

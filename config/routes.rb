@@ -13,8 +13,6 @@ Rails.application.routes.draw do
 
   get 'varaus' => 'reservation_tokens#show'
 
-  get 'reserve' => 'reservation_slots#reserve'
-  get 'release' => 'reservation_slots#release'
 
   resources :admins
   resources :owners do

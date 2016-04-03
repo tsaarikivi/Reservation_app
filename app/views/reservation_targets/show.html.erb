@@ -5,18 +5,22 @@
 
 
 <%if(@showList)%>
-<l>
-  <% @targetList.each do |t| %>
-    <%=render t %>
-    <%end%>
-</l>
+        <%=render @targetList %>
 <%else%>
+
     <div class="reservation-target-list">
       <div class="page-header-wide">
         <h1 class=""><%= @target.name %></h1>
       </div>
 
+      <div class="schema-day-container">
+        <div class="date-container">
+          <p class="date"> Varaukset </p>
+        </div>
+        <div class="slots-container">
         <%= render @userTokens%>
+      </div>
+    </div>
 
         <% for @dayIndex in 1..@target.timeWindowInDays
               @di = get_adjusted_day_index(@todayDayNum, @dayIndex)
