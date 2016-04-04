@@ -57,9 +57,25 @@
       }
     }
 
+    a.small-slot {      
+      height: $smallslotsize;
+      .small-res-info-container {
+        background: $ownslot;
+      }
+    }
+
     div.indicator {
       width: 3%;
       height: $slotsize;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      float: left;
+    }
+
+    div.small-indicator {
+      width: 3%;
+      height: $smallslotsize;
       display: inline-block;
       margin: 0;
       padding: 0;
@@ -85,6 +101,15 @@
     div.res-info-container {
       width: 97%;
       height: $slotsize;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      float: left;
+    }
+
+    div.small-res-info-container {
+      width: 97%;
+      height: $smallslotsize;
       display: inline-block;
       margin: 0;
       padding: 0;
