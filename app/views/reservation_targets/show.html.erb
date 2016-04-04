@@ -16,9 +16,9 @@
       <% if (@userTokens.count != 0) %>
         <%= render @userTokens%>
       <% else %>
-        <%= render 'reservation_targets/getnew' %>
+        <h2 class="getnew warning">Et voi varata vuoroja.</h2>
       <% end %>
-      <h3 class="getnew">Hanki lisää varauksia <%= link_to "täältä.", root_url , class: "text-link"%></h3>
+        <%= render 'reservation_targets/getnew' %>
   </div>
 </div>
 
