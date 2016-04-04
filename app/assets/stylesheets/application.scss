@@ -21,6 +21,10 @@ body {
   background: $background;
 }
 
+h2.warning {
+  color: $warning;
+}
+
 /*MOBILE*/
 @media only screen and (max-width: 780px) {
 
