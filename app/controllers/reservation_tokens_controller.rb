@@ -5,11 +5,27 @@ class ReservationTokensController < ApplicationController
 
 
   def new
-    @target = ReservationTarget.find_by_id(params[:format])
     @token = ReservationToken.new
+    options = ReservationTarget.where(owner_id: current_user.owner_id)
+    @user_targets = Array.new
+    for target in options do
+      @user_targets.push([target.name, target.id])
+    end
   end
 
   def create
+    @token = ReservationToken.create() do |t|
+      t.user_id = current_user.id
+      t.reservation_target_id = params[:reservation_target_id]
+      t.tokenType = params[:tokenType]
+    end
+    if @token.save
+      flash[:success] = "Varaus luotu."
+      redirect_to root_url
+    else
+      flash[:danger] = "Jokin meni pieleen."
+      render 'new'
+    end
   end
 
   def destroy

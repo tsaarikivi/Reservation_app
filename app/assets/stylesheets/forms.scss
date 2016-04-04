@@ -31,6 +31,46 @@
       background: $button;
       color: $buttontext;
     }
+    input.radio {
+      height: 8vw;
+      width: 8vw;
+      display: inline-block;
+      float: left;
+    }
+    div.radio-container {
+      width: 42vw;
+      height: 10vw;
+      margin: 0 auto;
+      padding: 0;
+      label {
+        height: 8vw;
+        width: 8vw;
+        padding: 1vw 0 0 2vw;
+        display: inline-block;
+        float: left;
+      }
+    }
+
+    div.selection-container {
+      width: 42vw;
+      height: 15vw;
+      margin: 0 auto;
+      padding: 0;
+      label {
+        text-align: center;
+        display: block;
+        padding: 0;
+        margin: 0;
+      }
+      select {
+        width: 100%;
+        height: 8vw;
+        margin: 1vw 0 0 0;
+        padding: 0;
+        display: block;
+        font-size: 5.5vw;
+      }
+    }
   }
 }
 
