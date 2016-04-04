@@ -12,9 +12,9 @@
     @stateString = "Käytössä"
     @dayString = @dayNames[@slot.day-1]
   else
-    @timeString = " -   :  -  :  "
+    @timeString = ""
     @stateString = "Ei käytössä"
-    @dayString = "--"
+    @dayString = ""
   end
 
   if(reservation_token.tokenType == token_type_permanent())
@@ -32,7 +32,7 @@
 <%end%>
 
   <div class="res-info-container">
-    <p class="res-username"> <%=@typeString + ":" + @stateString %></p>
+    <p class="res-username"> <%=@typeString + ": " + @stateString %></p>
     <p class="res-time"><%= @dayString + " " + @timeString%></p>
   </div>
 <% end %>
