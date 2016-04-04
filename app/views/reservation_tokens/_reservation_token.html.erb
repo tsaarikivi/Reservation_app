@@ -24,14 +24,14 @@
   end
 
 %>
-<%= link_to([@current_user, reservation_token], class: "free-slot nonclickable") do %>
+<%= link_to([@current_user, reservation_token], class: "small-slot nonclickable") do %>
 <% if(reservation_token.tokenType == token_type_permanent()) %>
-  <div class="indicator weekly-ind"></div>
+  <div class="small-indicator weekly-ind"></div>
 <%else%>
-  <div class="indicator onetime-ind"></div>
+  <div class="small-indicator onetime-ind"></div>
 <%end%>
 
-  <div class="res-info-container">
+  <div class="small-res-info-container">
     <p class="res-username"> <%=@typeString + ": " + @stateString %></p>
     <p class="res-time"><%= @dayString + " " + @timeString%></p>
   </div>
