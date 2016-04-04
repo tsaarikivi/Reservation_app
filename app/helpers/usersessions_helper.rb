@@ -31,8 +31,8 @@ module UsersessionsHelper
   end
 
   def userhasmultipletargets?
-    @tokesforuser = ReservationToken.where(user_id: current_user.id).select(:reservation_target_id).distinct
-    if @tokesforuser.length > 1
+    @targetsforuser = ReservationTarget.where(owner_id: current_user.owner_id)
+    if @targetsforuser.length > 1
       return true
     end
     return false

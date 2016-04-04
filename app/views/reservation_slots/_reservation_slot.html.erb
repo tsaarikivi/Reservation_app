@@ -8,7 +8,18 @@
       end
     end
 
-    @timeString = reservation_slot.startTime.to_s.slice(0..1) + ":" + reservation_slot.startTime.to_s.slice(2..3) + "-" + reservation_slot.endTime.to_s.slice(0..1) + ":" + reservation_slot.endTime.to_s.slice(2..3)
+    if(reservation_slot.startTime < 1000)
+      @timeString =  reservation_slot.startTime.to_s.slice(0) + ":" + reservation_slot.startTime.to_s.slice(1..2)
+    else
+      @timeString =  reservation_slot.startTime.to_s.slice(0..1) + ":" + reservation_slot.startTime.to_s.slice(2..3)
+    end
+
+    if(reservation_slot.endTime < 1000)
+      @timeString += "-" + reservation_slot.endTime.to_s.slice(0) + ":" + reservation_slot.endTime.to_s.slice(1..2)
+    else
+      @timeString += "-" + reservation_slot.endTime.to_s.slice(0..1) + ":" + reservation_slot.endTime.to_s.slice(2..3)
+    end
+
 
     %>
 

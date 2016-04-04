@@ -8,7 +8,18 @@
 
 
   if(@slot != nil)
-    @timeString =  @slot.startTime.to_s.slice(0..1) + ":" + @slot.startTime.to_s.slice(2..3) + "-" + @slot.endTime.to_s.slice(0..1) + ":" + @slot.endTime.to_s.slice(2..3)
+    if(@slot.startTime < 1000)
+      @timeString =  @slot.startTime.to_s.slice(0) + ":" + @slot.startTime.to_s.slice(1..2)
+    else
+      @timeString =  @slot.startTime.to_s.slice(0..1) + ":" + @slot.startTime.to_s.slice(2..3)
+    end
+
+    if(@slot.endTime < 1000)
+      @timeString += "-" + @slot.endTime.to_s.slice(0) + ":" + @slot.endTime.to_s.slice(1..2)
+    else
+      @timeString += "-" + @slot.endTime.to_s.slice(0..1) + ":" + @slot.endTime.to_s.slice(2..3)
+    end
+
     @stateString = "Käytössä"
     @dayString = @dayNames[@slot.day-1]
   else
