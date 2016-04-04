@@ -8,7 +8,7 @@
     <h1 class=""><%= @target.name %></h1>
   </div>
 
-  <div class="schema-day-container">
+  <div class="own-schema-container">
     <div class="date-container">
       <p class="date"> Varaukset </p>
     </div>
@@ -16,8 +16,9 @@
       <% if (@userTokens.count != 0) %>
         <%= render @userTokens%>
       <% else %>
-        <%= render 'reservation_targets/getnew' %>
+        <h2 class="getnew warning">Et voi varata vuoroja.</h2>
       <% end %>
+        <%= render 'reservation_targets/getnew' %>
   </div>
 </div>
 
