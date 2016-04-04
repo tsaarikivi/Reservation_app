@@ -1,0 +1,14 @@
+
+
+<h1>Uusi varaus</h1>
+<%= form_for(current_user, @token) do %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <br>
+  <%= radio_button_tag (:tokenType )%>
+  <%= label_tag (:tokenType_1 )%>
+  <br>
+  <%= radio_button_tag (:tokenType)%>
+  <%= label_tag (:tokenType_2 )%>
+  <br>
+  <%= submit "Luo varaus" %>
+<% end %>

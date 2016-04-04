@@ -5,6 +5,8 @@ class ReservationTokensController < ApplicationController
 
 
   def new
+    @target = ReservationTarget.find_by_id(params[:format])
+    @token = ReservationToken.new
   end
 
   def create
@@ -15,8 +17,6 @@ class ReservationTokensController < ApplicationController
 
   def show
     current_user
-
-
 
     if(@current_user != nil)
       @userId = @current_user.id ## replace this with selecting the current user ID...
