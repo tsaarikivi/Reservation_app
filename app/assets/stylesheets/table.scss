@@ -57,7 +57,7 @@
       }
     }
 
-    a.small-slot {      
+    a.small-slot {
       height: $smallslotsize;
       .small-res-info-container {
         background: $ownslot;
@@ -153,6 +153,13 @@
     margin: 0 auto;
   }
 
+  div.own-schema-container {
+    width: 33%;
+    padding: 0;
+    margin: 0 auto;
+    padding: 0;
+  }
+
   div.schema-day-container {
     width: 33%;
     padding: 0;
@@ -206,9 +213,25 @@
       }
     }
 
+    a.small-slot {
+      height: $smallslotsized;
+      .small-res-info-container {
+        background: $ownslot;
+      }
+    }
+
     div.indicator {
       width: 3%;
       height: $slotsized;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      float: left;
+    }
+
+    div.small-indicator {
+      width: 3%;
+      height: $smallslotsized;
       display: inline-block;
       margin: 0;
       padding: 0;
@@ -234,6 +257,15 @@
     div.res-info-container {
       width: 97%;
       height: $slotsized;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      float: left;
+    }
+
+    div.small-res-info-container {
+      width: 97%;
+      height: $smallslotsized;
       display: inline-block;
       margin: 0;
       padding: 0;
