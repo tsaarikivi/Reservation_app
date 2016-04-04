@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'reservation_targets#show'
+  root 'reservation_targets#index'
 
   get 'help' => 'static_pages#help'
   get 'about' => 'static_pages#about'
@@ -10,9 +10,7 @@ Rails.application.routes.draw do
   get 'userlogin'   => 'usersessions#new'
   post 'userlogin'   => 'usersessions#create'
   delete 'userlogout'  => 'usersessions#destroy'
-
   get 'varaus' => 'reservation_tokens#show'
-
 
   resources :admins
   resources :owners do

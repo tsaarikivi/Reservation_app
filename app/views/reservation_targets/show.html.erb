@@ -3,41 +3,39 @@
   @todayDayNum = DateTime.now.strftime("%u").to_i
 %>
 
+<div class="reservation-target-container">
+  <div class="page-header-wide">
+    <h1 class=""><%= @target.name %></h1>
+  </div>
 
-<%if(@showList)%>
-        <%=render @targetList %>
-<%else%>
-
-    <div class="reservation-target-list">
-      <div class="page-header-wide">
-        <h1 class=""><%= @target.name %></h1>
-      </div>
-
-      <div class="schema-day-container">
-        <div class="date-container">
-          <p class="date"> Varaukset </p>
-        </div>
-        <div class="slots-container">
+  <div class="schema-day-container">
+    <div class="date-container">
+      <p class="date"> Varaukset </p>
+    </div>
+    <div class="slots-container">
+      <% if (@userTokens.count != 0) %>
         <%= render @userTokens%>
-      </div>
-    </div>
+      <% else %>
+        <%= render 'reservation_targets/getnew' %>
+      <% end %>
+  </div>
+</div>
 
-        <% for @dayIndex in 1..@target.timeWindowInDays
-              @di = get_adjusted_day_index(@todayDayNum, @dayIndex)
-              @slotsForTheDay = @reservation_slots.where("day = ?", @di).order(:startTime)
-              if(@slotsForTheDay.count > 0) %>
+<% for @dayIndex in 1..@target.timeWindowInDays
+      @di = get_adjusted_day_index(@todayDayNum, @dayIndex)
+      @slotsForTheDay = @reservation_slots.where("day = ?", @di).order(:startTime)
+      if(@slotsForTheDay.count > 0) %>
 
-                <div class="schema-day-container">
-                  <div class="date-container">
-                    <p class="date"><%= @dayNames[@di-1] %></p>
-                  </div>
-                  <div class="slots-container">
-                    <%= render @slotsForTheDay %>
-                  </div>
-                </div>
-              <% end
-           end %>
+        <div class="schema-day-container">
+          <div class="date-container">
+            <p class="date"><%= @dayNames[@di-1] %></p>
+          </div>
+          <div class="slots-container">
+            <%= render @slotsForTheDay %>
+          </div>
+        </div>
+      <% end
+   end %>
 
 
-    </div>
-<%end%>
+</div>

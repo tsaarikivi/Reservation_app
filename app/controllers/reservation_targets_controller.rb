@@ -21,17 +21,17 @@ class ReservationTargetsController < ApplicationController
   end
 
   def show
-    @showList = false
-    if(params[:id] != nil)
-      @target = ReservationTarget.find_by_id(params[:id])
-      @reservation_slots = ReservationSlot.where(reservation_target_id: @target.id)
-      @cleared = clear_old_one_time_tokens(@reservation_slots)
-      @userHasTokensToUse = check_if_current_user_has_tokens(@target.id)
+    @target = ReservationTarget.find_by_id(params[:id])
+    @reservation_slots = ReservationSlot.where(reservation_target_id: @target.id)
+    @cleared = clear_old_one_time_tokens(@reservation_slots)
+    @userHasTokensToUse = check_if_current_user_has_tokens(@target.id)
+  end
+
+  def index
+    if userlogged_in?
+      @targetList = ReservationTarget.where(owner_id: current_user.owner_id)
     else
-      ##show list of targets available to the user
-      @showList = true
-      current_user
-      @targetList = ReservationTarget.where(owner_id: @current_user.owner_id)
+      redirect_to userlogin_path
     end
   end
 

@@ -2,19 +2,13 @@
 
 /*MOBILE*/
 @media only screen and (max-width: 780px) {
-  ul.reservation-token-list {
+  ul.reservation-target-list {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  p.res-token-pre {
-    padding: 0;
-    margin: 0;
-    color: $listpre;
-  }
-
-  a.res-token {
+  a.res-target {
     width: 90%;
     padding: 3vw 0;
     background: $button;
@@ -35,19 +29,14 @@
 /*DESKTOP*/
 @media only screen and (min-width: 781px) {
 
-  ul.reservation-token-list {
+  ul.reservation-target-list {
     list-style: none;
     padding: 0;
     margin: 0;
     text-align: center;
   }
 
-  p.res-token-pre {
-    padding: 0;
-    margin: 0;
-  }
-
-  a.res-token {
+  a.res-target {
     width: 100%;
     max-width: 400px;
     padding: 15px 0;
