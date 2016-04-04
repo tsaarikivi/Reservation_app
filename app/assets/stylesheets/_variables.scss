@@ -1,15 +1,15 @@
 /* colors */
 $background: #fff;
 $secondarybg: #f8f8f8;
-$honebg: #fff;
+$honebg: $background;
 $hone: #444;
 $topbar: #0088ee;
-$navbtn: $topbar;
+$navbtn: #0088ee;
 $warning: #ff0000;
-$flashbg: $topbar;
-$flash: #fff;
-$textlinkbtn: $topbar;
-$textlink: #fff;
+$flashbg: $navbtn;
+$flash: $background;
+$textlinkbtn: $navbtn;
+$textlink: $background;
 
 
 $tabledaystart: $background;
@@ -44,7 +44,7 @@ $border: #ccc;
 $listpre: #333;
 $listclick: #333;
 $listbtn: $secondarybg;
-$button: $topbar;
+$button: $navbtn;
 $buttontext: #fff;
 
 $forminput: $background;
@@ -56,4 +56,4 @@ $smallslotsize: 13vw;
 $slotsized: 95px;
 $smallslotsized: 60px;
 $topbarheightm: 14vw;
-$topbarheightd: 80px;
+$topbarheightd: 75px;
