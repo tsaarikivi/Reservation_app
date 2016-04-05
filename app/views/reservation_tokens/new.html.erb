@@ -26,3 +26,5 @@
   <%= link_to  "Poista " + @tokenText1, removetoken_path(id: t.id, reservation_target_id: @target.id), method: "post", data: { confirm: "Oletko varma että haluat poistaa " + @tokenText2 + "?" }, class: "button-large red" %>
   <%end%>
 <%end%>
+
+<p class="note">HUOM! Voit ainoastaan poistaa ei-käytössä olevia varauksia.</p>

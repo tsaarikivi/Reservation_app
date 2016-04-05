@@ -70,11 +70,15 @@ h2.middle {
 
   h2 {
     font-weight: 300;
+    font-size: 7vw;
+    color: $hone;
   }
 
   h3 {
     font-weight: 300;
+    font-size: 6.5;
     height: 12vw;
+    color: $hone;
     a.text-link {
       padding: 0 1vw;
       font-weight: 300;
@@ -98,6 +102,13 @@ h2.middle {
     text-transform: uppercase;
     font-weight: 400;
     background: $flashbg;
+  }
+
+  p.note {
+    text-align: center;
+    color: $notetext;
+    font-size: 5vw;
+    font-style: italic;
   }
 }
 
@@ -139,6 +150,7 @@ h2.middle {
     font-size: 40px;
     font-weight: 300;
     font-style: italic;
+    color: $hone;
   }
 
   .getnew {
@@ -155,10 +167,14 @@ h2.middle {
 
   h2 {
     font-weight: 300;
+    color: $hone;
+    font-size: 32px;
   }
 
   h3 {
     font-weight: 300;
+    font-size: 30px;
+    color: $hone;
     a.text-link {
       padding: 0 4px;
       font-weight: 300;
@@ -182,5 +198,12 @@ h2.middle {
     text-transform: uppercase;
     font-weight: 400;
     background: $flashbg;
+  }
+
+  p.note {
+    text-align: center;
+    color: $notetext;
+    font-size: 20px;
+    font-style: italic;
   }
 }
