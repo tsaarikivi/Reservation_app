@@ -4,13 +4,21 @@ class ReservationTokensController < ApplicationController
   include ReservationSlotsHelper
 
 
-  def new
+  def newvakio
     @token = ReservationToken.new
-    options = ReservationTarget.where(owner_id: current_user.owner_id)
-    @user_targets = Array.new
-    for target in options do
-      @user_targets.push([target.name, target.id])
-    end
+    @token.user_id = current_user.id
+    @token.tokenType = 1
+    @token.reservation_target_id = current_target(nil).id
+    @token.save
+  end
+  def newkerta
+    @token = ReservationToken.new
+    @token.user_id = current_user.id
+    @token.tokenType = 2
+    @token.reservation_target_id = current_target(nil).id
+    @token.save
+  end
+  def new
   end
 
   def create

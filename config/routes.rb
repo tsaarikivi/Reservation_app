@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   delete 'userlogout'  => 'usersessions#destroy'
   get 'varaus' => 'reservation_tokens#show'
   get 'uusivaraus' => 'reservation_tokens#new'
+  get 'uusivakio' => 'reservation_tokens#newvakio'
+  get 'uusikerta' => 'reservation_tokens#newkerta'
 
   resources :admins
   resources :owners do

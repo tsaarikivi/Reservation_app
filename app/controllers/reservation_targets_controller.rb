@@ -1,6 +1,7 @@
 class ReservationTargetsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :show]
   include ReservationTargetsHelper
+  include ApplicationHelper
 
   def new
     @reservation_target = ReservationTarget.new
@@ -22,6 +23,7 @@ class ReservationTargetsController < ApplicationController
 
   def show
     @target = ReservationTarget.find_by_id(params[:id])
+    current_target(@target)
     @reservation_slots = ReservationSlot.where(reservation_target_id: @target.id)
     @cleared = clear_old_one_time_tokens(@reservation_slots)
     @userHasTokensToUse = check_if_current_user_has_tokens(@target.id)
