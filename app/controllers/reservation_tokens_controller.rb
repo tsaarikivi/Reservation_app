@@ -5,11 +5,11 @@ class ReservationTokensController < ApplicationController
 
 
   def new
-    @token = ReservationToken.new
-    options = ReservationTarget.where(owner_id: current_user.owner_id)
-    @user_targets = Array.new
-    for target in options do
-      @user_targets.push([target.name, target.id])
+    if params[:reservation_target_id] == nil
+      redirect_to root_url
+    else
+      @token = ReservationToken.new
+      @target = ReservationTarget.find(params[:reservation_target_id])
     end
   end
 

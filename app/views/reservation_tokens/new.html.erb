@@ -1,22 +1,4 @@
 <h1>Uusi varaus</h1>
-<%= form_for [current_user, @token] do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <br>
-  <div class="selection-container">
-    <%= f.label(:reservation_target_id, "Valitse kohde") %>
-    <%= select_tag(:reservation_target_id, options_for_select(@user_targets)) %>
-  </div>
-
-  <br>
-  <div class="radio-container">
-    <%= f.radio_button(:tokenType, 1, class: "radio") %>
-    <%= f.label("Vakiovaraus") %>
-  </div>
-  <br>
-  <div class="radio-container">
-    <%= f.radio_button(:tokenType, 2, class: "radio") %>
-    <%= f.label("Kertavaraus") %>
-  </div>
-  <br>
-  <%= f.submit( "Luo varaus", class: "submit") %>
-<% end %>
+<h2 class="middle">Kohde: <%= @target.name %></h2>
+<%= link_to "Luo Vakiovaraus", createtoken_path(reservation_target_id: @target.id, tokenType: 1), method: "post", data: { confirm: "Oletko varma että haluat hankkia Vakiovarauksen?" }, class: "res-target" %>
+<%= link_to "Luo Kertavaraus", createtoken_path(reservation_target_id: @target.id, tokenType: 2), method: "post", data: { confirm: "Oletko varma että haluat hankkia Kertavarauksen?" }, class: "res-target" %>

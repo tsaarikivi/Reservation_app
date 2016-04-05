@@ -25,6 +25,10 @@ h2.warning {
   color: $warning;
 }
 
+h2.middle {
+  text-align: center;
+}
+
 /*MOBILE*/
 @media only screen and (max-width: 780px) {
 

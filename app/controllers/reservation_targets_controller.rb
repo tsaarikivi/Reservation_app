@@ -21,7 +21,7 @@ class ReservationTargetsController < ApplicationController
   end
 
   def show
-    @target = ReservationTarget.find_by_id(params[:id])
+    @target = ReservationTarget.find(params[:id])
     @reservation_slots = ReservationSlot.where(reservation_target_id: @target.id)
     @cleared = clear_old_one_time_tokens(@reservation_slots)
     @userHasTokensToUse = check_if_current_user_has_tokens(@target.id)
