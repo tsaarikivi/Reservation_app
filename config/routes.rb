@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'varaus' => 'reservation_tokens#show'
   get 'uusivaraus' => 'reservation_tokens#new'
   post 'createtoken' => 'reservation_tokens#create'
+  post 'removetoken' => 'reservation_tokens#destroy'
 
   resources :admins
   resources :owners do

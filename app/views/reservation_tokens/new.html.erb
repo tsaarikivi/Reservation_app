@@ -1,4 +1,29 @@
 <h1>Uusi varaus</h1>
 <h2 class="middle">Kohde: <%= @target.name %></h2>
-<%= link_to "Luo Vakiovaraus", createtoken_path(reservation_target_id: @target.id, tokenType: 1), method: "post", data: { confirm: "Oletko varma että haluat hankkia Vakiovarauksen?" }, class: "res-target" %>
-<%= link_to "Luo Kertavaraus", createtoken_path(reservation_target_id: @target.id, tokenType: 2), method: "post", data: { confirm: "Oletko varma että haluat hankkia Kertavarauksen?" }, class: "res-target" %>
+<% if(@target.category == 1)%>
+  <%= link_to "Luo Vakiovaraus", createtoken_path(reservation_target_id: @target.id, tokenType: 1), method: "post", data: { confirm: "Oletko varma että haluat hankkia Vakiovarauksen?" }, class: "res-target-add" %>
+<%end%>
+<%= link_to "Luo Kertavaraus", createtoken_path(reservation_target_id: @target.id, tokenType: 2), method: "post", data: { confirm: "Oletko varma että haluat hankkia Kertavarauksen?" }, class: "res-target-add" %>
+
+<%
+@tokensToRemove.each do |t|
+
+  @tokenText1 = ""
+  @tokenText2 = ""
+  if (t.tokenType == 1)
+    @tokenText1 = "vakiovaraus"
+    @tokenText2 = "vakiovarauksen"
+  end
+  if (t.tokenType == 2)
+    @tokenText1 = "kertavaraus"
+    @tokenText2 = "kertavarauksen"
+  end
+
+  if(ReservationSlot.find_by(reservation_token_id: t.id) == nil)
+%>
+
+  <%= link_to  "Poista " + @tokenText1, removetoken_path(id: t.id, reservation_target_id: @target.id), method: "post", data: { confirm: "Oletko varma että haluat poistaa " + @tokenText2 + "?" }, class: "res-target-del" %>
+  <%end%>
+<%end%>
+
+<%= link_to "Takaisin", "/reservation_targets/" + @target.id.to_s, class: "res-target" %>

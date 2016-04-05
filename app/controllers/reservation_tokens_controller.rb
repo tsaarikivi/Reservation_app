@@ -8,9 +8,10 @@ class ReservationTokensController < ApplicationController
     if params[:reservation_target_id] == nil
       redirect_to root_url
     else
-      @token = ReservationToken.new
+      #@token = ReservationToken.new
       @target = ReservationTarget.find(params[:reservation_target_id])
     end
+    @tokensToRemove = ReservationToken.where("user_id = ? and reservation_target_id = ?", current_user.id, params[:reservation_target_id])
   end
 
   def create
@@ -21,7 +22,7 @@ class ReservationTokensController < ApplicationController
     end
     if @token.save
       flash[:success] = "Varaus luotu."
-      redirect_to root_url
+      redirect_to "/reservation_targets/" + params[:reservation_target_id].to_s
     else
       flash[:danger] = "Jokin meni pieleen."
       render 'new'
@@ -29,6 +30,14 @@ class ReservationTokensController < ApplicationController
   end
 
   def destroy
+    @token = ReservationToken.find_by_id(params[:id])
+    if @token.destroy
+      flash[:success] = "Varaus poistettu."
+      redirect_to "/reservation_targets/" + params[:reservation_target_id].to_s
+    else
+      flash[:danger] = "Jokin meni pieleen."
+      render 'new'
+    end
   end
 
   def show
