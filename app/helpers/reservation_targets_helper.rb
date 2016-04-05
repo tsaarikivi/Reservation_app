@@ -19,7 +19,7 @@ module ReservationTargetsHelper
 
   def check_if_current_user_has_tokens(targetId)
     current_user
-    @userTokens = ReservationToken.where("user_id = ? and reservation_target_id = ?", @current_user.id, targetId)
+    @userTokens = ReservationToken.where("user_id = ? and reservation_target_id = ?", @current_user.id, targetId).order(:tokenType)
     @userTokens.each do |t|
       if(ReservationSlot.find_by(reservation_token_id: t.id) == nil)
         return true

@@ -11,7 +11,7 @@ class ReservationTokensController < ApplicationController
       #@token = ReservationToken.new
       @target = ReservationTarget.find(params[:reservation_target_id])
     end
-    @tokensToRemove = ReservationToken.where("user_id = ? and reservation_target_id = ?", current_user.id, params[:reservation_target_id])
+    @tokensToRemove = ReservationToken.where("user_id = ? and reservation_target_id = ?", current_user.id, params[:reservation_target_id]).order(:tokenType)
   end
 
   def create
