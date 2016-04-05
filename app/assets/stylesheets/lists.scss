@@ -8,53 +8,29 @@
     margin: 0;
   }
 
-  a.res-target {
+  a.button-large{
     width: 90%;
     padding: 3vw 0;
-    background: $button;
     display: block;
     margin: 10px auto;
     text-decoration: none;
+    font-size: 7vw;
+    font-weight: 300;
+    border-radius: 2px;
+    text-align: center;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     color: $buttontext;
-    font-size: 7vw;
-    font-weight: 300;
-    border-radius: 2px;
-    text-align: center;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
   }
-  a.res-target-add {
-    width: 90%;
-    padding: 3vw 0;
-    background: $buttonadd;
-    display: block;
-    margin: 10px auto;
-    text-decoration: none;
-    color: $buttonaddtext;
-    font-size: 7vw;
-    font-weight: 300;
-    border-radius: 2px;
-    text-align: center;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+  a.blue {
+    background: $buttonblue;
   }
-  a.res-target-del {
-    width: 90%;
-    padding: 3vw 0;
-    background: $buttondel;
-    display: block;
-    margin: 10px auto;
-    text-decoration: none;
-    color: $buttondeltext;
-    font-size: 7vw;
-    font-weight: 300;
-    border-radius: 2px;
-    text-align: center;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+  a.green{
+    background: $buttongreen;
+  }
+  a.red{
+    background: $buttonred;
   }
 }
 
@@ -68,11 +44,10 @@
     text-align: center;
   }
 
-  a.res-target {
+  a.button-large {
     width: 100%;
     max-width: 400px;
     padding: 15px 0;
-    background: $button;
     display: block;
     margin: 30px auto;
     text-decoration: none;
@@ -86,40 +61,13 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
   }
-  a.res-target-add {
-    width: 100%;
-    max-width: 400px;
-    padding: 15px 0;
-    background: $buttonadd;
-    display: block;
-    margin: 30px auto;
-    text-decoration: none;
-    color: $buttonaddtext;
-    font-size: 30px;
-    font-weight: 300;
-    border-radius: 2px;
-    text-align: center;
-    border-radius: 2px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+  a.blue {
+    background: $buttonblue;
   }
-  a.res-target-del {
-    width: 100%;
-    max-width: 400px;
-    padding: 15px 0;
-    background: $buttondel;
-    display: block;
-    margin: 30px auto;
-    text-decoration: none;
-    color: $buttondeltext;
-    font-size: 30px;
-    font-weight: 300;
-    border-radius: 2px;
-    text-align: center;
-    border-radius: 2px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+  a.green{
+    background: $buttongreen;
+  }
+  a.red{
+    background: $buttonred;
   }
 }
