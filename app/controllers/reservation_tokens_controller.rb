@@ -2,7 +2,7 @@ class ReservationTokensController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :show]
 
   include ReservationSlotsHelper
-
+  include ReservationTokensHelper
 
   def new
     if params[:reservation_target_id] == nil
@@ -21,6 +21,7 @@ class ReservationTokensController < ApplicationController
       t.tokenType = params[:tokenType]
     end
     if @token.save
+      write_token_log_entry("LISÄÄVARAUS: ", @token)
       flash[:success] = "Varaus luotu."
       redirect_to "/reservation_targets/" + params[:reservation_target_id].to_s
     else
@@ -31,6 +32,7 @@ class ReservationTokensController < ApplicationController
 
   def destroy
     @token = ReservationToken.find_by_id(params[:id])
+    write_token_log_entry("POISTAVARAUS: ", @token)
     if @token.destroy
       flash[:success] = "Varaus poistettu."
       redirect_to "/reservation_targets/" + params[:reservation_target_id].to_s

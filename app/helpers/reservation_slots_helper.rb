@@ -43,7 +43,7 @@ end
 def write_log_entry(oper, tkn, slt)
   $target = ReservationTarget.find_by_id(tkn.reservation_target_id)
 
-  @theevent = oper + token_type_to_s(tkn.tokenType) + " Käyttäjä: " + current_user.name + " Kohde: " + $target.name + " Päivä: " + slt.day.to_s + " Aika: " + slt.startTime.to_s.slice(0..1) + ":" + slt.startTime.to_s.slice(2..3) + "-" + slt.endTime.to_s.slice(0..1) + ":" + slt.endTime.to_s.slice(2..3) + " käyttöpäivä: " + tkn.useDay.to_s
+  @theevent = oper + "Tapahtumaaika: "+ DateTime.now.to_s + " " + token_type_to_s(tkn.tokenType) + " Käyttäjä: " + current_user.name + " Kohde: " + $target.name + " Päivä: " + slt.day.to_s + " Aika: " + slt.startTime.to_s.slice(0..1) + ":" + slt.startTime.to_s.slice(2..3) + "-" + slt.endTime.to_s.slice(0..1) + ":" + slt.endTime.to_s.slice(2..3) + " käyttöpäivä: " + tkn.useDay.to_s
 
   Reservationlog.create!(owner_id: @current_user.owner_id, logstr: @theevent).save
 
