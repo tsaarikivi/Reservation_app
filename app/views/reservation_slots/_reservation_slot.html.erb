@@ -69,7 +69,7 @@
         <% if (@tokenOfSlot.tokenType == token_type_permanent()) %>
 
           <%# reserved clickable slot weekly %>
-          <%= link_to(reservation_slot, class: "own-slot") do %>
+          <%= link_to(reservation_slot, class: "own-slot", data: { confirm: "Oletko varma että haluat poistaa tämän varauksen?" }) do %>
             <div class="indicator weekly-ind"></div>
               <%= render 'reservation_slots/resinfo' %>
                 <p class="slot-state">
@@ -81,7 +81,7 @@
         <% else %>
 
           <%# reserved clickable slot one time %>
-          <%= link_to(reservation_slot, class: "own-slot") do %>
+          <%= link_to(reservation_slot, class: "own-slot", data: { confirm: "Oletko varma että haluat poistaa tämän varauksen?" }) do %>
             <div class="indicator onetime-ind"></div>
               <%= render 'reservation_slots/resinfo' %>
                 <p class="slot-state">
@@ -101,7 +101,7 @@
 
       <% @userName = "-" %>
       <%# free clickable slot %>
-      <%= link_to(reservation_slot, class: "free-slot") do %>
+      <%= link_to(reservation_slot, class: "free-slot", data: { confirm: "Oletko varma että haluat varata tämän ajan?" }) do %>
         <div class="indicator free-ind"></div>
           <div class="res-info-container">
             <p class="res-time"><%= @timeString %></p>
