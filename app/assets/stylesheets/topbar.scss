@@ -12,6 +12,7 @@
     height: $topbarheightm;
     margin: 0;
     padding: 0;
+    overflow: hidden;
     ul {
       list-style: none;
       margin: 0;
@@ -26,14 +27,13 @@
     font-weight: 400;
     font-size: 5vw;
     margin: 0 3%;
-    padding: 3vw 0 2vw 0;
+    padding: 4vw 0 4vw 0;
     display: inline-block;
     color: $topbtntext;
     background-color: $navbtn;
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
-    border-bottom: 1px solid $topbtntext;
   }
 
   #reservations-btn {
@@ -70,15 +70,14 @@
   .topbar-btn {
     font-weight: 300;
     font-size: 26px;
-    padding: 20px 0 12px 0;
-    margin: 0 4px;
+    padding: 12px 0 12px 0;
+    margin: 8px 4px;
     color: $topbtntext;
     width: 200px;
     background-color: $navbtn;
     text-decoration: none;
     text-align: center;
     display: block;
-    border-bottom: 1px solid $topbtntext;
   }
 
   #reservations-btn {
