@@ -26,7 +26,7 @@
   }
 
   div.slots-container {
-    a {
+    .slot {
       display: block;
       position: relative;
       height: $slotsize;
@@ -34,30 +34,34 @@
       text-decoration: none;
     }
 
+    .confirm {
+      display: none;
+    }
+
     .nonclickable {
       pointer-events: none;
       cursor: default;
     }
 
-    a.others-slot {
+    .others-slot {
       .res-info-container {
         background: $othersslot;
       }
     }
 
-    a.own-slot {
+    .own-slot {
       .res-info-container {
         background: $ownslot;
       }
     }
 
-    a.free-slot {
+    .free-slot {
       .res-info-container {
         background: $freeslot;
       }
     }
 
-    a.small-slot {
+    .small-slot {
       height: $smallslotsize;
       .small-res-info-container {
         background: $ownslot;
@@ -142,6 +146,57 @@
     p.hidden {
       color: transparent;
     }
+
+    p.confirmation-text {
+      font-size: 5vw;
+      color: $warning;
+      font-weight: 300;
+      margin: 1.2vw 0 0 2vw;
+    }
+
+    /*.confirm-ok, .confirm-cancel {
+      margin-top: 2vw;
+      padding: 1vw 0;
+      border-radius: 2px;
+      width: 20vw;
+      height: 5.5vw;
+      text-align: center;
+      text-decoration: none;
+      color: $buttontext;
+      font-size: 4vw;
+    }*/
+
+    .confirm-ok {
+      margin-top: 2vw;
+      padding: 1vw 0;
+      border-radius: 2px;
+      width: 33%;
+      height: 5.5vw;
+      text-align: center;
+      text-decoration: none;
+      color: $buttontext;
+      font-size: 4vw;
+
+      background: $buttongreen;
+      margin-left: 33%;
+    }
+
+    /*.confirm-cancel {
+      background: $buttonred;
+      margin-left: 2.5vw;
+    }*/
+
+    .slot:hover {
+      .res-info-container {
+        background: $hover;
+      }
+    }
+
+    div.others-slot:hover {
+      .res-info-container {
+        background: $nohover;
+      }
+    }
   }
 }
 
@@ -182,7 +237,8 @@
   }
 
   div.slots-container {
-    a {
+
+    .slot {
       display: block;
       position: relative;
       height: $slotsized;
@@ -190,30 +246,46 @@
       text-decoration: none;
     }
 
+    .slot:hover {
+      .res-info-container {
+        background: $hover;
+      }
+    }
+
+    div.others-slot:hover {
+      .res-info-container {
+        background: $nohover;
+      }
+    }
+
+    .confirm {
+      display: none;
+    }
+
     .nonclickable {
       pointer-events: none;
       cursor: default;
     }
 
-    a.others-slot {
+    .others-slot {
       .res-info-container {
         background: $othersslot;
       }
     }
 
-    a.own-slot {
+    .own-slot {
       .res-info-container {
         background: $ownslot;
       }
     }
 
-    a.free-slot {
+    .free-slot {
       .res-info-container {
         background: $freeslot;
       }
     }
 
-    a.small-slot {
+    .small-slot {
       height: $smallslotsized;
       .small-res-info-container {
         background: $ownslot;
@@ -302,5 +374,42 @@
     p.hidden {
       color: transparent;
     }
+
+    p.confirmation-text {
+      font-size: 18px;
+      color: $warning;
+      font-weight: 300;
+      margin: 10px 0 0 10px;
+    }
+
+    /*.confirm-ok, .confirm-cancel {
+      margin-top: 5px;
+      padding: 5px 10px;
+      border-radius: 2px;
+      width: 40px;
+      height: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: $buttontext;
+    }*/
+
+    .confirm-ok {
+      margin-top: 5px;
+      padding: 5px 0;
+      border-radius: 2px;
+      width: 33%;
+      height: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: $buttontext;
+
+      background: $buttongreen;
+      margin-left: 33%;
+    }
+
+    /*.confirm-cancel {
+      background: $buttonred;
+      margin-left: 5px;
+    }*/
   }
 }

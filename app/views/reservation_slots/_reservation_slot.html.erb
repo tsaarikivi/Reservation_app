@@ -1,3 +1,4 @@
+<% @slotidstring = "slotid-" << reservation_slot.id.to_s %>
 
     <%
     @isNotInHistory = true
@@ -39,26 +40,26 @@
         <% if (@tokenOfSlot.tokenType == token_type_permanent()) %>
 
           <%# reserved nonclickable slot weekly %>
-          <%= link_to(reservation_slot, class: "others-slot nonclickable") do %>
+          <div id="others-slot" class="others-slot slot">
             <div class="indicator weekly-ind"></div>
-              <%= render 'reservation_slots/resinfo' %>
-                <p class="slot-state">
-                  Vakiovaraus
-                </p>
-              </div>
-          <% end %>
+            <div class="res-info-container">
+              <p class="res-time"><%= @timeString %></p>
+              <p class="res-username"><%= @userName %></p>
+              <p class="slot-state">Vakiovaraus</p>
+            </div>
+          </div>
 
         <% else %>
 
           <%# reserved nonclickable slot one time%>
-          <%= link_to(reservation_slot, class: "others-slot nonclickable") do %>
+          <div id="others-slot" class="others-slot slot">
             <div class="indicator onetime-ind"></div>
-              <%= render 'reservation_slots/resinfo' %>
-                <p class="slot-state">
-                  Kertavaraus
-                </p>
-              </div>
-          <% end %>
+            <div class="res-info-container">
+              <p class="res-time"><%= @timeString %></p>
+              <p class="res-username "><%= @userName %></p>
+              <p class="slot-state">Kertavaraus</p>
+            </div>
+          </div>
 
         <% end %>
 
@@ -69,26 +70,36 @@
         <% if (@tokenOfSlot.tokenType == token_type_permanent()) %>
 
           <%# reserved clickable slot weekly %>
-          <%= link_to(reservation_slot, class: "own-slot", data: { confirm: "Oletko varma että haluat poistaa\r" + @dayNames[@di-1] + " " + @timeString + "\rvarauksen?" }) do %>
+          <div id="<%= @slotidstring %>" class="own-slot slot">
             <div class="indicator weekly-ind"></div>
-              <%= render 'reservation_slots/resinfo' %>
-                <p class="slot-state">
-                  Vakiovaraus
-                </p>
-              </div>
-          <% end %>
+            <div class="res-info-container">
+              <p class="res-time no-confirm"><%= @timeString %></p>
+              <p class="res-username no-confirm"><%= @userName %></p>
+              <p class="slot-state no-confirm">
+                Vakiovaraus
+              </p>
+              <p class="confirmation-text confirm">Haluatko poistaa varauksen <%= @timeString %>?</p>
+              <%= link_to "Kyllä", reservation_slot, class: "confirm-ok confirm" %>
+              <%# <a class="confirm-cancel confirm">Ei</a> %>
+            </div>
+          </div>
 
         <% else %>
 
           <%# reserved clickable slot one time %>
-          <%= link_to(reservation_slot, class: "own-slot", data: { confirm: "Oletko varma että haluat poistaa\r" + @dayNames[@di-1] + " " + @timeString + "\rvarauksen?" }) do %>
+          <div id="<%= @slotidstring %>" class="own-slot slot">
             <div class="indicator onetime-ind"></div>
-              <%= render 'reservation_slots/resinfo' %>
-                <p class="slot-state">
-                  Kertavaraus
-                </p>
-              </div>
-          <% end %>
+            <div class="res-info-container">
+              <p class="res-time no-confirm"><%= @timeString %></p>
+              <p class="res-username no-confirm"><%= @userName %></p>
+              <p class="slot-state no-confirm">
+                Vakiovaraus
+              </p>
+              <p class="confirmation-text confirm">Haluatko poistaa varauksen <%= @timeString %>?</p>
+              <%= link_to "Kyllä", reservation_slot, class: "confirm-ok confirm" %>
+              <%# <a class="confirm-cancel confirm">Ei</a> %>
+            </div>
+          </div>
 
         <% end %>
 
@@ -101,15 +112,16 @@
 
       <% @userName = "-" %>
       <%# free clickable slot %>
-      <%= link_to(reservation_slot, class: "free-slot", data: { confirm: "Oletko varma että haluat varata\r" + @dayNames[@di-1] + " " + @timeString + "\rajan?" }) do %>
+      <div id="<%= @slotidstring %>" class="free-slot slot">
         <div class="indicator free-ind"></div>
-          <div class="res-info-container">
-            <p class="res-time"><%= @timeString %></p>
-            <p class="res-username hidden"><%= @userName %></p>
-            <p class="slot-state">
-              Vapaa
-            </p>
-          </div>
-      <% end %>
+        <div class="res-info-container">
+          <p class="res-time no-confirm"><%= @timeString %></p>
+          <p class="res-username hidden no-confirm"><%= @userName %></p>
+          <p class="slot-state no-confirm">Vapaa</p>
+          <p class="confirmation-text confirm">Haluatko varata ajan <%= @timeString %>?</p>
+          <%= link_to "Kyllä", reservation_slot, class: "confirm-ok confirm" %>
+          <%# <a class="confirm-cancel confirm">Ei</a> %>
+        </div>
+      </div>
 
     <% end %>
