@@ -29,6 +29,16 @@ h2.middle {
   text-align: center;
 }
 
+.blue {
+  background: $buttonblue;
+}
+.green{
+  background: $buttongreen;
+}
+.red{
+  background: $buttonred;
+}
+
 /*MOBILE*/
 @media only screen and (max-width: 780px) {
 
@@ -57,9 +67,9 @@ h2.middle {
 
   .getnew {
     width: 100%;
-    margin: 1px 0 0 0;
+    margin: 0;
     padding: 0.5vw 0;
-    background: $honebg;
+    background: $secondarybg;
     color: $hone;
     text-align: center;
     display: inline-block;

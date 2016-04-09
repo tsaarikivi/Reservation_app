@@ -79,7 +79,7 @@
                 Vakiovaraus
               </p>
               <p class="confirmation-text confirm">Haluatko poistaa varauksen <%= @timeString %>?</p>
-              <%= link_to "Kyllä", reservation_slot, class: "confirm-ok confirm" %>
+              <%= link_to "Poista", reservation_slot, class: "confirm-ok confirm red" %>
               <%# <a class="confirm-cancel confirm">Ei</a> %>
             </div>
           </div>
@@ -93,10 +93,10 @@
               <p class="res-time no-confirm"><%= @timeString %></p>
               <p class="res-username no-confirm"><%= @userName %></p>
               <p class="slot-state no-confirm">
-                Vakiovaraus
+                Kertavaraus
               </p>
               <p class="confirmation-text confirm">Haluatko poistaa varauksen <%= @timeString %>?</p>
-              <%= link_to "Kyllä", reservation_slot, class: "confirm-ok confirm" %>
+              <%= link_to "Poista", reservation_slot, class: "confirm-ok confirm red" %>
               <%# <a class="confirm-cancel confirm">Ei</a> %>
             </div>
           </div>
@@ -119,7 +119,7 @@
           <p class="res-username hidden no-confirm"><%= @userName %></p>
           <p class="slot-state no-confirm">Vapaa</p>
           <p class="confirmation-text confirm">Haluatko varata ajan <%= @timeString %>?</p>
-          <%= link_to "Kyllä", reservation_slot, class: "confirm-ok confirm" %>
+          <%= link_to "Varaa", reservation_slot, class: "confirm-ok confirm green" %>
           <%# <a class="confirm-cancel confirm">Ei</a> %>
         </div>
       </div>
