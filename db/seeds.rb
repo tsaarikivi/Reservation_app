@@ -40,27 +40,27 @@ kuivaushuone = ReservationTarget.create(
 token_type_permanent = 1
 token_type_use_once = 2
 ######################################################
-Hallitus = User.create(
-    name: 'Hallitus',
-    owner_id: omistaja.id,
-    password: 'salasana',
-    password_confirmation: 'salasana'
-    )
-    Hallitus_TP_1 = ReservationToken.create(
-        user_id: Hallitus.id,
-        reservation_target_id: sauna.id,
-        tokenType: token_type_permanent
-        )
-    Hallitus_TO_1 = ReservationToken.create(
-        user_id: Hallitus.id,
-        reservation_target_id: sauna.id,
-        tokenType: token_type_use_once
-        )
-    Hallitus__kh_TO_1 = ReservationToken.create(
-        user_id: Hallitus.id,
-        reservation_target_id: kuivaushuone.id,
-        tokenType: token_type_use_once
-        )
+#Hallitus = User.create(
+#    name: 'Hallitus',
+#    owner_id: omistaja.id,
+#    password: 'salasana',
+#    password_confirmation: 'salasana'
+#    )
+#    Hallitus_TP_1 = ReservationToken.create(
+#        user_id: Hallitus.id,
+#        reservation_target_id: sauna.id,
+#        tokenType: token_type_permanent
+#        )
+#    Hallitus_TO_1 = ReservationToken.create(
+#        user_id: Hallitus.id,
+#        reservation_target_id: sauna.id,
+#        tokenType: token_type_use_once
+#        )
+#    Hallitus__kh_TO_1 = ReservationToken.create(
+#        user_id: Hallitus.id,
+#        reservation_target_id: kuivaushuone.id,
+#        tokenType: token_type_use_once
+#        )
 
 
 A1 = User.create(
