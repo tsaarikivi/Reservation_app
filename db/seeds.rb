@@ -23,7 +23,7 @@ omistaja = Owner.create(
 sauna = ReservationTarget.create(
     name: 'Sauna',
     timeWindowInDays: 7,
-    category: 1,
+    category: 2,
     owner_id: omistaja.id
     )
 
@@ -56,12 +56,11 @@ Hallitus = User.create(
         reservation_target_id: sauna.id,
         tokenType: token_type_use_once
         )
-
     Hallitus__kh_TO_1 = ReservationToken.create(
-            user_id: Hallitus.id,
-            reservation_target_id: kuivaushuone.id,
-            tokenType: token_type_use_once
-            )
+        user_id: Hallitus.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 
 A1 = User.create(
@@ -70,6 +69,16 @@ A1 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    A1_TO_1 = ReservationToken.create(
+        user_id: A1.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    A1_kh_TO_1 = ReservationToken.create(
+        user_id: A1.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 
 A2 = User.create(
@@ -88,6 +97,11 @@ A2 = User.create(
              reservation_target_id: sauna.id,
              tokenType: token_type_use_once
              )
+     A2_kh_TO_1 = ReservationToken.create(
+         user_id: A2.id,
+         reservation_target_id: kuivaushuone.id,
+         tokenType: token_type_use_once
+         )
 
 
 A3 = User.create(
@@ -96,6 +110,16 @@ A3 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    A3_TO_1 = ReservationToken.create(
+        user_id: A3.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    A3_kh_TO_1 = ReservationToken.create(
+        user_id: A3.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 A4 = User.create(
     name: 'A4',
@@ -103,6 +127,16 @@ A4 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    A4_TO_1 = ReservationToken.create(
+        user_id: A4.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    A4_kh_TO_1 = ReservationToken.create(
+        user_id: A4.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 A5 = User.create(
     name: 'A5',
@@ -110,6 +144,16 @@ A5 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    A5_TO_1 = ReservationToken.create(
+        user_id: A5.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    A5_kh_TO_1 = ReservationToken.create(
+        user_id: A5.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 A6 = User.create(
     name: 'A6',
@@ -127,6 +171,11 @@ A6 = User.create(
        reservation_target_id: sauna.id,
        tokenType: token_type_use_once
        )
+   A6_kh_TO_1 = ReservationToken.create(
+       user_id: A6.id,
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
+       )
 
 A7 = User.create(
     name: 'A7',
@@ -134,6 +183,16 @@ A7 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    A7_TO_1 = ReservationToken.create(
+        user_id: A7.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    A7_kh_TO_1 = ReservationToken.create(
+        user_id: A7.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 A8 = User.create(
     name: 'A8',
@@ -141,6 +200,16 @@ A8 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    A8_TO_1 = ReservationToken.create(
+        user_id: A8.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    A8_kh_TO_1 = ReservationToken.create(
+        user_id: A8.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 A9 = User.create(
     name: 'A9',
@@ -158,6 +227,11 @@ A9 = User.create(
        reservation_target_id: sauna.id,
        tokenType: token_type_use_once
        )
+   A9_kh_TO_1 = ReservationToken.create(
+       user_id: A9.id,
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
+       )
 
 A10 = User.create(
     name: 'A10',
@@ -165,6 +239,16 @@ A10 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    A10_TO_1 = ReservationToken.create(
+        user_id: A10.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    A10_kh_TO_1 = ReservationToken.create(
+        user_id: A10.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 A11 = User.create(
     name: 'A11',
@@ -172,6 +256,16 @@ A11 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    A11_TO_1 = ReservationToken.create(
+        user_id: A11.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    A11_kh_TO_1 = ReservationToken.create(
+        user_id: A11.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 A12 = User.create(
     name: 'A12',
@@ -179,6 +273,16 @@ A12 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    A12_TO_1 = ReservationToken.create(
+        user_id: A12.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    A12_kh_TO_1 = ReservationToken.create(
+        user_id: A12.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 B13 = User.create(
     name: 'B13',
@@ -186,6 +290,16 @@ B13 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    B13_TO_1 = ReservationToken.create(
+        user_id: B13.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    B13_kh_TO_1 = ReservationToken.create(
+        user_id: B13.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 B14 = User.create(
     name: 'B14',
@@ -203,6 +317,11 @@ B14 = User.create(
        reservation_target_id: sauna.id,
        tokenType: token_type_use_once
        )
+   B14_kh_TO_1 = ReservationToken.create(
+       user_id: B14.id,
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
+       )
 
 B15 = User.create(
     name: 'B15',
@@ -210,6 +329,16 @@ B15 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    B15_TO_1 = ReservationToken.create(
+        user_id: B15.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    B15_kh_TO_1 = ReservationToken.create(
+        user_id: B15.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 B16 = User.create(
     name: 'B16',
@@ -217,6 +346,16 @@ B16 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    B16_TO_1 = ReservationToken.create(
+        user_id: B16.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    B16_kh_TO_1 = ReservationToken.create(
+        user_id: B16.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 B17 = User.create(
     name: 'B17',
@@ -224,6 +363,16 @@ B17 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    B17_TO_1 = ReservationToken.create(
+        user_id: B17.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    B17_kh_TO_1 = ReservationToken.create(
+        user_id: B17.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 B18 = User.create(
     name: 'B18',
@@ -231,6 +380,16 @@ B18 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    B18_TO_1 = ReservationToken.create(
+        user_id: B18.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    B18_kh_TO_1 = ReservationToken.create(
+        user_id: B18.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 B19 = User.create(
     name: 'B19',
@@ -238,6 +397,16 @@ B19 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    B19_TO_1 = ReservationToken.create(
+        user_id: B19.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    B19_kh_TO_1 = ReservationToken.create(
+        user_id: B19.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 B20 = User.create(
     name: 'B20',
@@ -255,6 +424,11 @@ B20 = User.create(
        reservation_target_id: sauna.id,
        tokenType: token_type_use_once
        )
+   B20_kh_TO_1 = ReservationToken.create(
+       user_id: B20.id,
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
+       )
 
 B21 = User.create(
     name: 'B21',
@@ -262,6 +436,16 @@ B21 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    B21_TO_1 = ReservationToken.create(
+        user_id: B21.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    B21_kh_TO_1 = ReservationToken.create(
+        user_id: B21.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 B22 = User.create(
     name: 'B22',
@@ -269,6 +453,16 @@ B22 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    B22_TO_1 = ReservationToken.create(
+        user_id: B22.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    B22_kh_TO_1 = ReservationToken.create(
+        user_id: B22.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 B23 = User.create(
     name: 'B23',
@@ -276,6 +470,16 @@ B23 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    B23_TO_1 = ReservationToken.create(
+        user_id: B23.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    B23_kh_TO_1 = ReservationToken.create(
+        user_id: B23.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 B24 = User.create(
     name: 'B24',
@@ -291,6 +495,11 @@ B24 = User.create(
    B24_TO_1 = ReservationToken.create(
        user_id: B13.id,
        reservation_target_id: sauna.id,
+       tokenType: token_type_use_once
+       )
+   B24_kh_TO_1 = ReservationToken.create(
+       user_id: B24.id,
+       reservation_target_id: kuivaushuone.id,
        tokenType: token_type_use_once
        )
 
@@ -310,6 +519,11 @@ C25 = User.create(
         reservation_target_id: sauna.id,
         tokenType: token_type_use_once
         )
+    C25_kh_TO_1 = ReservationToken.create(
+        user_id: C25.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+            )
 
 C26 = User.create(
     name: 'C26',
@@ -327,6 +541,11 @@ C26 = User.create(
        reservation_target_id: sauna.id,
        tokenType: token_type_use_once
        )
+   C26_kh_TO_1 = ReservationToken.create(
+       user_id: C26.id,
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
+           )
 
 C27 = User.create(
     name: 'C27',
@@ -334,6 +553,16 @@ C27 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    C27_TO_1 = ReservationToken.create(
+        user_id: C27.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    C27_kh_TO_1 = ReservationToken.create(
+        user_id: C27.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 C28 = User.create(
     name: 'C28',
@@ -351,6 +580,11 @@ C28 = User.create(
        reservation_target_id: sauna.id,
        tokenType: token_type_use_once
        )
+   C28_kh_TO_1 = ReservationToken.create(
+       user_id: C28.id,
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
+       )
 
 C29 = User.create(
     name: 'C29',
@@ -358,6 +592,16 @@ C29 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    C29_TO_1 = ReservationToken.create(
+        user_id: C29.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    C29_kh_TO_1 = ReservationToken.create(
+        user_id: C29.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 C30 = User.create(
     name: 'C30',
@@ -365,6 +609,16 @@ C30 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    C30_TO_1 = ReservationToken.create(
+        user_id: C30.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    C30_kh_TO_1 = ReservationToken.create(
+        user_id: C30.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 C31 = User.create(
     name: 'C31',
@@ -372,6 +626,16 @@ C31 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    C31_TO_1 = ReservationToken.create(
+        user_id: C31.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    C31_kh_TO_1 = ReservationToken.create(
+        user_id: C31.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 C32 = User.create(
     name: 'C32',
@@ -379,6 +643,16 @@ C32 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    C32_TO_1 = ReservationToken.create(
+        user_id: C32.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    C32_kh_TO_1 = ReservationToken.create(
+        user_id: C32.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 C33 = User.create(
     name: 'C33',
@@ -386,6 +660,16 @@ C33 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    C33_TO_1 = ReservationToken.create(
+        user_id: C33.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    C33_kh_TO_1 = ReservationToken.create(
+        user_id: C33.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 C34 = User.create(
     name: 'C34',
@@ -408,6 +692,11 @@ C34 = User.create(
        reservation_target_id: sauna.id,
        tokenType: token_type_use_once
        )
+   C34_kh_TO_1 = ReservationToken.create(
+       user_id: C34.id,
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
+       )
 
 C35 = User.create(
     name: 'C35',
@@ -415,6 +704,16 @@ C35 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    C35_TO_1 = ReservationToken.create(
+        user_id: C35.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    C35_kh_TO_1 = ReservationToken.create(
+        user_id: C35.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 C36 = User.create(
     name: 'C36',
@@ -422,6 +721,16 @@ C36 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    C36_TO_1 = ReservationToken.create(
+        user_id: C36.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    C36_kh_TO_1 = ReservationToken.create(
+        user_id: C36.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 D37 = User.create(
     name: 'D37',
@@ -429,6 +738,16 @@ D37 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    D37_TO_1 = ReservationToken.create(
+        user_id: D37.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    D37_kh_TO_1 = ReservationToken.create(
+        user_id: D37.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 D38 = User.create(
     name: 'D38',
@@ -446,6 +765,11 @@ D38 = User.create(
        reservation_target_id: sauna.id,
        tokenType: token_type_use_once
        )
+   D38_kh_TO_1 = ReservationToken.create(
+       user_id: D38.id,
+       reservation_target_id: kuivaushuone.id,
+       tokenType: token_type_use_once
+       )
 
 D39 = User.create(
     name: 'D39',
@@ -453,6 +777,16 @@ D39 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    D39_TO_1 = ReservationToken.create(
+        user_id: D39.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    D39_kh_TO_1 = ReservationToken.create(
+        user_id: D39.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 D40 = User.create(
     name: 'D40',
@@ -460,6 +794,16 @@ D40 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    D40_TO_1 = ReservationToken.create(
+        user_id: D40.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    D40_kh_TO_1 = ReservationToken.create(
+        user_id: D40.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 D41 = User.create(
     name: 'D41',
@@ -467,6 +811,16 @@ D41 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    D41_TO_1 = ReservationToken.create(
+        user_id: D41.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    D41_kh_TO_1 = ReservationToken.create(
+        user_id: D41.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 D42 = User.create(
     name: 'D42',
@@ -474,6 +828,16 @@ D42 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    D42_TO_1 = ReservationToken.create(
+        user_id: D42.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    D42_kh_TO_1 = ReservationToken.create(
+        user_id: D42.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 D43 = User.create(
     name: 'D43',
@@ -481,6 +845,16 @@ D43 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    D43_TO_1 = ReservationToken.create(
+        user_id: D43.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    D43_kh_TO_1 = ReservationToken.create(
+        user_id: D43.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 D44 = User.create(
     name: 'D44',
@@ -488,6 +862,16 @@ D44 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    D44_TO_1 = ReservationToken.create(
+        user_id: D44.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    D44_kh_TO_1 = ReservationToken.create(
+        user_id: D44.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 D45 = User.create(
     name: 'D45',
@@ -495,6 +879,16 @@ D45 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    D45_TO_1 = ReservationToken.create(
+        user_id: D45.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    D45_kh_TO_1 = ReservationToken.create(
+        user_id: D45.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 D46 = User.create(
     name: 'D46',
@@ -502,6 +896,16 @@ D46 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    D46_TO_1 = ReservationToken.create(
+        user_id: D46.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    D46_kh_TO_1 = ReservationToken.create(
+        user_id: D46.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 D47 = User.create(
     name: 'D47',
@@ -509,6 +913,16 @@ D47 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    D47_TO_1 = ReservationToken.create(
+        user_id: D47.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    D47_kh_TO_1 = ReservationToken.create(
+        user_id: D47.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 D48 = User.create(
     name: 'D48',
@@ -516,6 +930,16 @@ D48 = User.create(
     password: 'salasana',
     password_confirmation: 'salasana'
     )
+    D48_TO_1 = ReservationToken.create(
+        user_id: D48.id,
+        reservation_target_id: sauna.id,
+        tokenType: token_type_use_once
+        )
+    D48_kh_TO_1 = ReservationToken.create(
+        user_id: D48.id,
+        reservation_target_id: kuivaushuone.id,
+        tokenType: token_type_use_once
+        )
 
 #####################################################
 # Reservation slots
