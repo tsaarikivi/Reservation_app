@@ -18,9 +18,9 @@
       <% else %>
         <h2 class="getnew warning">Et voi varata vuoroja.</h2>
       <% end %>
-        <%= render 'reservation_targets/getnew' %>
+    </div>
+      <%= render 'reservation_targets/getnew' %>
   </div>
-</div>
 
 <% for @dayIndex in 1..@target.timeWindowInDays
       @di = get_adjusted_day_index(@todayDayNum, @dayIndex)

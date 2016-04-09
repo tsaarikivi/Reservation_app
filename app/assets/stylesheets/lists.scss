@@ -8,11 +8,31 @@
     margin: 0;
   }
 
-  a.button-large{
-    width: 90%;
+  .button-confirmable {
+    .confirmable-text {
+      margin: 0;
+      padding: 3vw 0;
+    }
+    .confirm-button {
+      text-decoration: none;
+      background: $secondarybg;
+      width: 100%;
+      color: $hone;
+      padding: 3vw 0;
+      margin-top: 1vw;
+      display: none;
+    }
+  }
+
+  a.link-button {
     padding: 3vw 0;
+  }
+
+  .button-large{
+    width: 90%;
+    padding: 0;
     display: block;
-    margin: 10px auto;
+    margin: 2vw auto;
     text-decoration: none;
     font-size: 7vw;
     font-weight: 300;
@@ -22,14 +42,15 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     color: $buttontext;
+    box-shadow: 0 0 10px 2px $shadow;
   }
-  a.blue {
+  .blue {
     background: $buttonblue;
   }
-  a.green{
+  .green{
     background: $buttongreen;
   }
-  a.red{
+  .red{
     background: $buttonred;
   }
 }
@@ -44,12 +65,32 @@
     text-align: center;
   }
 
-  a.button-large {
+  .button-confirmable {
+    .confirmable-text {
+      margin: 0;
+      padding: 20px 0;
+    }
+    .confirm-button {
+      text-decoration: none;
+      background: $secondarybg;
+      width: 100%;
+      color: $hone;
+      padding: 20px 0;
+      margin-top: 10px;
+      display: none;
+    }
+  }
+
+  a.link-button {
+    padding: 20px 0;
+  }
+
+  .button-large {
     width: 100%;
     max-width: 400px;
-    padding: 15px 0;
+    padding: 0;
     display: block;
-    margin: 30px auto;
+    margin: 20px auto;
     text-decoration: none;
     color: $buttontext;
     font-size: 30px;
@@ -60,14 +101,15 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    box-shadow: 0 0 10px 2px $shadow;
   }
-  a.blue {
+  .blue {
     background: $buttonblue;
   }
-  a.green{
+  .green{
     background: $buttongreen;
   }
-  a.red{
+  .red{
     background: $buttonred;
   }
 }

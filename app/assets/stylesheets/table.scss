@@ -6,6 +6,12 @@
 
   }
 
+  div.own-schema-container {
+     div.date-container p, div.getnew-container h3, div.slots-container {
+       background: $secondarybg;
+     }
+  }
+
   div.schema-day-container {
     display: block;
     margin-top: 0;
