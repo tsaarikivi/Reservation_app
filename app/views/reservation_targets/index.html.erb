@@ -4,6 +4,6 @@
 <ul class="reservation-target-list">
   <%=render @targetList %>
 </ul>
-<h3>
-  Lisää palaute <%= link_to "täältä.", new_owner_feedback_path(Owner.find_by_id(current_user.owner_id))%>
+<h3 class="middle">
+  Lähetä palautetta <%= link_to "täältä.", new_owner_feedback_path(Owner.find_by_id(current_user.owner_id))%>
 </h3>
