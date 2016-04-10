@@ -1,0 +1,11 @@
+<h1>Uusi palaute</h1>
+<%= form_for [@owner, @feedback] do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+  <br>
+  <%= f.label :feedbackText, "Palaute" %>
+  <br>
+  <%= f.text_area :feedbackText %>
+  <br>
+  <%= f.submit "Lähetä palaute", class: "submit" %>
+  <%# hidden_field_tag 'reservation_target_id', params[:reservation_target_id] %>
+<% end %>

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :owners do
     resources :reservation_targets
     resources :users
+    resources :feedbacks
   end
   resources :reservation_targets do
     resources :reservation_slots

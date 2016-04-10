@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401174510) do
+ActiveRecord::Schema.define(version: 20160410144928) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20160401174510) do
     t.string   "password_digest"
     t.string   "remember_digest"
   end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.text     "feedbackText"
+    t.integer  "owner_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "feedbacks", ["owner_id"], name: "index_feedbacks_on_owner_id"
 
   create_table "owners", force: :cascade do |t|
     t.string   "name"
@@ -79,17 +88,6 @@ ActiveRecord::Schema.define(version: 20160401174510) do
 
   add_index "reservationlogs", ["owner_id", "created_at"], name: "index_reservationlogs_on_owner_id_and_created_at"
   add_index "reservationlogs", ["owner_id"], name: "index_reservationlogs_on_owner_id"
-
-  create_table "resources", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "category"
-    t.integer  "owner_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "resources", ["owner_id", "created_at"], name: "index_resources_on_owner_id_and_created_at"
-  add_index "resources", ["owner_id"], name: "index_resources_on_owner_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
