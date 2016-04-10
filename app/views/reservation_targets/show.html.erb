@@ -4,7 +4,9 @@
 %>
 
 <div class="reservation-target-container">
-  <h3 class="corner-button"> <%= link_to "Käyttöohje", root_path %> </h3>
+  <div class="help-container">
+    <%= link_to "Käyttöohje", root_path, class: "corner-button text-link" %>
+  </div>
   <div class="page-header-wide">
     <h1 class=""><%= @target.name %></h1>
   </div>
