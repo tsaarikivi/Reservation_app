@@ -56,7 +56,7 @@ h2.warning {
 
   h1 {
     margin: 1px 0 0 0;
-    padding: 3vw 0;
+    padding: 2vw 0;
     width: 100%;
     text-align: center;
     font-size: 8vw;
@@ -89,17 +89,18 @@ h2.warning {
     font-size: 6.5;
     height: 8vw;
     color: $hone;
-    a.text-link {
-      padding: 0 1vw;
-      font-weight: 300;
-      display: inline-block;
-      position: relative;
-      text-decoration: none;
-      background: $textlinkbtn;
-      color: $textlink;
-      height: 7vw;
-      border-radius: 2px;
-    }
+  }
+
+  .text-link {
+    padding: 0 1vw;
+    font-weight: 300;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    background: $textlinkbtn;
+    color: $textlink;
+    height: 7vw;
+    border-radius: 2px;
   }
 
   div.flash {
@@ -119,6 +120,17 @@ h2.warning {
     color: $notetext;
     font-size: 5vw;
     font-style: italic;
+  }
+
+  .help-container {
+    padding: 2vw 2% 0 0;
+    width: 98%;
+    height: 7vw;
+  }
+
+  .corner-button {
+    display: block;
+    float: right;
   }
 }
 

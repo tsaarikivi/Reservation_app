@@ -22,6 +22,21 @@
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
     }
+
+    textarea {
+      height: 100vw;
+      width: 100%;
+      border: 1px solid $border;
+      background: $textarea;
+      border-radius: 2px;
+      font-size: 5vw;
+      font-weight: 300;
+      padding: 0 0 0 2vw;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+
     input.submit {
       margin: 2vw 0;
       font-size: 5vw;

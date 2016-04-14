@@ -5,5 +5,5 @@
   <%=render @targetList %>
 </ul>
 <h3 class="middle">
-  Lähetä palautetta <%= link_to "täältä.", new_owner_feedback_path(Owner.find_by_id(current_user.owner_id))%>
+  Lähetä palautetta <%= link_to "täältä.", new_owner_feedback_path(Owner.find_by_id(current_user.owner_id)), class: "text-link"%>
 </h3>

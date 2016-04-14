@@ -1,7 +1,6 @@
 <h1>Uusi palaute</h1>
 <%= form_for [@owner, @feedback] do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
-  <br>
   <%= f.label :feedbackText, "Palaute" %>
   <br>
   <%= f.text_area :feedbackText %>
