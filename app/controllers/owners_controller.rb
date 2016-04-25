@@ -8,7 +8,8 @@ class OwnersController < ApplicationController
   def show
     @owner = Owner.find_by_id(params[:id])
     @reservation_targets = @owner.reservation_targets
-    @logentries = Reservationlog.last(100)
+    @logentries = Reservationlog.where(owner_id: @owner.id).last(100)
+    @feedback = Feedback.where(owner_id: @owner.id).last(100)
     #@logentries.order(:created_at)
   end
 

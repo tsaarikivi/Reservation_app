@@ -12,4 +12,9 @@
   <% @logentries.each do |e| %>
     <li><%= e.logstr %> </li>
   <% end %>
+  <h3> Palautteet: </h3>
+  <% @feedback.each do |f| %>
+    <li><%= f.feedbackText %> </li>
+    <br>
+  <% end %>
 </div>
