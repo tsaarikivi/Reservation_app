@@ -91,6 +91,10 @@ h2.warning {
     color: $hone;
   }
 
+  .help-info {
+    margin: 2vw;
+  }
+
   .text-link {
     padding: 0 1vw;
     font-weight: 300;
@@ -206,6 +210,12 @@ h2.warning {
     font-weight: 300;
     font-size: 30px;
     color: $hone;
+  }
+
+  .help-info {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   a.text-link {
