@@ -127,5 +127,19 @@
       background: $buttonblue;
       color: $buttontext;
     }
+
+    textarea {
+      height: 400px;
+      width: 100%;
+      border: 1px solid $border;
+      background: $textarea;
+      border-radius: 2px;
+      font-size: 22px;
+      font-weight: 300;
+      padding: 0 0 0 10px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
   }
 }

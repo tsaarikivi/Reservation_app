@@ -86,7 +86,7 @@ h2.warning {
 
   h3 {
     font-weight: 300;
-    font-size: 6.5;
+    font-size: 5vw;
     height: 8vw;
     color: $hone;
   }
@@ -99,7 +99,7 @@ h2.warning {
     text-decoration: none;
     background: $textlinkbtn;
     color: $textlink;
-    height: 7vw;
+
     border-radius: 2px;
   }
 
@@ -108,11 +108,19 @@ h2.warning {
     padding: 0;
     text-align: center;
     font-size: 4vw;
-    color: $flash;
     font-style: italic;
     text-transform: uppercase;
     font-weight: 400;
-    background: $flashbg;
+  }
+
+  .flash-success {
+    color: $flash;
+    background: $flashsuccess;
+  }
+
+  .flash-danger {
+    color: $flash;
+    background: $flashdanger;
   }
 
   p.note {
@@ -131,6 +139,7 @@ h2.warning {
   .corner-button {
     display: block;
     float: right;
+    font-size: 4vw;
   }
 }
 
@@ -197,17 +206,30 @@ h2.warning {
     font-weight: 300;
     font-size: 30px;
     color: $hone;
-    a.text-link {
-      padding: 0 4px;
-      font-weight: 300;
-      display: inline-block;
-      position: relative;
-      text-decoration: none;
-      background: $textlinkbtn;
-      color: $textlink;
-      border-radius: 2px;
-      height: 28px;
-    }
+  }
+
+  a.text-link {
+    padding: 0 4px;
+    margin-top: 5px;
+    margin-right: 5px;
+    font-weight: 300;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    background: $textlinkbtn;
+    color: $textlink;
+    border-radius: 2px;
+  }
+
+  div.help-container {
+    width: 100%;
+    height: 30px;
+  }
+
+  .corner-button {
+    display: block;
+    float: right;
+    font-size: 22px;
   }
 
   div.flash {
@@ -215,11 +237,19 @@ h2.warning {
     padding: 0;
     text-align: center;
     font-size: 22px;
-    color: $flash;
     font-style: italic;
     text-transform: uppercase;
     font-weight: 400;
-    background: $flashbg;
+  }
+
+  .flash-success {
+    color: $flash;
+    background: $flashsuccess;
+  }
+
+  .flash-danger {
+    color: $flash;
+    background: $flashdanger;
   }
 
   p.note {

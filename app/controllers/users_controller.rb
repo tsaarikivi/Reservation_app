@@ -20,6 +20,24 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def edit
+    @user = current_user
+    if (@user.id == params[:id])
+      redirect_to root_url
+    end
+  end
+
+  def update
+    @user = current_user
+    if @user.update_attributes(user_params)
+      flash[:success] = "Käyttäjä päivitetty"
+      redirect_to root_url
+    else
+      flash[:danger] = "Jokin meni pieleen"
+      render 'edit'
+    end
+  end
+
   private
 
   def user_params

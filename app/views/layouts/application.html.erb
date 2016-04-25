@@ -14,7 +14,7 @@
   <%= render 'layouts/header_user' %>
   <div class="body-container">
     <% flash.each do |message_type, message| %>
-      <div class="flash">
+      <div class="flash flash-<%= message_type %>">
         <%= message %>
       </div>
     <% end %>

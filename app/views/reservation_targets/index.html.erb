@@ -5,5 +5,8 @@
   <%=render @targetList %>
 </ul>
 <h3 class="middle">
+  Muuta henkilökohtaisia asetuksia <%= link_to "täältä.", edit_user_path(current_user), class: "text-link" %>
+</h3>
+<h3 class="middle">
   Lähetä palautetta <%= link_to "täältä.", new_owner_feedback_path(Owner.find_by_id(current_user.owner_id)), class: "text-link"%>
 </h3>
