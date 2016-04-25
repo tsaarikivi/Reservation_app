@@ -66,8 +66,7 @@ def handle_click_to_slot(iSlotId)
 
   @freedSlot = 0
   @theSlot = ReservationSlot.find_by_id(@slotId)
-  current_user
-  @tokens = ReservationToken.where("user_id = ? and reservation_target_id = ?", @current_user.id, @theSlot.reservation_target_id)
+  @tokens = ReservationToken.where("user_id = ? and reservation_target_id = ?", current_user.id, @theSlot.reservation_target_id)
   @tokens.each do |t|
     if try_to_free_token(t,@theSlot) == 1
       @freedSlot = 1
@@ -80,11 +79,24 @@ def handle_click_to_slot(iSlotId)
       @slotDay = ah_reserve_slot(@theSlot, @freeToken.id)
 
       @todayNum = DateTime.now.strftime("%u").to_i
-      if(@todayNum < @slotDay)
-        @freeToken.useDay = DateTime.now.advance(:days => (@slotDay - @todayNum)).noon
+
+      ##Find how many hours & minutes to add to the useDay timestamp.
+      if(@theSlot.startTime < 1000)
+        @hoursToAdd = @theSlot.startTime.to_s.slice(0).to_i
+        @minutesToAdd = @theSlot.startTime.to_s.slice(1..2).to_i
       else
-        @freeToken.useDay = DateTime.now.advance(:days => (7 + @slotDay - @todayNum)).noon
+        @hoursToAdd = @theSlot.startTime.to_s.slice(0..1).to_i
+        @minutesToAdd = @theSlot.startTime.to_s.slice(2..3).to_i
       end
+
+      if(@todayNum < @slotDay)
+        @freeToken.useDay = DateTime.now.advance(:days => (@slotDay - @todayNum)).beginning_of_day
+      else
+        @freeToken.useDay = DateTime.now.advance(:days => (7 + @slotDay - @todayNum)).beginning_of_day
+      end
+      @freeToken.useDay = @freeToken.useDay.advance(:hours => @hoursToAdd)
+      @freeToken.useDay = @freeToken.useDay.advance(:minutes => @minutesToAdd)
+
       @freeToken.save
       write_log_entry("VARAUS: ", @freeToken, @theSlot)
       return 1
