@@ -145,6 +145,25 @@ h2.warning {
     float: right;
     font-size: 4vw;
   }
+
+  div.help-info {
+
+    h2 {
+      font-size: 7vw;
+      font-weight: 600;
+      color: black;
+    }
+    h3 {
+      font-size: 6.5vw;
+      font-weight: 500;
+      color: black;
+    }
+    p {
+      font-size: 5vw;
+      font-weight: 500;
+      color: black;
+    }
+  }
 }
 
 /*DESKTOP*/
