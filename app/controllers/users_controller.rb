@@ -22,18 +22,20 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
-    if (@user.id == params[:id])
-      redirect_to root_url
-    end
   end
 
   def update
     @user = current_user
-    if @user.update_attributes(user_params)
-      flash[:success] = "Käyttäjä päivitetty"
-      redirect_to root_url
+    if BCrypt::Password.new(current_user.password_digest) == params[:user][:old_password]
+      if current_user.update_attributes(user_params)
+        flash[:success] = "Käyttäjä päivitetty"
+        redirect_to root_url
+      else
+        flash.now[:danger] = "Jokin meni pieleen"
+        render 'edit'
+      end
     else
-      flash[:danger] = "Jokin meni pieleen"
+      flash.now[:danger] = "Tarkista salasanasi"
       render 'edit'
     end
   end

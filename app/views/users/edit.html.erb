@@ -1,11 +1,14 @@
 <h1>Asetukset</h1>
 <%= form_for(@user) do |f| %>
-
+  <%= @pass %>
   <%= f.label :password, "Uusi salasana"%>
   <%= f.password_field :password, class: 'form-control' %>
 
-  <%= f.label :password_confirmation, "Salasanan uudelleen" %>
+  <%= f.label :password_confirmation, "Uusi salasana uudelleen" %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+  <%= f.label :old_password, "Vanha salasana", class: 'spaced' %>
+  <%= f.password_field :old_password, class: 'form-control' %>
 
   <%= f.submit "Valmis", class: "submit" %>
 <% end %>
