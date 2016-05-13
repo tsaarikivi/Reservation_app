@@ -35,7 +35,6 @@ module ReservationTargetsHelper
       if(s.reservation_token_id != nil)
         @token = ReservationToken.find_by_id(s.reservation_token_id)
         if(@token.tokenType == token_type_use_once())
-          byebug
           if(@token.useDay < DateTime.now)
             s.reservation_token_id = nil
             s.save

@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  include UsersHelper
+
   def new
     @user = User.new
   end
@@ -29,13 +32,16 @@ class UsersController < ApplicationController
     if BCrypt::Password.new(current_user.password_digest) == params[:user][:old_password]
       if current_user.update_attributes(user_params)
         flash[:success] = "Käyttäjä päivitetty"
+        write_log_entry(@user, "KÄYTTÄJÄPÄIVITYS", "OK")
         redirect_to root_url
       else
         flash.now[:danger] = "Jokin meni pieleen"
+        write_log_entry(@user, "KÄYTTÄJÄPÄIVITYS", "JOKINMENIPIELEEN")
         render 'edit'
       end
     else
       flash.now[:danger] = "Tarkista salasanasi"
+      write_log_entry(@user, "KÄYTTÄJÄPÄIVITYS", "TARKISTASALASANASI")
       render 'edit'
     end
   end
