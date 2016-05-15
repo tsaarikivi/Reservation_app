@@ -1104,160 +1104,111 @@ La21_22 = ReservationSlot.create(
 
 ###################################################
 
-Kuivaushuone_Ma_8_13 = ReservationSlot.create(
+Kuivaushuone_Ma_8_15 = ReservationSlot.create(
     reservation_target_id: kuivaushuone.id,
     day: 1,
     startTime: 800,
-    endTime: 1300,
+    endTime: 1500,
     slotStatus: 1
     )
-Kuivaushuone_Ma_13_18 = ReservationSlot.create(
-    reservation_target_id: kuivaushuone.id,
-    day: 1,
-    startTime: 1300,
-    endTime: 1800,
-    slotStatus: 1
-    )
-    Kuivaushuone_Ma_18_23 = ReservationSlot.create(
+    Kuivaushuone_Ma_15_22 = ReservationSlot.create(
         reservation_target_id: kuivaushuone.id,
         day: 1,
-        startTime: 1800,
-        endTime: 2300,
+        startTime: 1500,
+        endTime: 2200,
         slotStatus: 1
         )
 
 ##
-Kuivaushuone_Ti_8_13 = ReservationSlot.create(
+Kuivaushuone_Ti_8_15 = ReservationSlot.create(
     reservation_target_id: kuivaushuone.id,
     day: 2,
     startTime: 800,
-    endTime: 1300,
+    endTime: 1500,
     slotStatus: 1
     )
-Kuivaushuone_Ti_13_18 = ReservationSlot.create(
-    reservation_target_id: kuivaushuone.id,
-    day: 2,
-    startTime: 1300,
-    endTime: 1800,
-    slotStatus: 1
-    )
-    Kuivaushuone_Ti_18_23 = ReservationSlot.create(
+    Kuivaushuone_Ti_15_22 = ReservationSlot.create(
         reservation_target_id: kuivaushuone.id,
         day: 2,
-        startTime: 1800,
-        endTime: 2300,
+        startTime: 1500,
+        endTime: 2200,
         slotStatus: 1
         )
 
 ##
-Kuivaushuone_Ke_8_13 = ReservationSlot.create(
+Kuivaushuone_Ke_8_15 = ReservationSlot.create(
     reservation_target_id: kuivaushuone.id,
     day: 3,
     startTime: 800,
-    endTime: 1300,
+    endTime: 1500,
     slotStatus: 1
     )
-Kuivaushuone_Ke_13_18 = ReservationSlot.create(
-    reservation_target_id: kuivaushuone.id,
-    day: 3,
-    startTime: 1300,
-    endTime: 1800,
-    slotStatus: 1
-    )
-    Kuivaushuone_Ke_18_23 = ReservationSlot.create(
+    Kuivaushuone_Ke_15_22 = ReservationSlot.create(
         reservation_target_id: kuivaushuone.id,
         day: 3,
-        startTime: 1800,
-        endTime: 2300,
+        startTime: 1500,
+        endTime: 2200,
         slotStatus: 1
         )
 
 ##
-Kuivaushuone_To_8_13 = ReservationSlot.create(
+Kuivaushuone_To_8_15 = ReservationSlot.create(
     reservation_target_id: kuivaushuone.id,
     day: 4,
     startTime: 800,
-    endTime: 1300,
+    endTime: 1500,
     slotStatus: 1
     )
-Kuivaushuone_To_13_18 = ReservationSlot.create(
-    reservation_target_id: kuivaushuone.id,
-    day: 4,
-    startTime: 1300,
-    endTime: 1800,
-    slotStatus: 1
-    )
-    Kuivaushuone_To_18_23 = ReservationSlot.create(
+    Kuivaushuone_To_15_22 = ReservationSlot.create(
         reservation_target_id: kuivaushuone.id,
         day: 4,
-        startTime: 1800,
-        endTime: 2300,
+        startTime: 1500,
+        endTime: 2200,
         slotStatus: 1
         )
 
 ##
-Kuivaushuone_Pe_8_13 = ReservationSlot.create(
+Kuivaushuone_Pe_8_15 = ReservationSlot.create(
     reservation_target_id: kuivaushuone.id,
     day: 5,
     startTime: 800,
-    endTime: 1300,
+    endTime: 1500,
     slotStatus: 1
     )
-Kuivaushuone_Pe_13_18 = ReservationSlot.create(
-    reservation_target_id: kuivaushuone.id,
-    day: 5,
-    startTime: 1300,
-    endTime: 1800,
-    slotStatus: 1
-    )
-    Kuivaushuone_Pe_18_23 = ReservationSlot.create(
+    Kuivaushuone_Pe_15_22 = ReservationSlot.create(
         reservation_target_id: kuivaushuone.id,
         day: 5,
-        startTime: 1800,
-        endTime: 2300,
+        startTime: 1500,
+        endTime: 2200,
         slotStatus: 1
         )
 ##
-Kuivaushuone_La_8_13 = ReservationSlot.create(
+Kuivaushuone_La_8_15 = ReservationSlot.create(
     reservation_target_id: kuivaushuone.id,
     day: 6,
     startTime: 800,
-    endTime: 1300,
+    endTime: 1500,
     slotStatus: 1
     )
-Kuivaushuone_La_13_18 = ReservationSlot.create(
-    reservation_target_id: kuivaushuone.id,
-    day: 6,
-    startTime: 1300,
-    endTime: 1800,
-    slotStatus: 1
-    )
-    Kuivaushuone_La_18_23 = ReservationSlot.create(
+    Kuivaushuone_La_15_22 = ReservationSlot.create(
         reservation_target_id: kuivaushuone.id,
         day: 6,
-        startTime: 1800,
-        endTime: 2300,
+        startTime: 1500,
+        endTime: 2200,
         slotStatus: 1
         )
 ##
-Kuivaushuone_Su_8_13 = ReservationSlot.create(
+Kuivaushuone_Su_8_15 = ReservationSlot.create(
     reservation_target_id: kuivaushuone.id,
     day: 7,
     startTime: 800,
-    endTime: 1300,
+    endTime: 1500,
     slotStatus: 1
     )
-Kuivaushuone_Su_13_18 = ReservationSlot.create(
+Kuivaushuone_Su_15_22 = ReservationSlot.create(
     reservation_target_id: kuivaushuone.id,
     day: 7,
-    startTime: 1300,
-    endTime: 1800,
-    slotStatus: 1
-    )
-Kuivaushuone_Su_18_23 = ReservationSlot.create(
-    reservation_target_id: kuivaushuone.id,
-    day: 7,
-    startTime: 1800,
-    endTime: 2300,
+    startTime: 1500,
+    endTime: 2200,
     slotStatus: 1
     )
