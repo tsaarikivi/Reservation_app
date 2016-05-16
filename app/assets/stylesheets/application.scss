@@ -163,6 +163,10 @@ h2.warning {
       font-weight: 500;
       color: black;
     }
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
@@ -235,6 +239,11 @@ h2.warning {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+    }
   }
 
   a.text-link {
