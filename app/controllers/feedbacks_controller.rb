@@ -1,5 +1,5 @@
 class FeedbacksController < ApplicationController
-
+before_action :logged_in_user, only: [:create, :new]
 def new
   @feedback = Feedback.new
   @owner = Owner.find_by_id(current_user.owner_id)

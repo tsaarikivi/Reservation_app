@@ -1,5 +1,5 @@
 class ReservationSlotsController < ApplicationController
-
+before_action :logged_in_user, only: [:show]
   include ReservationSlotsHelper
 
   def new
