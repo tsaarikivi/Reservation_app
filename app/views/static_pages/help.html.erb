@@ -1,15 +1,23 @@
 
 <h1>Käyttöohje</h1>
 <div class="help-info">
-  <%= image_tag "banana.png" %>
-  <h2>Käyttäjät</h2>
-  <p>Varausjärjestelmässä on jokaiselle asunnolle luotu käyttäjä, jonka nimi on asunnon tunniste. Esimerkiksi C-rapun asunto numero 25 on käyttäjä c25.</p>
-  <p>Jokaisella käyttäjällä on pilottivaiheessa yksi kertavaraus jokaista varattavaa kohdetta kohti.</p>
-  <p>Mikäli käyttäjillä on jo olemassa olevia saunan vuoroja, on nekin lisätty järjestelmään pysyväisvarauksina.</p>
   <h2>Varaukset</h2>
-  <p>Käytettävissä olevat varaukset on näkyvissä varauskalenterin näytön yläosassa. Mikäli varaus on aktiivinen, varauksen yhteydessä on tieto siitä mihin aikaan varaus on aktiivinen. Käytettävissä olevassa varauksessa on tieto 'ei käytössä'.</p>
+  <p>Käytettävissä olevat varaukset on näkyvissä varauskalenterin näytön yläosassa.</p>
+  <%= image_tag "varaus_molemmat.png" %>
+  <p>Mikäli varaus on aktiivinen, varauksen yhteydessä on tieto siitä mihin aikaan varaus on aktiivinen.</p>
+  <%= image_tag "varaus_kaytossa.png" %>
+  <p>Käytettävissä olevassa varauksessa on tieto 'ei käytössä'.</p>
+  <%= image_tag "varaus_eikaytossa.png" %>
   <p>Varaus tehdään valitsemalla vapaana oleva varattava aika. Valinta vahvistetaan painamalla esiin tulevaa vahvistus painiketta.</p>
+  <%= image_tag "varaaminen1.png" %>
+  <p>Onnistunut varaus näkyy varattavassa aikaruudussa ja sovelluksen tilakentässä olevassa viestissä.</p>
+  <p> <%= image_tag "varaaminen2.png" %> </p>
+  <p> <%= image_tag "varaaminen3.png" %> </p>
+
   <p>Mikäli kaikki varaukset ovat käytössä, pitää joku käytössä olevista vapauttaa ennen uutta varausta. Vapautus tapahtuu samoin kuin varaus. Etsi kalenterista aktiivinen varaus ja napauta sitä. Vahvista varauksen poisto esiin tulevasta painikkeesta.</p>
+  <p> <%= image_tag "poisto1.png" %> </p>
+  <p> <%= image_tag "poisto2.png" %> </p>
+
   <h3>Sauna</h2>
   <p>Jokaisella asunnolla on mahdollisuus varata yksi vapaa vuoro kertavarauksena. Kun vuoro on käytetty, voi varauksen uusia mikäli vapaita vuoroja on käytettävissä.</p>
   <p>Asunnoilla, joilla on vakiovuoro, näkyy kalenterissa myös vakiovuoron varaus. Vakiovuoroa on mahdollisuus siirtää vapauttamalla nykyinen varaus ja varaamalla heti perään uusi aika.</p>
