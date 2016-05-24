@@ -944,6 +944,43 @@ D48 = User.create(
 #####################################################
 # Reservation slots
 #####################################################
+Ti17_18 = ReservationSlot.create(
+    reservation_target_id: sauna.id,
+    day: 2,
+    startTime: 1700,
+    endTime: 1800,
+    slotStatus: 0
+    )
+Ti18_19 = ReservationSlot.create(
+    reservation_target_id: sauna.id,
+    day: 2,
+    startTime: 1800,
+    endTime: 1900,
+    slotStatus: 0
+    )
+Ti19_20 = ReservationSlot.create(
+    reservation_target_id: sauna.id,
+    day: 2,
+    startTime: 1900,
+    endTime: 2000,
+    slotStatus: 1
+    )
+Ti20_21 = ReservationSlot.create(
+  reservation_target_id: sauna.id,
+  day: 1,
+  startTime: 2000,
+  endTime: 2100,
+  slotStatus: 1
+)
+Ti21_22 = ReservationSlot.create(
+    reservation_target_id: sauna.id,
+    day: 2,
+    startTime: 2100,
+    endTime: 2200,
+    slotStatus: 1
+    )
+
+#####################################################
 Ke17_18 = ReservationSlot.create(
     reservation_target_id: sauna.id,
     day: 3,
