@@ -3,7 +3,10 @@
     <%
     @isNotInHistory = true
     if( DateTime.now.strftime("%u").to_i == reservation_slot.day)
-      @timenow = DateTime.now.strftime("%k").to_i * 100 + DateTime.now.strftime("%M").to_i
+      @t_hours = DateTime.now.utc.strftime("%k").to_i
+      @t_hours = @t_hours + 3
+
+      @timenow = @t_hours * 100 + DateTime.now.strftime("%M").to_i
       if(reservation_slot.startTime < @timenow)
         @isNotInHistory = false
       end
