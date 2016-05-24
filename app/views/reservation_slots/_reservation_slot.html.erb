@@ -109,26 +109,43 @@
 
     <%# free slots %>
     <% else %>
+          <% @userName = "-" %>
+            <% if (@isNotInHistory) %>
+            <%# free clickable slot %>
+            <div id="<%= @slotidstring %>" class="free-slot slot">
+              <div class="indicator free-ind"></div>
+              <div class="res-info-container">
+                <p class="res-time no-confirm"><%= @timeString %></p>
+                <p class="res-username hidden no-confirm"><%= @userName %></p>
 
-      <% @userName = "-" %>
-      <%# free clickable slot %>
+              <% if (find_token_for_current_user(reservation_slot) != nil ) %>
+                        <p class="slot-state no-confirm">Vapaa</p>
+                        <p class="confirmation-text confirm">Haluatko varata ajan <%= @timeString %>?</p>
+                        <%= link_to "Varaa", reservation_slot, class: "confirm-ok confirm green" %>
+                        <%# <a class="confirm-cancel confirm">Ei</a> %>
+              <%else %>
+                        <p class="slot-state no-confirm">Ei varauksia</p>
+                        <p class="confirmation-text confirm">Kaikki varaukset käytössä.</p>
+                        <%= link_to "Takaisin", "/reservation_targets/" + reservation_slot.reservation_target_id.to_s, class: "confirm-ok confirm blue" %>
+              <% end %>
+
+              </div>
+            </div>
+
+      <% else %>
+
+      <%# free NOT-clickable slot %>
       <div id="<%= @slotidstring %>" class="free-slot slot">
-        <div class="indicator free-ind"></div>
+        <div class="indicator unavailable-ind"></div>
         <div class="res-info-container">
           <p class="res-time no-confirm"><%= @timeString %></p>
           <p class="res-username hidden no-confirm"><%= @userName %></p>
 
-<% if (find_token_for_current_user(reservation_slot) != nil ) %>
-          <p class="slot-state no-confirm">Vapaa</p>
-          <p class="confirmation-text confirm">Haluatko varata ajan <%= @timeString %>?</p>
-          <%= link_to "Varaa", reservation_slot, class: "confirm-ok confirm green" %>
-          <%# <a class="confirm-cancel confirm">Ei</a> %>
-<%else %>
-          <p class="slot-state no-confirm">Ei varauksia</p>
-          <p class="confirmation-text confirm">Kaikki varaukset käytössä.</p>
+          <p class="slot-state no-confirm">Ei varattavissa tänään</p>
+          <p class="confirmation-text confirm">Palaa takaisin huomenna.</p>
           <%= link_to "Takaisin", "/reservation_targets/" + reservation_slot.reservation_target_id.to_s, class: "confirm-ok confirm blue" %>
-<% end %>
         </div>
       </div>
 
+      <% end %>
     <% end %>

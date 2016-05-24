@@ -30,7 +30,7 @@ module ReservationTargetsHelper
 
   def clear_old_one_time_tokens(iSlots)
     @numberCleared = 0
-    @countS = iSlots.count
+
     iSlots.each do |s|
       if(s.reservation_token_id != nil)
         @token = ReservationToken.find_by_id(s.reservation_token_id)
@@ -38,6 +38,7 @@ module ReservationTargetsHelper
           if(@token.useDay < DateTime.now)
             s.reservation_token_id = nil
             s.save
+            @numberCleared = @numberCleared + 1
           end
         end
       end

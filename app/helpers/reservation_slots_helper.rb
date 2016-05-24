@@ -89,11 +89,10 @@ def handle_click_to_slot(iSlotId)
         @minutesToAdd = @theSlot.startTime.to_s.slice(2..3).to_i
       end
 
-      if(@todayNum < @slotDay)
-        @freeToken.useDay = DateTime.now.advance(:days => (@slotDay - @todayNum)).beginning_of_day
-      else
-        ##TODO - the number 7 should be replaced by the ReservationTarget.timeWindow attribute
+      if (@todayNum > @slotDay)
         @freeToken.useDay = DateTime.now.advance(:days => (7 + @slotDay - @todayNum)).beginning_of_day
+      else
+        @freeToken.useDay = DateTime.now.advance(:days => (@slotDay - @todayNum)).beginning_of_day
       end
       @freeToken.useDay = @freeToken.useDay.advance(:hours => @hoursToAdd)
       @freeToken.useDay = @freeToken.useDay.advance(:minutes => @minutesToAdd)
