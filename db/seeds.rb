@@ -967,7 +967,7 @@ Ti19_20 = ReservationSlot.create(
     )
 Ti20_21 = ReservationSlot.create(
   reservation_target_id: sauna.id,
-  day: 1,
+  day: 2,
   startTime: 2000,
   endTime: 2100,
   slotStatus: 1
@@ -1016,8 +1016,7 @@ Ke21_22 = ReservationSlot.create(
     day: 3,
     startTime: 2100,
     endTime: 2200,
-    slotStatus: 1,
-    reservation_token_id: C26_TP_1.id
+    slotStatus: 1
     )
 ############33
 To17_18 = ReservationSlot.create(
