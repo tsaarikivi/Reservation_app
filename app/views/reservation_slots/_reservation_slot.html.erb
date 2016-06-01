@@ -7,7 +7,7 @@
       @t_hours = @t_hours + 3
 
       @timenow = @t_hours * 100 + DateTime.now.strftime("%M").to_i
-      if(reservation_slot.startTime < @timenow)
+      if(reservation_slot.endTime < @timenow)
         @isNotInHistory = false
       end
     end

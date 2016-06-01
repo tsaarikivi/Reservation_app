@@ -81,12 +81,12 @@ def handle_click_to_slot(iSlotId)
       @todayNum = DateTime.now.strftime("%u").to_i
 
       ##Find how many hours & minutes to add to the useDay timestamp.
-      if(@theSlot.startTime < 1000)
-        @hoursToAdd = @theSlot.startTime.to_s.slice(0).to_i
-        @minutesToAdd = @theSlot.startTime.to_s.slice(1..2).to_i
+      if(@theSlot.endTime < 1000)
+        @hoursToAdd = @theSlot.endTime.to_s.slice(0).to_i
+        @minutesToAdd = @theSlot.endTime.to_s.slice(1..2).to_i
       else
-        @hoursToAdd = @theSlot.startTime.to_s.slice(0..1).to_i
-        @minutesToAdd = @theSlot.startTime.to_s.slice(2..3).to_i
+        @hoursToAdd = @theSlot.endTime.to_s.slice(0..1).to_i
+        @minutesToAdd = @theSlot.endTime.to_s.slice(2..3).to_i
       end
 
       @freeToken.useDay = DateTime.now.utc.beginning_of_day
