@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'static_pages#about'
-  # root 'reservation_targets#index'
+  # root 'static_pages#about'
+  root 'reservation_targets#index'
 
   get 'help' => 'static_pages#help'
   get 'odota' => 'static_pages#about'
