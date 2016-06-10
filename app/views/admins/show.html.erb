@@ -1,8 +1,7 @@
 <h2>Ylläpitäjä: <%= @admin.email %></h2>
-<%= link_to "Luo uusi Omistaja", new_owner_path %>
 <div class="owner-list-cont">
   <% if @admin.owners.any? %>
-    <h3>Omistajia: (<%= @admin.owners.count %>)</h3>
+    <h3>Taloyhtiöt: (<%= @admin.owners.count %>)</h3>
     <ol class="owner-list">
       <%= render @owners %>
     </ol>

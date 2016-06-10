@@ -6,14 +6,16 @@
 <h2>Omistaja: <%= @owner.name %></h2>
     <h3>Varauskohteet: (<%= @owner.reservation_targets.count %>)</h3>
       <% @reservation_targets.each do |t| %>
-        <h4> <%= t.name %> </h4>
+        <h4> <%= t.name %>  vakiovuorot</h4>
         <%
         @slots = ReservationSlot.where(reservation_target_id: t.id).order(:day)
+        @slotsFound = false
         @slots.each do |s|
           if s.reservation_token_id != nil
             @token = ReservationToken.find_by_id(s.reservation_token_id)
             @user = User.find_by_id(@token.user_id)
             if @token.tokenType == 1 ## Only Permanent tokens
+              @slotsFound = true
               if(s.startTime < 1000)
                 @timeString =  s.startTime.to_s.slice(0) + ":" + s.startTime.to_s.slice(1..2)
               else
@@ -31,6 +33,11 @@
         <%
             end
           end
+        end
+        if !@slotsFound
+        %>
+          <p style="font-size:2em"> Ei vakiovuoroja.<p>
+        <%
         end
         %>
       <% end %>
