@@ -1,13 +1,39 @@
 
+<%
+  @dayNames = ["Maanantai", "Tiistai", "Keskiviikko", "Torstai", "Perjantai", "Lauantai", "Sunnuntai"]
+%>
+
 <h2>Omistaja: <%= @owner.name %></h2>
-<%= link_to "Luo uusi Resurssi", new_reservation_target_path(@owner) %>
-<div class="reservation-target-list-cont">
-  <% if @owner.reservation_targets.any? %>
-    <h3>Resursseja: (<%= @owner.reservation_targets.count %>)</h3>
-    <ol class="reservation-target-list">
-      <%= render @reservation_targets %>
-    </ol>
-  <% end %>
+    <h3>Varauskohteet: (<%= @owner.reservation_targets.count %>)</h3>
+      <% @reservation_targets.each do |t| %>
+        <h4> <%= t.name %> </h4>
+        <%
+        @slots = ReservationSlot.where(reservation_target_id: t.id).order(:day)
+        @slots.each do |s|
+          if s.reservation_token_id != nil
+            @token = ReservationToken.find_by_id(s.reservation_token_id)
+            @user = User.find_by_id(@token.user_id)
+            if @token.tokenType == 1 ## Only Permanent tokens
+              if(s.startTime < 1000)
+                @timeString =  s.startTime.to_s.slice(0) + ":" + s.startTime.to_s.slice(1..2)
+              else
+                @timeString =  s.startTime.to_s.slice(0..1) + ":" + s.startTime.to_s.slice(2..3)
+              end
+
+              if(s.endTime < 1000)
+                @timeString += "-" + s.endTime.to_s.slice(0) + ":" + s.endTime.to_s.slice(1..2)
+              else
+                @timeString += "-" + s.endTime.to_s.slice(0..1) + ":" + s.endTime.to_s.slice(2..3)
+              end
+
+        %>
+          <p style="font-size:2em"> <%= @dayNames[s.day] %> : <%= @timeString %>  :  <%= @user.name %><p>
+        <%
+            end
+          end
+        end
+        %>
+      <% end %>
   <h3> Tapahtumat: </h3>
   <% @logentries.each do |e| %>
     <li><%= e.logstr %> </li>
@@ -17,4 +43,3 @@
     <li><%= f.feedbackText %> </li>
     <br>
   <% end %>
-</div>
