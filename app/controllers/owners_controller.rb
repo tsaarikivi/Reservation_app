@@ -8,7 +8,6 @@ class OwnersController < ApplicationController
   end
 
   def show
-    implementFix()
     @owner = Owner.find_by_id(params[:id])
     @reservation_targets = @owner.reservation_targets
     @logentries = Reservationlog.where(owner_id: @owner.id).last(500)
