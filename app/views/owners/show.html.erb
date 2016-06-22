@@ -4,6 +4,7 @@
 %>
 
 <h2>Omistaja: <%= @owner.name %></h2>
+
     <h3>Varauskohteet: (<%= @owner.reservation_targets.count %>)</h3>
       <% @reservation_targets.each do |t| %>
         <h4> <%= t.name %>  vakiovuorot</h4>

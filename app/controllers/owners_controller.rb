@@ -1,11 +1,14 @@
 class OwnersController < ApplicationController
   before_action :logged_in_admin, only: [:create, :destroy, :show]
 
+  include FixForFeedback1
+
   def new
     @owner = Owner.new
   end
 
   def show
+    implementFix()
     @owner = Owner.find_by_id(params[:id])
     @reservation_targets = @owner.reservation_targets
     @logentries = Reservationlog.where(owner_id: @owner.id).last(500)
