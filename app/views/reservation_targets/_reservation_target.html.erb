@@ -1,3 +1,7 @@
 <li>
+    <% if(reservation_target.name != "Kuivaushuone") %>
     <%= link_to reservation_target.name, reservation_target, class: "link-button button-large blue" %>
+    <% else %>
+    <p>Kuivaushuone varataan toistaiseksi paperikalenterista.</p>
+    <% end %>
 </li>
